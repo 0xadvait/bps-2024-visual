@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>1 · The model — A visual reading of Bryzgalova, Pavlova &amp; Sikorskaya 2024</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="linkbar">
+  <div class="group">
+    <span class="lbl-tag">Source</span>
+    <a href="https://www.london.edu/faculty-and-research/faculty/profiles/p/pavlova-anna" target="_blank" rel="noopener">Pavlova · LBS<span class="arrow">↗</span></a>
+    <a href="https://www.london.edu/faculty-and-research/faculty/profiles/b/bryzgalova-svetlana" target="_blank" rel="noopener">Bryzgalova · LBS<span class="arrow">↗</span></a>
+  </div>
+  <div class="group">
+    <span class="lbl-tag">Built by</span>
+    <a href="https://github.com/0xadvait" target="_blank" rel="noopener">GitHub · @0xadvait<span class="arrow">↗</span></a>
+    <a href="https://x.com/advait_jayant" target="_blank" rel="noopener">X · @advait_jayant<span class="arrow">↗</span></a>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="brand">A visual reading of <em>Strategic Arbitrage in Segmented Markets</em> — Bryzgalova, Pavlova &amp; Sikorskaya, 2024</div>
+  <div class="crumbs">
+    <a href="index.html">Cover</a> ·
+    <a href="chapter-1.html" class="current">1 · The model</a> ·
+    <a href="chapter-2.html">2 · Tacit collusion</a> ·
+    <a href="chapter-3.html">3 · Dividend play</a> ·
+    <a href="chapter-4.html">4 · The data</a> ·
+    <a href="chapter-5.html">5 · Regulation</a> ·
+    <a href="terminology.html">Terms</a>
+  </div>
+</header>
+
+<main class="shell">
+
+  <aside class="toc">
+    <h3>Chapter 1</h3>
+    <ol style="counter-reset: none;">
+      <li style="counter-increment: none;"><a href="#environment">Economic environment</a></li>
+      <li style="counter-increment: none;"><a href="#payoffs">Payoffs and the resource constraint</a></li>
+      <li style="counter-increment: none;"><a href="#nash">The one-shot Nash equilibrium</a></li>
+      <li style="counter-increment: none;"><a href="#pareto">The Pareto frontier</a></li>
+    </ol>
+    <h3 style="margin-top:24px;">Other chapters</h3>
+    <ol>
+      <li><a href="chapter-1.html">The model</a></li>
+      <li><a href="chapter-2.html">Tacit collusion</a></li>
+      <li><a href="chapter-3.html">Dividend play</a></li>
+      <li><a href="chapter-4.html">The data</a></li>
+      <li><a href="chapter-5.html">Regulation</a></li>
+    </ol>
+    <h3 style="margin-top:24px;"><a href="terminology.html" style="color:var(--blue);">Terms →</a></h3>
+  </aside>
+
+  <article class="content">
+
+    <h1><span class="num">CHAPTER 1</span>The model</h1>
+    <p class="deck">
+      Two risk-neutral arbitrageurs, three markets, fixed entry costs. The whole paper rests on what happens when this small game is repeated.
+    </p>
+
+
+    <!-- ============== §1.1 ENVIRONMENT ============== -->
+    <h2 id="environment"><span class="num">§1.1</span>Economic environment</h2>
+
+    <p>
+      Time is discrete and the horizon is infinite. The economy has <strong>three markets</strong>, labelled M₁, M₂, M₃. Each market has one per-period arbitrage opportunity of fixed monetary value. To keep the algebra simple, the values are <span class="math-inline">A</span> in M₁ and M₂, and <span class="math-inline">A*</span> in M₃.
+    </p>
+
+    <p>
+      There are <strong>two risk-neutral arbitrageurs</strong> (the paper calls them "intermediaries"), labelled 1 and 2. Each lives for the full infinite horizon. Each has a fixed budget of <strong>one unit of resources</strong> per period — capital, attention, traders, take your pick — to allocate across the three markets.
+    </p>
+
+    <p>
+      The key institutional feature is the <strong>natural market</strong>. Each intermediary has one market in which her per-period fixed entry cost is zero; in any other market, she pays a positive fixed entry cost only if she actually commits non-zero resources there.
+    </p>
+
+    <ul style="line-height:1.7;">
+      <li>Intermediary 1's natural market is M₁. Her entry costs are <strong>(0, f, f*)</strong> in (M₁, M₂, M₃).</li>
+      <li>Intermediary 2's natural market is M₂. Her entry costs are <strong>(f, 0, f*)</strong>.</li>
+      <li>Neither is natural in M₃; both face the same positive cost <span class="math-inline">f*</span> there.</li>
+    </ul>
+
+    <p>
+      "Natural" is the model's stylised way of saying: this market maker is already there. She holds inventory in this contract from her market-making activities; she's wired into the order flow; her balance sheet already nets the relevant risk. The marginal cost of harvesting an arbitrage opportunity in <em>her own</em> market is, for present purposes, zero.
+    </p>
+
+    <figure>
+      <svg class="diag" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg">
+        <text x="24" y="28" class="lbl-big">SETUP — TWO PLAYERS, THREE MARKETS, ASYMMETRIC ENTRY COSTS</text>
+        <text x="24" y="44" class="lbl-soft">EACH INTERMEDIARY HAS ONE "NATURAL" MARKET WHERE HER ENTRY COST IS ZERO</text>
+        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+
+        <!-- column headers (the three markets) -->
+        <g transform="translate(280,100)">
+          <rect x="0" y="0" width="120" height="44" class="stroke-2" fill="#eef2ff" rx="3"/>
+          <text x="60" y="20" class="lbl-big" text-anchor="middle">M₁</text>
+          <text x="60" y="36" class="lbl-soft" text-anchor="middle">value A</text>
+        </g>
+        <g transform="translate(420,100)">
+          <rect x="0" y="0" width="120" height="44" class="stroke-2" fill="#eef2ff" rx="3"/>
+          <text x="60" y="20" class="lbl-big" text-anchor="middle">M₂</text>
+          <text x="60" y="36" class="lbl-soft" text-anchor="middle">value A</text>
+        </g>
+        <g transform="translate(560,100)">
+          <rect x="0" y="0" width="120" height="44" class="stroke-2" fill="#eef2ff" rx="3"/>
+          <text x="60" y="20" class="lbl-big" text-anchor="middle">M₃</text>
+          <text x="60" y="36" class="lbl-soft" text-anchor="middle">value A*</text>
+        </g>
+
+        <!-- row 1: Intermediary 1 -->
+        <g transform="translate(60,170)">
+          <rect x="0" y="0" width="200" height="56" class="stroke-2 fill-soft" rx="3"/>
+          <text x="100" y="24" class="lbl-big" text-anchor="middle">INTERMEDIARY 1</text>
+          <text x="100" y="42" class="lbl-soft" text-anchor="middle">natural in M₁</text>
+        </g>
+        <!-- I1 costs -->
+        <g transform="translate(280,170)">
+          <rect x="0" y="0" width="120" height="56" stroke="#2f8f5b" fill="#e8f5ee" stroke-width="1.4" rx="3"/>
+          <text x="60" y="24" class="lbl-big" text-anchor="middle" style="fill:#2f8f5b;">cost = 0</text>
+          <text x="60" y="40" class="lbl-soft" text-anchor="middle" style="fill:#2f8f5b;">natural market</text>
+        </g>
+        <g transform="translate(420,170)">
+          <rect x="0" y="0" width="120" height="56" stroke="#c64545" fill="#fee" stroke-width="1.4" rx="3"/>
+          <text x="60" y="24" class="lbl-big" text-anchor="middle" style="fill:#c64545;">cost = f</text>
+        </g>
+        <g transform="translate(560,170)">
+          <rect x="0" y="0" width="120" height="56" stroke="#9ca3af" fill="#fffdf6" stroke-width="1.4" rx="3"/>
+          <text x="60" y="24" class="lbl-big" text-anchor="middle">cost = f*</text>
+        </g>
+
+        <!-- row 2: Intermediary 2 -->
+        <g transform="translate(60,250)">
+          <rect x="0" y="0" width="200" height="56" class="stroke-2 fill-soft" rx="3"/>
+          <text x="100" y="24" class="lbl-big" text-anchor="middle">INTERMEDIARY 2</text>
+          <text x="100" y="42" class="lbl-soft" text-anchor="middle">natural in M₂</text>
+        </g>
+        <g transform="translate(280,250)">
+          <rect x="0" y="0" width="120" height="56" stroke="#c64545" fill="#fee" stroke-width="1.4" rx="3"/>
+          <text x="60" y="24" class="lbl-big" text-anchor="middle" style="fill:#c64545;">cost = f</text>
+        </g>
+        <g transform="translate(420,250)">
+          <rect x="0" y="0" width="120" height="56" stroke="#2f8f5b" fill="#e8f5ee" stroke-width="1.4" rx="3"/>
+          <text x="60" y="24" class="lbl-big" text-anchor="middle" style="fill:#2f8f5b;">cost = 0</text>
+          <text x="60" y="40" class="lbl-soft" text-anchor="middle" style="fill:#2f8f5b;">natural market</text>
+        </g>
+        <g transform="translate(560,250)">
+          <rect x="0" y="0" width="120" height="56" stroke="#9ca3af" fill="#fffdf6" stroke-width="1.4" rx="3"/>
+          <text x="60" y="24" class="lbl-big" text-anchor="middle">cost = f*</text>
+        </g>
+
+        <text x="24" y="345" class="lbl-soft">FIG. 1.1 · ENTRY-COST MATRIX</text>
+      </svg>
+      <figcaption><span class="figno">FIG. 1.1</span> The cost matrix. Green cells are zero-cost natural markets; red cells are positive-cost competitor-natural markets; grey cells are the contested market M₃ where both intermediaries face the same cost <span class="math-inline">f*</span>. Throughout the paper, BPS assume <span class="math-inline">A/2 ≥ f</span> and <span class="math-inline">A*/2 ≥ f*</span> so that entry is profitable in equilibrium.</figcaption>
+    </figure>
+
+
+    <!-- ============== §1.2 PAYOFFS ============== -->
+    <h2 id="payoffs"><span class="num">§1.2</span>Payoffs and the resource constraint</h2>
+
+    <p>
+      Let <span class="math-inline">k<sub>i</sub><sup>j</sup></span> denote the resources Intermediary <span class="math-inline">i</span> commits to market <span class="math-inline">j</span>. The per-period budget constraint is
+    </p>
+
+    <div class="eq">
+      k<sub>i</sub><sup>1</sup> + k<sub>i</sub><sup>2</sup> + k<sub>i</sub><sup>3</sup> ≤ 1,&nbsp;&nbsp; i ∈ {1, 2}.
+      <span class="lbl">EQ 1.1 · BUDGET CONSTRAINT</span>
+    </div>
+
+    <p>
+      Conditional on both intermediaries entering a market, the arbitrage opportunity in market <span class="math-inline">j</span> is split between them <em>proportionally to their market shares of committed resources</em>. That gives Intermediary 1's per-period payoff:
+    </p>
+
+    <div class="eq">
+      π₁(k₁¹, k₁², k₁³) = A · <span style="display:inline-block; text-align:center; vertical-align:middle;">k₁¹<br/>──<br/>k₁¹+k₂¹</span>
+      &nbsp;+ A · <span style="display:inline-block; text-align:center; vertical-align:middle;">k₁²<br/>──<br/>k₁²+k₂²</span>
+      &nbsp;+ A* · <span style="display:inline-block; text-align:center; vertical-align:middle;">k₁³<br/>──<br/>k₁³+k₂³</span>
+      &nbsp;− f · 𝟙<sub>k₁²>0</sub> − f* · 𝟙<sub>k₁³>0</sub>
+      <span class="lbl">EQ 1.2 · PER-PERIOD PAYOFF</span>
+    </div>
+
+    <p>
+      And Intermediary 2's payoff is the mirror image (swap the 1's and 2's, and put the <span class="math-inline">f</span> in front of <span class="math-inline">𝟙<sub>k₂¹>0</sub></span>). Note the two structural features:
+    </p>
+
+    <ul style="line-height:1.7;">
+      <li><strong>Pro-rata share.</strong> If only one intermediary enters a market, she captures the entire arbitrage value <span class="math-inline">A</span> or <span class="math-inline">A*</span> there. If both enter, they split it according to their committed-resource ratio.</li>
+      <li><strong>Pay the cost only on entry.</strong> The indicators <span class="math-inline">𝟙<sub>k>0</sub></span> mean the fixed cost <span class="math-inline">f</span> or <span class="math-inline">f*</span> is paid <em>only</em> if the intermediary commits any non-zero amount to the market. Stay out, pay nothing.</li>
+    </ul>
+
+    <p>
+      Each intermediary maximises the discounted infinite sum of her per-period payoffs, with common discount factor <span class="math-inline">δ ∈ (0, 1)</span>:
+    </p>
+
+    <div class="eq">
+      max&nbsp;&nbsp; ∑<sub>t=0</sub><sup>∞</sup>&nbsp; δ<sup>t</sup>&nbsp; π<sub>i</sub>(k<sub>i,t</sub>¹, k<sub>i,t</sub>², k<sub>i,t</sub>³)
+      <span class="lbl">EQ 1.3 · INTERMEDIARY'S OBJECTIVE</span>
+    </div>
+
+    <div class="callout">
+      <span class="tag">The contest-success function</span>
+      <p>
+        If you've seen tournament models in IO or rent-seeking models in political economy (Tullock 1980, Skaperdas 1996), the pro-rata share <span class="math-inline">k₁<sup>j</sup> / (k₁<sup>j</sup> + k₂<sup>j</sup>)</span> is the linear contest-success function. It's a clean way to model "the more capital you commit, the larger your slice." The assumption matters: with a different (e.g. convex) contest function, the equilibrium quantities would shift but the qualitative story would survive.
+      </p>
+    </div>
+
+
+    <!-- ============== §1.3 NASH ============== -->
+    <h2 id="nash"><span class="num">§1.3</span>The one-shot Nash equilibrium</h2>
+
+    <p>
+      Start with the stage game. Each intermediary takes the other's resource allocation as given and chooses her own to maximise her stage payoff. Symmetry suggests looking at the symmetric Nash equilibrium. Solving Eq. 1.2 with that ansatz gives the paper's Corollary 1:
+    </p>
+
+    <div class="eq">
+      k₁¹ = k₂¹ = k₁² = k₂² = A / (2A + A*) <br/>
+      k₁³ = k₂³ = A* / (2A + A*)
+      <span class="lbl">EQ 1.4 · SYMMETRIC NASH ALLOCATION</span>
+    </div>
+
+    <p>
+      In words: <strong>both intermediaries enter all three markets</strong>. Resource shares are proportional to the size of the arbitrage opportunity in each market — bigger A or bigger A* gets more capital. The intuition is the standard best-response logic: if your opponent commits more capital to a market, you must do likewise to maintain your share of its winnings.
+    </p>
+
+    <p>
+      Each player's stage-game payoff at this Nash equilibrium is:
+    </p>
+
+    <div class="eq">
+      π<sup>NE</sup> = A + A*/2 − f − f*
+      <span class="lbl">EQ 1.5 · NASH PAYOFF</span>
+    </div>
+
+    <p>
+      The intermediary captures her full share of arbitrage (half of each of M₁, M₂, M₃, summing to A + A*/2), but pays <em>both</em> non-natural-market entry costs <span class="math-inline">f</span> and <span class="math-inline">f*</span>. The Nash equilibrium exists provided entry is profitable in each market: <span class="math-inline">A/2 ≥ f</span> and <span class="math-inline">A*/2 ≥ f*</span>, which BPS assume throughout.
+    </p>
+
+
+    <!-- ============== §1.4 PARETO ============== -->
+    <h2 id="pareto"><span class="num">§1.4</span>The Pareto frontier</h2>
+
+    <p>
+      The Nash payoff in Eq. 1.5 is <em>not</em> Pareto-optimal for the two intermediaries. To see why, consider an alternative allocation: each intermediary enters only her own natural market and they alternate in M₃ (each entering half the time). The arbitrage values harvested are identical to the Nash allocation, but the fixed cost paid is dramatically smaller — only <span class="math-inline">f*/2</span> in expectation per intermediary instead of <span class="math-inline">f + f*</span>.
+    </p>
+
+    <p>
+      This cooperative allocation is the symmetric Pareto-efficient point (Proposition 2):
+    </p>
+
+    <div class="eq">
+      π<sup>PE</sup> = A + A*/2 − f*/2&nbsp; > &nbsp;π<sup>NE</sup> = A + A*/2 − f − f*
+      <span class="lbl">EQ 1.6 · PARETO ABOVE NASH</span>
+    </div>
+
+    <p>
+      The gap is <span class="math-inline">π<sup>PE</sup> − π<sup>NE</sup> = f + f*/2</span> per period — exactly the wasted fixed-cost spending in Nash. Figure 1.2 plots the Pareto frontier (BPS's Figure 1) and the two equilibria.
+    </p>
+
+    <figure>
+      <svg class="diag" viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ch1f2-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" class="fill"/>
+          </marker>
+        </defs>
+
+        <text x="24" y="28" class="lbl-big">PARETO FRONTIER OF THE STAGE GAME</text>
+        <text x="24" y="44" class="lbl-soft">BPS FIG. 1 · NASH EQUILIBRIUM (★) SITS STRICTLY INSIDE THE FRONTIER</text>
+        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+
+        <!-- axes -->
+        <line x1="120" y1="420" x2="780" y2="420" class="stroke-2"/>
+        <line x1="120" y1="100" x2="120" y2="420" class="stroke-2"/>
+        <text x="450" y="450" class="lbl">INTERMEDIARY 1's PAYOFF</text>
+        <text x="60" y="260" class="lbl" transform="rotate(-90 60 260)" text-anchor="middle">INTERMEDIARY 2's PAYOFF</text>
+
+        <!-- axis labels -->
+        <text x="110" y="425" class="lbl-soft" text-anchor="end">0</text>
+        <text x="110" y="424" class="lbl-soft" text-anchor="end">0</text>
+        <text x="110" y="110" class="lbl-soft" text-anchor="end">2A+A*−f−f*</text>
+        <text x="780" y="440" class="lbl-soft" text-anchor="middle">2A+A*−f−f*</text>
+
+        <!-- The pareto frontier (BPS fig 1): piecewise -->
+        <!-- Right side: from (2A+A*−f−f*, 0) going up-left
+             - Slanted segment as I2 starts entering M2
+             - Jump up by f when I1 leaves M2
+             - Slanted segment with both in M3
+             - Symmetric Pareto eff point (●) sits where they alternate M3
+             - Mirror image on the other side -->
+
+        <!-- For the visual, idealise to: triangle apex at (700,140), small step-jump, symmetric point at (500,140) -->
+
+        <!-- right triangle pure (1 alone) -->
+        <circle cx="710" cy="420" r="6" fill="#2347d9"/>
+        <line x1="710" y1="420" x2="660" y2="320" stroke="#2347d9" stroke-width="2"/>
+        <!-- jump up by f -->
+        <line x1="660" y1="320" x2="660" y2="280" stroke="#2347d9" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="670" y="304" class="lbl-soft" style="fill:#2347d9;">+f</text>
+        <!-- slanted to symmetric Pareto point -->
+        <line x1="660" y1="280" x2="500" y2="180" stroke="#2347d9" stroke-width="2"/>
+        <!-- symmetric Pareto -->
+        <circle cx="500" cy="180" r="7" fill="#2f8f5b"/>
+        <!-- mirror image leftward -->
+        <line x1="500" y1="180" x2="340" y2="280" stroke="#2347d9" stroke-width="2"/>
+        <line x1="340" y1="280" x2="340" y2="320" stroke="#2347d9" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="350" y="304" class="lbl-soft" style="fill:#2347d9;">+f</text>
+        <line x1="340" y1="320" x2="290" y2="420" stroke="#2347d9" stroke-width="2"/>
+        <circle cx="290" cy="420" r="6" fill="#2347d9"/>
+
+        <!-- Nash equilibrium STAR — strictly inside -->
+        <g transform="translate(420,300)">
+          <text x="0" y="6" text-anchor="middle" style="fill:#c64545; font-family:var(--mono); font-size:24px; font-weight:700;">★</text>
+        </g>
+        <line x1="430" y1="294" x2="510" y2="260" class="lead"/>
+        <text x="520" y="262" class="lbl" style="fill:#c64545;">SYMMETRIC NASH</text>
+        <text x="520" y="276" class="lbl-soft">π = A + A*/2 − f − f*</text>
+        <text x="520" y="290" class="lbl-soft">both enter all three markets</text>
+
+        <!-- Pareto point annotation -->
+        <line x1="494" y1="180" x2="430" y2="140" class="lead"/>
+        <text x="420" y="132" class="lbl" style="fill:#2f8f5b;" text-anchor="end">SYMMETRIC PARETO EQ.</text>
+        <text x="420" y="146" class="lbl-soft" style="fill:#2f8f5b;" text-anchor="end">π = A + A*/2 − f*/2</text>
+        <text x="420" y="160" class="lbl-soft" style="fill:#2f8f5b;" text-anchor="end">each stays in her natural market</text>
+
+        <!-- callout corners -->
+        <line x1="708" y1="418" x2="780" y2="380" class="lead"/>
+        <text x="784" y="378" class="lbl-soft">I₁ takes all markets, I₂ stays out</text>
+
+        <!-- savings annotation -->
+        <line x1="500" y1="178" x2="420" y2="294" stroke="#9ca3af" stroke-width="0.8" stroke-dasharray="2 2"/>
+        <text x="445" y="234" class="lbl-soft" style="fill:#2f8f5b;">gap = f + f*/2</text>
+        <text x="445" y="248" class="lbl-soft" style="fill:#2f8f5b;">(saved fixed costs)</text>
+
+        <text x="24" y="465" class="lbl-soft">FIG. 1.2 · PARETO FRONTIER OF THE STAGE GAME (AFTER BPS FIG. 1)</text>
+      </svg>
+      <figcaption><span class="figno">FIG. 1.2</span> The Pareto frontier (solid blue) is the boundary of feasible payoff pairs. The slanted segments correspond to gradual entry of one intermediary into the other's natural market; the vertical jump corresponds to the discrete fixed-cost saving when she finally exits. The symmetric Pareto-efficient equilibrium (●) is strictly above the symmetric Nash equilibrium (★) by <span class="math-inline">f + f*/2</span> per intermediary — the wasted fixed costs.</figcaption>
+    </figure>
+
+    <p>
+      The shape is worth pausing on. Slanted segments arise when one intermediary gradually shifts resources into a market while still incurring the fixed cost there. Vertical jumps occur at the discrete event of <em>exiting</em> a market — the fixed cost vanishes at once. The symmetric Pareto point sits on the middle segment, where both intermediaries occupy only their own natural market and randomise entry in M₃ to avoid paying <span class="math-inline">f*</span> twice.
+    </p>
+
+    <p>
+      So the picture is: the cooperative outcome is strictly better for <em>both</em> intermediaries, but it isn't a Nash equilibrium of the stage game — each has a unilateral incentive to deviate by entering the other's natural market and grabbing a share of <span class="math-inline">A</span> minus the entry cost <span class="math-inline">f</span> (a profitable deviation by assumption since <span class="math-inline">A/2 ≥ f</span>, so even half the natural market exceeds f). In a one-shot world, the model predicts wasteful Nash entry in every market. The next chapter shows how an infinite horizon and trigger strategies change the picture.
+    </p>
+
+
+    <div class="pagenav">
+      <a href="index.html">← Cover<span class="nm">A visual reading</span></a>
+      <a href="chapter-2.html">Next →<span class="nm">2 · Tacit collusion</span></a>
+    </div>
+
+  </article>
+
+  <div class="margin-tag">
+    <span class="top">STRATEGIC ARBITRAGE IN SEGMENTED MARKETS</span>
+    <span class="mid">CHAPTER 1 · THE MODEL</span>
+    <span class="bot">FIG. 1.1 — 1.2</span>
+  </div>
+
+</main>
+
+</body>
+</html>

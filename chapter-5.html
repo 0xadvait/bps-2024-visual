@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>5 · Regulation — A visual reading of Bryzgalova, Pavlova &amp; Sikorskaya 2024</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="linkbar">
+  <div class="group">
+    <span class="lbl-tag">Source</span>
+    <a href="https://www.london.edu/faculty-and-research/faculty/profiles/p/pavlova-anna" target="_blank" rel="noopener">Pavlova · LBS<span class="arrow">↗</span></a>
+    <a href="https://www.london.edu/faculty-and-research/faculty/profiles/b/bryzgalova-svetlana" target="_blank" rel="noopener">Bryzgalova · LBS<span class="arrow">↗</span></a>
+  </div>
+  <div class="group">
+    <span class="lbl-tag">Built by</span>
+    <a href="https://github.com/0xadvait" target="_blank" rel="noopener">GitHub · @0xadvait<span class="arrow">↗</span></a>
+    <a href="https://x.com/advait_jayant" target="_blank" rel="noopener">X · @advait_jayant<span class="arrow">↗</span></a>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="brand">A visual reading of <em>Strategic Arbitrage in Segmented Markets</em> — Bryzgalova, Pavlova &amp; Sikorskaya, 2024</div>
+  <div class="crumbs">
+    <a href="index.html">Cover</a> ·
+    <a href="chapter-1.html">1 · The model</a> ·
+    <a href="chapter-2.html">2 · Tacit collusion</a> ·
+    <a href="chapter-3.html">3 · Dividend play</a> ·
+    <a href="chapter-4.html">4 · The data</a> ·
+    <a href="chapter-5.html" class="current">5 · Regulation</a> ·
+    <a href="terminology.html">Terms</a>
+  </div>
+</header>
+
+<main class="shell">
+
+  <aside class="toc">
+    <h3>Chapter 5</h3>
+    <ol style="counter-reset: none;">
+      <li style="counter-increment: none;"><a href="#sec-2014">The 2014 SEC rule</a></li>
+      <li style="counter-increment: none;"><a href="#circumvent">How arbitrageurs circumvented it</a></li>
+      <li style="counter-increment: none;"><a href="#proposal">The authors' proposed fix</a></li>
+      <li style="counter-increment: none;"><a href="#takeaway">Takeaway</a></li>
+    </ol>
+    <h3 style="margin-top:24px;">Other chapters</h3>
+    <ol>
+      <li><a href="chapter-1.html">The model</a></li>
+      <li><a href="chapter-2.html">Tacit collusion</a></li>
+      <li><a href="chapter-3.html">Dividend play</a></li>
+      <li><a href="chapter-4.html">The data</a></li>
+      <li><a href="chapter-5.html">Regulation</a></li>
+    </ol>
+    <h3 style="margin-top:24px;"><a href="terminology.html" style="color:var(--blue);">Terms →</a></h3>
+  </aside>
+
+  <article class="content">
+
+    <h1><span class="num">CHAPTER 5</span>Regulation and what comes next</h1>
+    <p class="deck">
+      The SEC tried to kill dividend play in 2014. The arbitrageurs adapted in weeks. The paper closes with a regulatory postscript and a clean economic punchline.
+    </p>
+
+
+    <!-- ============== §5.1 2014 RULE ============== -->
+    <h2 id="sec-2014"><span class="num">§5.1</span>The 2014 SEC clearing rule</h2>
+
+    <p>
+      The pre-2014 dividend-play strategy required the arbitrageur to <em>simultaneously buy and sell the same contract</em> — that's how the offsetting hedge worked, and that's how the dilution of the short pool was engineered. In 2014, the SEC and the Options Clearing Corporation (OCC) approved a rule that made this specific mechanic impossible.
+    </p>
+
+    <p>
+      The rule's text required that <em>same-contract</em> exposures be <strong>netted</strong> before the OCC performed its random-assignment lottery. If you bought 100 contracts and sold 100 of the same contract, your net exposure for assignment purposes became zero — so you had nothing to be unassigned on, and the windfall mechanic broke.
+    </p>
+
+    <figure>
+      <svg class="diag" viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ch5f1-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" class="fill"/>
+          </marker>
+        </defs>
+
+        <text x="24" y="28" class="lbl-big">THE 2014 OCC NETTING RULE — INTENDED EFFECT</text>
+        <text x="24" y="44" class="lbl-soft">SAME-CONTRACT LONG AND SHORT POSITIONS NETTED BEFORE ASSIGNMENT</text>
+        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+
+        <!-- BEFORE -->
+        <g transform="translate(40,90)">
+          <text x="160" y="-4" class="lbl-big" text-anchor="middle">BEFORE 2014</text>
+          <rect x="0" y="10" width="320" height="140" class="stroke-2 fill-soft" rx="4"/>
+          <text x="160" y="34" class="lbl">ARBITRAGEUR HOLDINGS IN CONTRACT C</text>
+          <text x="20" y="60" class="body">long 100 contracts</text>
+          <text x="20" y="80" class="body">short 100 contracts</text>
+          <text x="20" y="100" class="body">OCC sees: <strong>200 gross positions</strong></text>
+          <text x="20" y="124" class="lbl-soft" style="fill:#2347d9;">→ unassignable short = potential windfall</text>
+          <text x="20" y="138" class="lbl-soft" style="fill:#2347d9;">→ strategy works</text>
+        </g>
+
+        <!-- arrow -->
+        <line x1="380" y1="160" x2="500" y2="160" class="stroke-2" marker-end="url(#ch5f1-arr)"/>
+        <text x="440" y="150" class="lbl" text-anchor="middle">RULE CHANGE</text>
+        <text x="440" y="180" class="lbl-soft" text-anchor="middle">net same-contract first</text>
+
+        <!-- AFTER -->
+        <g transform="translate(520,90)">
+          <text x="160" y="-4" class="lbl-big" text-anchor="middle">AFTER 2014</text>
+          <rect x="0" y="10" width="320" height="140" stroke="#c64545" fill="#fee" stroke-width="1.8" rx="4"/>
+          <text x="160" y="34" class="lbl" style="fill:#c64545;">ARBITRAGEUR HOLDINGS IN CONTRACT C</text>
+          <text x="20" y="60" class="body">long 100 contracts</text>
+          <text x="20" y="80" class="body">short 100 contracts</text>
+          <text x="20" y="100" class="body">OCC sees: <strong>0 net positions</strong></text>
+          <text x="20" y="124" class="lbl-soft" style="fill:#c64545;">→ nothing to assign or not-assign</text>
+          <text x="20" y="138" class="lbl-soft" style="fill:#c64545;">→ strategy broken (in theory)</text>
+        </g>
+
+        <text x="24" y="365" class="lbl-soft">FIG. 5.1 · WHAT THE 2014 RULE WAS DESIGNED TO ACCOMPLISH</text>
+      </svg>
+      <figcaption><span class="figno">FIG. 5.1</span> Pre-2014, OCC saw your gross positions and ran the assignment lottery against all of them, so the more you wrote, the more likely you'd be the unassigned writer. Post-2014, same-contract long-and-short positions cancel out before the lottery runs, so writing 100 paired contracts adds zero exposure to the assignment pool. The rule was designed to kill dividend play outright.</figcaption>
+    </figure>
+
+
+    <!-- ============== §5.2 CIRCUMVENT ============== -->
+    <h2 id="circumvent"><span class="num">§5.2</span>How arbitrageurs circumvented it</h2>
+
+    <p>
+      The 2014 rule netted <em>same</em> contracts. Arbitrageurs responded by using <em>different</em> contracts. Instead of pairing long and short positions in the same call (call C with strike K and expiry T), they pair a long position in C with a short position in a near-identical neighbour — call C' with the same expiry T but a different strike K' — or vice versa.
+    </p>
+
+    <p>
+      For risk purposes, contracts with adjacent strikes on the same underlying and expiry are almost perfect substitutes. Their deltas and vegas are extremely close; the hedge is nearly as good as it was before. But to the OCC's same-contract netting algorithm, they're <em>distinct securities</em>. The dilution mechanic survives intact. The arbitrage continues.
+    </p>
+
+    <figure>
+      <svg class="diag" viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg">
+        <text x="24" y="28" class="lbl-big">THE CIRCUMVENTION</text>
+        <text x="24" y="44" class="lbl-soft">SUBSTITUTE NEAR-IDENTICAL CONTRACTS · OCC NETTING ALGORITHM TREATS THEM AS DISTINCT</text>
+        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+
+        <!-- Box: pre-2014 strategy -->
+        <g transform="translate(40,90)">
+          <text x="0" y="0" class="lbl-big">PRE-2014</text>
+          <text x="0" y="16" class="lbl-soft">single contract</text>
+          <rect x="0" y="30" width="320" height="80" stroke="#2347d9" fill="#eef2ff" stroke-width="1.6" rx="3"/>
+          <text x="20" y="56" class="body">Long: 100 × call(K=50, T=Jan15)</text>
+          <text x="20" y="76" class="body">Short: 100 × call(K=50, T=Jan15)</text>
+          <text x="20" y="100" class="lbl-soft">→ SAME CONTRACT</text>
+        </g>
+
+        <!-- Box: post-2014 strategy -->
+        <g transform="translate(520,90)">
+          <text x="0" y="0" class="lbl-big" style="fill:#c64545;">POST-2014</text>
+          <text x="0" y="16" class="lbl-soft" style="fill:#c64545;">switch strikes</text>
+          <rect x="0" y="30" width="320" height="80" stroke="#c64545" fill="#fee" stroke-width="1.6" rx="3"/>
+          <text x="20" y="56" class="body">Long: 100 × call(K=50, T=Jan15)</text>
+          <text x="20" y="76" class="body">Short: 100 × call(<strong>K=51</strong>, T=Jan15)</text>
+          <text x="20" y="100" class="lbl-soft" style="fill:#c64545;">→ DISTINCT CONTRACTS — OCC sees both</text>
+        </g>
+
+        <!-- delta vega comparison -->
+        <g transform="translate(40,240)">
+          <text x="0" y="0" class="lbl">WHAT MAKES THE SUBSTITUTE WORK</text>
+          <line x1="0" y1="8" x2="800" y2="8" class="stroke-soft"/>
+          <text x="0" y="30" class="body"><strong>Delta:</strong> call(K=50) ≈ 0.991, call(K=51) ≈ 0.990. Hedge effectiveness essentially unchanged.</text>
+          <text x="0" y="50" class="body"><strong>Vega:</strong> call(K=50) ≈ 0.243, call(K=51) ≈ 0.268. Small residual exposure; arbitrageur can match notionals to neutralise.</text>
+          <text x="0" y="70" class="body"><strong>OCC view:</strong> two different security identifiers → no netting → assignment lottery sees full gross positions on both.</text>
+        </g>
+
+        <text x="24" y="365" class="lbl-soft">FIG. 5.2 · WHAT CHANGED AND WHAT DIDN'T</text>
+      </svg>
+      <figcaption><span class="figno">FIG. 5.2</span> The circumvention uses the gap between economic substitutability (which is what hedging cares about) and contractual identity (which is what netting algorithms key on). Near-adjacent contracts are economically near-identical but legally distinct.</figcaption>
+    </figure>
+
+    <p>
+      The paper's section 5 documents the speed of adaptation. Within months of the 2014 rule taking effect, dividend-play volume had migrated to near-adjacent-strike pairs rather than same-contract pairs, and the strategy resumed at roughly its previous scale. The rule succeeded in changing the trade's implementation but failed in its stated purpose of curtailing the activity.
+    </p>
+
+
+    <!-- ============== §5.3 PROPOSAL ============== -->
+    <h2 id="proposal"><span class="num">§5.3</span>The authors' proposed fix</h2>
+
+    <p>
+      BPS suggest the obvious-in-hindsight fix: net <em>across</em> contracts that are economic substitutes, not just within identical contracts. Specifically, sum each arbitrageur's gross delta-equivalent exposure across all calls on the same underlying with the same maturity, and run the OCC assignment lottery against that aggregated quantity.
+    </p>
+
+    <p>
+      Equivalently: define a "netting class" as the set of all call options on the same underlying with the same expiration, and require netting within that class before assignment. This kills the same-underlying / different-strike circumvention because adjacent strikes go into the same netting bucket. To work around it, an arbitrageur would have to use contracts on a different underlying or a different expiration — and at that point, the hedge isn't a hedge anymore. The arbitrage becomes genuinely risky and most likely unprofitable.
+    </p>
+
+    <div class="callout">
+      <span class="tag">A general principle</span>
+      <p>
+        BPS frame this as a small instance of a much broader regulatory pattern: when a rule keys on a narrow legal definition, sophisticated counterparties redefine their trade to fall outside it without changing the economics. The remedy is to write rules at the level of <em>economic substance</em> rather than legal form. Easy to say; institutionally difficult to implement, because economic-substance tests require interpretation and create discretion. The paper's tone here is matter-of-fact rather than reformist.
+      </p>
+    </div>
+
+
+    <!-- ============== §5.4 TAKEAWAY ============== -->
+    <h2 id="takeaway"><span class="num">§5.4</span>Takeaway</h2>
+
+    <p>
+      The paper's structure is a textbook example of how to write up theory + empirics in the modern finance literature. The model is simple — two players, three markets, one fixed cost. The mechanism is general — tacit collusion supported by trigger strategies, an established result since the 1970s — but the application (entry into multi-market arbitrage with natural markets) is novel. The empirical laboratory is exceptionally clean: a virtually riskless arbitrage with observable quantities, exogenous opportunity values, and a small repeat-player population.
+    </p>
+
+    <p>
+      For the literature, two contributions stand out. First, the BPS model is the first formal characterization of segmented arbitrage in a repeated game, providing a tractable alternative to the dominant competitive-arbitrageur paradigm. Second, the empirical findings demonstrate that strategic considerations matter quantitatively in real markets — $204 million of forgone profit in 3.5 years isn't a rounding error. Both contributions are useful inputs to ongoing debates about market microstructure, intermediary capital, and the limits of arbitrage.
+    </p>
+
+    <p>
+      For the regulatory literature, the 2014–2024 episode is a cautionary tale: a clearing rule that took years to write, was successfully circumvented within months, and has spent a decade preventing the wrong thing. The authors' proposed fix is sensible but politically modest — they don't argue that dividend play should be eliminated, just that if regulators want to eliminate it they should write rules that bite. That restraint is characteristic of careful finance research and worth emulating.
+    </p>
+
+    <div class="compare">
+      <div>
+        <h4>What the paper establishes</h4>
+        <ul>
+          <li class="good">Strategic arbitrage in segmented markets has a tractable repeated-game characterisation</li>
+          <li class="good">Tacit collusion among a small handful of arbitrageurs explains observed market entry patterns</li>
+          <li class="good">Standard limits-to-arbitrage theories cannot explain the BPS three facts</li>
+          <li class="good">Regulation that keys on legal form is easily circumvented when economic substance is available</li>
+        </ul>
+      </div>
+      <div>
+        <h4>What's left open</h4>
+        <ul>
+          <li>Asymmetric (non-symmetric) tacit collusion equilibria — heterogeneous arbitrageurs, multiple natural markets each</li>
+          <li>Welfare consequences for end investors of arbitrageur specialization</li>
+          <li>Generalisation beyond dividend play — CDS dealers, agency MBS, government bonds, OTC derivatives</li>
+          <li>The dynamics of entry and exit at the arbitrageur level over longer horizons</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="pagenav">
+      <a href="chapter-4.html">← Previous<span class="nm">4 · The data</span></a>
+      <a href="terminology.html">Next →<span class="nm">Terms</span></a>
+    </div>
+
+  </article>
+
+  <div class="margin-tag">
+    <span class="top">STRATEGIC ARBITRAGE IN SEGMENTED MARKETS</span>
+    <span class="mid">CHAPTER 5 · REGULATION</span>
+    <span class="bot">FIG. 5.1 — 5.2</span>
+  </div>
+
+</main>
+
+</body>
+</html>

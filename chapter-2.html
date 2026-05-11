@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>2 · Tacit collusion — A visual reading of Bryzgalova, Pavlova &amp; Sikorskaya 2024</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="linkbar">
+  <div class="group">
+    <span class="lbl-tag">Source</span>
+    <a href="https://www.london.edu/faculty-and-research/faculty/profiles/p/pavlova-anna" target="_blank" rel="noopener">Pavlova · LBS<span class="arrow">↗</span></a>
+    <a href="https://www.london.edu/faculty-and-research/faculty/profiles/b/bryzgalova-svetlana" target="_blank" rel="noopener">Bryzgalova · LBS<span class="arrow">↗</span></a>
+  </div>
+  <div class="group">
+    <span class="lbl-tag">Built by</span>
+    <a href="https://github.com/0xadvait" target="_blank" rel="noopener">GitHub · @0xadvait<span class="arrow">↗</span></a>
+    <a href="https://x.com/advait_jayant" target="_blank" rel="noopener">X · @advait_jayant<span class="arrow">↗</span></a>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="brand">A visual reading of <em>Strategic Arbitrage in Segmented Markets</em> — Bryzgalova, Pavlova &amp; Sikorskaya, 2024</div>
+  <div class="crumbs">
+    <a href="index.html">Cover</a> ·
+    <a href="chapter-1.html">1 · The model</a> ·
+    <a href="chapter-2.html" class="current">2 · Tacit collusion</a> ·
+    <a href="chapter-3.html">3 · Dividend play</a> ·
+    <a href="chapter-4.html">4 · The data</a> ·
+    <a href="chapter-5.html">5 · Regulation</a> ·
+    <a href="terminology.html">Terms</a>
+  </div>
+</header>
+
+<main class="shell">
+
+  <aside class="toc">
+    <h3>Chapter 2</h3>
+    <ol style="counter-reset: none;">
+      <li style="counter-increment: none;"><a href="#why-repeated">Why the repeated game</a></li>
+      <li style="counter-increment: none;"><a href="#trigger">The trigger strategy</a></li>
+      <li style="counter-increment: none;"><a href="#spe">The SPE condition</a></li>
+      <li style="counter-increment: none;"><a href="#predictions">Three testable predictions</a></li>
+    </ol>
+    <h3 style="margin-top:24px;">Other chapters</h3>
+    <ol>
+      <li><a href="chapter-1.html">The model</a></li>
+      <li><a href="chapter-2.html">Tacit collusion</a></li>
+      <li><a href="chapter-3.html">Dividend play</a></li>
+      <li><a href="chapter-4.html">The data</a></li>
+      <li><a href="chapter-5.html">Regulation</a></li>
+    </ol>
+    <h3 style="margin-top:24px;"><a href="terminology.html" style="color:var(--blue);">Terms →</a></h3>
+  </aside>
+
+  <article class="content">
+
+    <h1><span class="num">CHAPTER 2</span>Tacit collusion</h1>
+    <p class="deck">
+      The repeated game enlarges the set of subgame perfect equilibria. The Pareto efficient allocation, infeasible as a stage Nash, returns as an SPE supported by trigger strategies — provided the discount factor is high enough.
+    </p>
+
+
+    <!-- ============== §2.1 WHY REPEATED ============== -->
+    <h2 id="why-repeated"><span class="num">§2.1</span>Why the repeated game</h2>
+
+    <p>
+      The Folk Theorem of repeated games (Fudenberg &amp; Maskin 1986) says that for a sufficiently patient discount factor, any feasible and individually rational payoff vector of the stage game can be sustained as a subgame perfect equilibrium of the infinitely repeated game. Cooperation becomes self-enforcing because deviation today is punished by reversion to non-cooperative play tomorrow — and that punishment is credible.
+    </p>
+
+    <p>
+      In the BPS setting, the "cooperative" outcome we want to sustain is the symmetric Pareto-efficient allocation from Chapter 1: each intermediary stays in her own natural market, and they alternate entry in M₃. Both intermediaries are strictly better off than in the one-shot Nash. The only question is: <em>can this cooperative pattern be sustained without explicit communication or contractual agreement?</em>
+    </p>
+
+    <p>
+      This is what "tacit" in tacit collusion means. No one signs a deal. No one even talks. The collusive pattern emerges because each intermediary correctly anticipates that deviating today triggers a long-lasting punishment phase that destroys her future profits — and the future profits being protected are large enough that the short-term deviation gain isn't worth it.
+    </p>
+
+    <div class="callout">
+      <span class="tag">Mapping to your IO coursework</span>
+      <p>
+        Classical tacit collusion (Bernheim-Whinston 1990, Friedman 1971) is about <em>setting prices above marginal cost</em> in a Bertrand or Cournot setting. The novel feature in BPS is that cooperation is about <em>not entering</em> a market — the welfare gain comes from saving the fixed entry cost rather than from raising prices. Dutta-Madhavan (1997) is the closest predecessor, applying tacit collusion to NASDAQ market makers' odd-eighth quote-avoidance (Christie-Schultz 1994). BPS extend the logic to multi-market arbitrage.
+      </p>
+    </div>
+
+
+    <!-- ============== §2.2 TRIGGER STRATEGY ============== -->
+    <h2 id="trigger"><span class="num">§2.2</span>The trigger strategy</h2>
+
+    <p>
+      BPS focus on a particular simple trigger strategy. Each intermediary maintains a binary mental state: either we are in the <strong>cooperative phase</strong>, or we are in the <strong>punishment phase</strong>. Play in the current period depends on this state and on observable history.
+    </p>
+
+    <figure>
+      <svg class="diag" viewBox="0 0 880 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ch2f1-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" class="fill"/>
+          </marker>
+          <marker id="ch2f1-arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#c64545"/>
+          </marker>
+        </defs>
+
+        <text x="24" y="28" class="lbl-big">THE TRIGGER STRATEGY</text>
+        <text x="24" y="44" class="lbl-soft">PROPOSITION 3 · COOPERATE WHILE NO ONE HAS DEVIATED · REVERT TO STAGE-GAME NASH FOREVER ONCE THEY HAVE</text>
+        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+
+        <!-- Cooperative phase box -->
+        <g transform="translate(60,100)">
+          <rect x="0" y="0" width="320" height="200" stroke="#2f8f5b" fill="#e8f5ee" stroke-width="2" rx="6"/>
+          <text x="160" y="28" class="lbl-big" text-anchor="middle" style="fill:#2f8f5b;">COOPERATIVE PHASE</text>
+          <text x="160" y="46" class="lbl-soft" text-anchor="middle">"so far, no one has deviated"</text>
+          <line x1="20" y1="58" x2="300" y2="58" class="stroke-soft"/>
+          <text x="20" y="80" class="body">Each intermediary stays in her</text>
+          <text x="20" y="96" class="body">natural market: k₁¹ &gt; 0, k₂² &gt; 0</text>
+          <text x="20" y="120" class="body">Alternate entry in M₃:</text>
+          <text x="20" y="136" class="body">  · odd t → k₁³ &gt; 0, k₂³ = 0</text>
+          <text x="20" y="152" class="body">  · even t → k₂³ &gt; 0, k₁³ = 0</text>
+          <text x="20" y="180" class="lbl-soft">Per-period payoff: A + A*/2 − f*/2</text>
+        </g>
+
+        <!-- arrow: deviation triggers transition -->
+        <line x1="380" y1="200" x2="500" y2="200" stroke="#c64545" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#ch2f1-arr-red)"/>
+        <text x="440" y="190" class="lbl" text-anchor="middle" style="fill:#c64545;">deviation observed</text>
+        <text x="440" y="220" class="lbl-soft" text-anchor="middle" style="fill:#c64545;">(I₁ enters M₂ or I₂ enters M₁)</text>
+
+        <!-- Punishment phase box -->
+        <g transform="translate(500,100)">
+          <rect x="0" y="0" width="320" height="200" stroke="#c64545" fill="#fee" stroke-width="2" rx="6"/>
+          <text x="160" y="28" class="lbl-big" text-anchor="middle" style="fill:#c64545;">PUNISHMENT PHASE</text>
+          <text x="160" y="46" class="lbl-soft" text-anchor="middle">"absorbing state · no return"</text>
+          <line x1="20" y1="58" x2="300" y2="58" class="stroke-soft"/>
+          <text x="20" y="80" class="body">Both intermediaries play the</text>
+          <text x="20" y="96" class="body">stage-game Nash forever:</text>
+          <text x="20" y="116" class="body">  · enter all three markets</text>
+          <text x="20" y="132" class="body">  · split each opportunity 50/50</text>
+          <text x="20" y="152" class="body">  · pay both costs f and f*</text>
+          <text x="20" y="180" class="lbl-soft">Per-period payoff: A + A*/2 − f − f*</text>
+        </g>
+
+        <!-- self-loop for punishment -->
+        <path d="M 660 320 C 660 360 660 380 660 380 C 660 320 660 320 660 320" stroke="#c64545" fill="none" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <ellipse cx="660" cy="350" rx="40" ry="16" stroke="#c64545" fill="none" stroke-width="1.4" stroke-dasharray="3 3"/>
+        <text x="660" y="354" class="lbl-soft" text-anchor="middle" style="fill:#c64545;">stays forever</text>
+
+        <text x="24" y="405" class="lbl-soft">FIG. 2.1 · TWO-STATE TRIGGER STRATEGY</text>
+      </svg>
+      <figcaption><span class="figno">FIG. 2.1</span> A particularly simple trigger strategy: while no deviation has occurred, play the cooperative pattern; after the first observed deviation, revert to stage-Nash play <em>forever</em>. This is sometimes called a "grim" trigger because the punishment phase is absorbing — once entered, no return to cooperation is ever attempted. Less harsh trigger strategies (e.g. finite-length punishment phases) also work but require more bookkeeping.</figcaption>
+    </figure>
+
+    <p>
+      Critically, the trigger strategy requires only that intermediaries can <em>observe whether someone deviated</em> in the previous period. They don't need to communicate, agree, or sign anything. In the empirical application (Chapter 3), the public observability is provided by the OPRA transaction-level data — every dividend-play trade leaves a transparent flag that any participant can read.
+    </p>
+
+
+    <!-- ============== §2.3 SPE CONDITION ============== -->
+    <h2 id="spe"><span class="num">§2.3</span>The SPE condition</h2>
+
+    <p>
+      For the trigger strategy in FIG 2.1 to be a subgame perfect equilibrium, both intermediaries must prefer to keep cooperating over one-shot deviation, anticipating the punishment that follows. The one-shot deviation incentive constraint is:
+    </p>
+
+    <div class="eq" style="text-align:left;">
+      Deviation gain today &nbsp;≤&nbsp; Discounted loss tomorrow forever
+    </div>
+
+    <p>
+      Concretely: the most profitable deviation from the cooperative phase is to enter the opponent's natural market and capture the entire <span class="math-inline">A</span> there. Net of the entry cost <span class="math-inline">f</span> and the loss of one's share of M₃ in that period (which is being alternated), the immediate gain over the cooperative payoff works out to <span class="math-inline">A − f</span>. (BPS work this out carefully in the appendix; this is the cleanest characterisation.) The future cost is the per-period loss <span class="math-inline">π<sup>PE</sup> − π<sup>NE</sup> = f + f*/2</span> from period <span class="math-inline">t+1</span> onward, discounted by <span class="math-inline">δ/(1−δ)</span>.
+    </p>
+
+    <p>
+      The cooperative path is sustainable as an SPE if and only if:
+    </p>
+
+    <div class="eq">
+      δ &nbsp;≥&nbsp; (A − f − f*/2) / A
+      <span class="lbl">EQ 2.1 · SPE CONDITION (PROPOSITION 3)</span>
+    </div>
+
+    <p>
+      Notice the comparative statics. The required discount factor is <em>lower</em> — i.e. cooperation is easier to sustain — when the per-period gain from cooperation <span class="math-inline">(f + f*/2)</span> is larger relative to the arbitrage size <span class="math-inline">A</span>. When fixed costs are a big share of arbitrage profits, intermediaries have a lot to lose by triggering punishment, so they refrain from deviating even at relatively low discount factors.
+    </p>
+
+    <figure>
+      <svg class="diag" viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg">
+        <text x="24" y="28" class="lbl-big">WHEN IS TACIT COLLUSION SUSTAINABLE?</text>
+        <text x="24" y="44" class="lbl-soft">DISCOUNT FACTOR δ MUST EXCEED A THRESHOLD THAT DEPENDS ON THE COST-TO-ARBITRAGE RATIO</text>
+        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+
+        <!-- axes -->
+        <line x1="120" y1="320" x2="780" y2="320" class="stroke-2"/>
+        <line x1="120" y1="100" x2="120" y2="320" class="stroke-2"/>
+
+        <!-- y axis labels (delta) -->
+        <text x="108" y="104" class="lbl-soft" text-anchor="end">δ = 1</text>
+        <text x="108" y="214" class="lbl-soft" text-anchor="end">δ = 0.5</text>
+        <text x="108" y="324" class="lbl-soft" text-anchor="end">δ = 0</text>
+        <text x="60" y="200" class="lbl" transform="rotate(-90 60 200)" text-anchor="middle">DISCOUNT FACTOR δ</text>
+
+        <!-- x axis labels (cost / arbitrage ratio) -->
+        <text x="120" y="338" class="lbl-soft" text-anchor="middle">0</text>
+        <text x="450" y="338" class="lbl-soft" text-anchor="middle">0.5</text>
+        <text x="780" y="338" class="lbl-soft" text-anchor="middle">1</text>
+        <text x="450" y="358" class="lbl">(f + f*/2) / A &nbsp;·&nbsp; cost-to-arbitrage ratio</text>
+
+        <!-- The threshold curve: δ = 1 - (f + f*/2)/A → straight line from (0, 1) to (1, 0) -->
+        <line x1="120" y1="100" x2="780" y2="320" stroke="#2347d9" stroke-width="2.4"/>
+
+        <!-- Sustainable region (above the line) -->
+        <path d="M 120 100 L 780 100 L 780 320 L 120 100 Z" fill="#e8f5ee" opacity="0.5"/>
+        <text x="500" y="180" class="lbl-big" text-anchor="middle" style="fill:#2f8f5b;">SUSTAINABLE</text>
+        <text x="500" y="196" class="lbl-soft" text-anchor="middle" style="fill:#2f8f5b;">tacit collusion is SPE</text>
+
+        <!-- Unsustainable region (below) -->
+        <text x="280" y="290" class="lbl-big" text-anchor="middle" style="fill:#c64545;">NOT SUSTAINABLE</text>
+        <text x="280" y="306" class="lbl-soft" text-anchor="middle" style="fill:#c64545;">deviation pays</text>
+
+        <!-- annotation -->
+        <line x1="450" y1="210" x2="540" y2="180" class="lead"/>
+        <text x="546" y="178" class="lbl" style="fill:#2347d9;">δ = 1 − (f + f*/2)/A</text>
+        <text x="546" y="192" class="lbl-soft">threshold line</text>
+
+        <text x="24" y="370" class="lbl-soft">FIG. 2.2 · SUSTAINABILITY REGION</text>
+      </svg>
+      <figcaption><span class="figno">FIG. 2.2</span> The set of <span class="math-inline">(cost-ratio, δ)</span> pairs for which the trigger strategy is an SPE. The threshold line is <span class="math-inline">δ = 1 − (f + f*/2)/A</span>. As fixed costs grow relative to arbitrage value, the threshold drops — cooperation can be sustained even by impatient players, because they have a lot to lose if punishment kicks in. In the empirical application (multiple dividend-play opportunities per week, on a calendar with high frequency), the relevant <span class="math-inline">δ</span> is very close to 1, so the SPE condition is easily satisfied.</figcaption>
+    </figure>
+
+
+    <!-- ============== §2.4 PREDICTIONS ============== -->
+    <h2 id="predictions"><span class="num">§2.4</span>Three testable predictions</h2>
+
+    <p>
+      Before turning to the data, the paper distils three sharp predictions of the tacit-collusion equilibrium (and one prediction of the contrary one-shot Nash hypothesis).
+    </p>
+
+    <div class="compare">
+      <div>
+        <h4>Tacit collusion (BPS hypothesis)</h4>
+        <ul>
+          <li><strong>TP1.</strong> Natural markets are fully exploited by the incumbent natural arbitrageur. We should observe <strong>no entry</strong> by competitors.</li>
+          <li><strong>TP2.</strong> In markets natural to neither player, we should observe <strong>only one</strong> arbitrageur entering.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>One-shot Nash (null)</h4>
+        <ul>
+          <li><strong>TP3.</strong> Arbitrageurs <strong>enter all markets</strong>. Resource commitments are proportional to arbitrage value: bigger A or A* attracts more capital.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      The strategic-arbitrage model and the standard competitive limits-to-arbitrage model produce different qualitative predictions about <em>which markets attract entry</em>, not just about prices or quantities. That's the empirical opportunity. The next two chapters describe the laboratory.
+    </p>
+
+    <div class="callout">
+      <span class="tag">A subtle point about the M₃ + M₄ extension</span>
+      <p>
+        For the empirical comparison, BPS extend the model from one contested market M₃ to two equally-contested markets M₃ and M₄, each with the same arbitrage value and entry cost. In this extension, the symmetric tacit-collusion equilibrium has <em>different</em> intermediaries entering different contested markets — Intermediary 1 in M₃, Intermediary 2 in M₄ — with no need for period-by-period alternation. This makes the prediction "one arbitrageur per non-natural market" stationary and cleanly testable in cross-section, which is what the empirical section needs.
+      </p>
+    </div>
+
+
+    <div class="pagenav">
+      <a href="chapter-1.html">← Previous<span class="nm">1 · The model</span></a>
+      <a href="chapter-3.html">Next →<span class="nm">3 · Dividend play</span></a>
+    </div>
+
+  </article>
+
+  <div class="margin-tag">
+    <span class="top">STRATEGIC ARBITRAGE IN SEGMENTED MARKETS</span>
+    <span class="mid">CHAPTER 2 · TACIT COLLUSION</span>
+    <span class="bot">FIG. 2.1 — 2.2</span>
+  </div>
+
+</main>
+
+</body>
+</html>

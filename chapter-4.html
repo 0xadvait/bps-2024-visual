@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>4 · The data — A visual reading of Bryzgalova, Pavlova &amp; Sikorskaya 2024</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="linkbar">
+  <div class="group">
+    <span class="lbl-tag">Source</span>
+    <a href="https://www.london.edu/faculty-and-research/faculty/profiles/p/pavlova-anna" target="_blank" rel="noopener">Pavlova · LBS<span class="arrow">↗</span></a>
+    <a href="https://www.london.edu/faculty-and-research/faculty/profiles/b/bryzgalova-svetlana" target="_blank" rel="noopener">Bryzgalova · LBS<span class="arrow">↗</span></a>
+  </div>
+  <div class="group">
+    <span class="lbl-tag">Built by</span>
+    <a href="https://github.com/0xadvait" target="_blank" rel="noopener">GitHub · @0xadvait<span class="arrow">↗</span></a>
+    <a href="https://x.com/advait_jayant" target="_blank" rel="noopener">X · @advait_jayant<span class="arrow">↗</span></a>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="brand">A visual reading of <em>Strategic Arbitrage in Segmented Markets</em> — Bryzgalova, Pavlova &amp; Sikorskaya, 2024</div>
+  <div class="crumbs">
+    <a href="index.html">Cover</a> ·
+    <a href="chapter-1.html">1 · The model</a> ·
+    <a href="chapter-2.html">2 · Tacit collusion</a> ·
+    <a href="chapter-3.html">3 · Dividend play</a> ·
+    <a href="chapter-4.html" class="current">4 · The data</a> ·
+    <a href="chapter-5.html">5 · Regulation</a> ·
+    <a href="terminology.html">Terms</a>
+  </div>
+</header>
+
+<main class="shell">
+
+  <aside class="toc">
+    <h3>Chapter 4</h3>
+    <ol style="counter-reset: none;">
+      <li style="counter-increment: none;"><a href="#three-facts">Three empirical facts</a></li>
+      <li style="counter-increment: none;"><a href="#no-pecking">No pecking order</a></li>
+      <li style="counter-increment: none;"><a href="#natural-markets">Identifying natural markets</a></li>
+      <li style="counter-increment: none;"><a href="#alternatives">Ruling out alternatives</a></li>
+    </ol>
+    <h3 style="margin-top:24px;">Other chapters</h3>
+    <ol>
+      <li><a href="chapter-1.html">The model</a></li>
+      <li><a href="chapter-2.html">Tacit collusion</a></li>
+      <li><a href="chapter-3.html">Dividend play</a></li>
+      <li><a href="chapter-4.html">The data</a></li>
+      <li><a href="chapter-5.html">Regulation</a></li>
+    </ol>
+    <h3 style="margin-top:24px;"><a href="terminology.html" style="color:var(--blue);">Terms →</a></h3>
+  </aside>
+
+  <article class="content">
+
+    <h1><span class="num">CHAPTER 4</span>What the data shows</h1>
+    <p class="deck">
+      Three empirical facts. Each is hard to square with competitive limits-to-arbitrage but lines up neatly with the strategic model's testable predictions.
+    </p>
+
+
+    <!-- ============== §4.1 THREE FACTS ============== -->
+    <h2 id="three-facts"><span class="num">§4.1</span>Three empirical facts</h2>
+
+    <p>
+      Aggregating across all profitable dividend-play opportunities in the November 2019 – June 2023 sample, the paper's central findings (§4.2 of the paper) reduce to three numbers.
+    </p>
+
+    <figure>
+      <svg class="diag" viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg">
+        <text x="24" y="28" class="lbl-big">HEADLINE FINDINGS</text>
+        <text x="24" y="44" class="lbl-soft">VIRTUALLY RISKLESS ARBITRAGE · YET MOST OPPORTUNITIES SEE LITTLE OR NO ENTRY</text>
+        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+
+        <!-- Fact 1: entry rate -->
+        <g transform="translate(60,100)">
+          <text x="0" y="0" class="lbl">FACT 1</text>
+          <text x="0" y="14" class="lbl-soft">contract-level entry rate</text>
+          <rect x="160" y="-10" width="566" height="28" stroke="#2347d9" fill="#fffdf6" stroke-width="1.2"/>
+          <rect x="160" y="-10" width="323" height="28" fill="#2347d9"/>
+          <text x="170" y="10" class="lbl" style="fill:#fff;">57% ENTRY</text>
+          <text x="495" y="10" class="lbl" style="fill:#2347d9;">43% no entry</text>
+          <text x="0" y="44" class="body">Only 57% of profitable contracts attract any arbitrageur. The remaining 43% are profitable but untouched.</text>
+        </g>
+
+        <!-- Fact 2: profit share -->
+        <g transform="translate(60,200)">
+          <text x="0" y="0" class="lbl">FACT 2</text>
+          <text x="0" y="14" class="lbl-soft">profit-weighted capture</text>
+          <rect x="160" y="-10" width="566" height="28" stroke="#2347d9" fill="#fffdf6" stroke-width="1.2"/>
+          <rect x="160" y="-10" width="249" height="28" fill="#2347d9"/>
+          <text x="170" y="10" class="lbl" style="fill:#fff;">44% HARVESTED</text>
+          <text x="420" y="10" class="lbl" style="fill:#2347d9;">$204M forgone</text>
+          <text x="0" y="44" class="body">Of $365M total potential profit, arbitrageurs harvest $161M (44%). Roughly $204M sits on the table.</text>
+        </g>
+
+        <!-- Fact 3: arbitrageur count -->
+        <g transform="translate(60,300)">
+          <text x="0" y="0" class="lbl">FACT 3</text>
+          <text x="0" y="14" class="lbl-soft">solo participation</text>
+          <rect x="160" y="-10" width="566" height="28" stroke="#2347d9" fill="#fffdf6" stroke-width="1.2"/>
+          <rect x="160" y="-10" width="277" height="28" fill="#2347d9"/>
+          <text x="170" y="10" class="lbl" style="fill:#fff;">49% SOLO</text>
+          <text x="450" y="10" class="lbl" style="fill:#2347d9;">2+ arbitrageurs in remaining</text>
+          <text x="0" y="44" class="body">Of contracts that do attract entry, 49% have a single arbitrageur. ≥4 arbitrageurs in only 8%; ≥10 in less than 1%.</text>
+        </g>
+
+        <text x="24" y="385" class="lbl-soft">FIG. 4.1 · THREE HEADLINE FACTS (BPS §4.2)</text>
+      </svg>
+      <figcaption><span class="figno">FIG. 4.1</span> Facts 1 and 2 are the model's Testable Prediction 1 (no entry into natural markets) in action: 43% of opportunities are natural to some incumbent who captures them silently. Fact 3 is Testable Prediction 2 (one arbitrageur per non-natural market) showing up in cross-section across the contested half of the sample.</figcaption>
+    </figure>
+
+    <p>
+      Two things make these numbers striking. First, dividend play is <em>not</em> a marginal opportunity: the daily floor volume on cum-dividend dates exceeds the average daily volume by a factor of 100 on relevant tickers. Arbitrageurs <em>are</em> aware of the strategy and <em>do</em> trade it. The 43% non-entry isn't ignorance.
+    </p>
+
+    <p>
+      Second, the dollar values are large. $204M of forgone profit over ~3.5 years is real money for a "virtually riskless" arbitrage. For comparison, de Silva, Smith and So (2022) document a $360M wealth transfer from retail to market makers via earnings-related options trading <em>over a seven-times-longer sample period</em>.
+    </p>
+
+
+    <!-- ============== §4.2 NO PECKING ORDER ============== -->
+    <h2 id="no-pecking"><span class="num">§4.2</span>No pecking order</h2>
+
+    <p>
+      A natural first guess: maybe arbitrageurs <em>prioritise</em> the most profitable opportunities and just ignore marginal ones. This is the "pecking order" hypothesis implied by standard limits-to-arbitrage stories — capital is scarce, so deploy it to the most profitable trades first.
+    </p>
+
+    <p>
+      BPS show the pecking-order hypothesis fails. Sort contracts into terciles by total potential profit, by EEV (early exercise value), or by moneyness. The "no-entry" share is roughly the same across terciles:
+    </p>
+
+    <figure>
+      <svg class="diag" viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg">
+        <text x="24" y="28" class="lbl-big">NO PECKING ORDER · NO-ENTRY RATE IS FLAT IN PROFITABILITY</text>
+        <text x="24" y="44" class="lbl-soft">EVEN THE MOST PROFITABLE CONTRACTS SEE 37% NON-ENTRY</text>
+        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+
+        <!-- bar chart: three sort variables × three terciles each -->
+        <!-- shared y axis -->
+        <line x1="120" y1="320" x2="800" y2="320" class="stroke-2"/>
+        <line x1="120" y1="100" x2="120" y2="320" class="stroke-2"/>
+
+        <text x="108" y="104" class="lbl-soft" text-anchor="end">50%</text>
+        <text x="108" y="222" class="lbl-soft" text-anchor="end">25%</text>
+        <text x="108" y="324" class="lbl-soft" text-anchor="end">0%</text>
+        <line x1="116" y1="222" x2="124" y2="222" class="stroke"/>
+        <text x="60" y="200" class="lbl" transform="rotate(-90 60 200)" text-anchor="middle">% NO-ENTRY</text>
+
+        <!-- 3 groups × 3 terciles -->
+        <!-- Group 1: by total potential profit -->
+        <g transform="translate(160,0)">
+          <rect x="0" y="159" width="40" height="161" fill="#2347d9"/>
+          <rect x="48" y="159" width="40" height="161" fill="#2347d9"/>
+          <rect x="96" y="159" width="40" height="161" fill="#2347d9"/>
+          <text x="20" y="148" class="lbl-soft" text-anchor="middle">37%</text>
+          <text x="68" y="148" class="lbl-soft" text-anchor="middle">37%</text>
+          <text x="116" y="148" class="lbl-soft" text-anchor="middle">37%</text>
+          <text x="20" y="336" class="lbl-soft" text-anchor="middle">low</text>
+          <text x="68" y="336" class="lbl-soft" text-anchor="middle">mid</text>
+          <text x="116" y="336" class="lbl-soft" text-anchor="middle">high</text>
+          <text x="68" y="354" class="lbl">total profit</text>
+        </g>
+
+        <!-- Group 2: by EEV -->
+        <g transform="translate(380,0)">
+          <rect x="0" y="159" width="40" height="161" fill="#2347d9"/>
+          <rect x="48" y="159" width="40" height="161" fill="#2347d9"/>
+          <rect x="96" y="159" width="40" height="161" fill="#2347d9"/>
+          <text x="20" y="148" class="lbl-soft" text-anchor="middle">37%</text>
+          <text x="68" y="148" class="lbl-soft" text-anchor="middle">37%</text>
+          <text x="116" y="148" class="lbl-soft" text-anchor="middle">37%</text>
+          <text x="20" y="336" class="lbl-soft" text-anchor="middle">low</text>
+          <text x="68" y="336" class="lbl-soft" text-anchor="middle">mid</text>
+          <text x="116" y="336" class="lbl-soft" text-anchor="middle">high</text>
+          <text x="68" y="354" class="lbl">EEV</text>
+        </g>
+
+        <!-- Group 3: by moneyness -->
+        <g transform="translate(600,0)">
+          <rect x="0" y="159" width="40" height="161" fill="#2347d9"/>
+          <rect x="48" y="159" width="40" height="161" fill="#2347d9"/>
+          <rect x="96" y="159" width="40" height="161" fill="#2347d9"/>
+          <text x="20" y="148" class="lbl-soft" text-anchor="middle">38%</text>
+          <text x="68" y="148" class="lbl-soft" text-anchor="middle">38%</text>
+          <text x="116" y="148" class="lbl-soft" text-anchor="middle">38%</text>
+          <text x="20" y="336" class="lbl-soft" text-anchor="middle">low</text>
+          <text x="68" y="336" class="lbl-soft" text-anchor="middle">mid</text>
+          <text x="116" y="336" class="lbl-soft" text-anchor="middle">high</text>
+          <text x="68" y="354" class="lbl">moneyness</text>
+        </g>
+
+        <text x="24" y="372" class="lbl-soft">FIG. 4.2 · NO-ENTRY % BY PROFITABILITY TERCILE (PAPER FACT 3)</text>
+      </svg>
+      <figcaption><span class="figno">FIG. 4.2</span> Whichever profitability measure you sort by, the no-entry rate sits around 37–38% across all terciles. The most profitable tercile is just as likely to be ignored as the least profitable. This is impossible to reconcile with capital-constrained limits-to-arbitrage theories that imply a pecking order.</figcaption>
+    </figure>
+
+    <p>
+      The paper also performs a propensity-score-matched test (Appendix B.7): they match each entered contract to a non-entered contract on the full set of profitability characteristics. They show that contracts with both zero and positive floor volume exist across the entire propensity-score spectrum — so the "marginal-cost-of-trade" story has no statistical home to live in.
+    </p>
+
+
+    <!-- ============== §4.3 NATURAL MARKETS ============== -->
+    <h2 id="natural-markets"><span class="num">§4.3</span>Identifying natural markets in the data</h2>
+
+    <p>
+      The model's mechanism is that 43% no-entry is concentrated in contracts that are <em>natural</em> to some incumbent market maker — typically because she's already short the contract from her ordinary market-making activity, so capturing the windfall is costless for her and other arbitrageurs rationally stay away.
+    </p>
+
+    <p>
+      Testing this requires a proxy for "natural to a market maker." BPS use two complementary proxies, both built from the Nasdaq PHOTO order-flow data that classifies trades by counterparty type:
+    </p>
+
+    <ul style="line-height:1.7;">
+      <li><strong>Retail-buy imbalances.</strong> When retail customers are net buyers of a particular call contract, market makers (the other side of those trades) accumulate <em>short</em> inventory in that contract. If retail then fails to exercise, market makers are the natural beneficiaries of the windfall.</li>
+      <li><strong>Market-maker sell imbalances.</strong> Direct measurement of market-maker net sell flow in a contract.</li>
+    </ul>
+
+    <figure>
+      <svg class="diag" viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg">
+        <text x="24" y="28" class="lbl-big">CONFIRMING THE MECHANISM</text>
+        <text x="24" y="44" class="lbl-soft">CONTRACTS WHERE A MARKET MAKER IS LIKELY SHORT (NATURAL) HAVE SHARPLY LOWER ARBITRAGEUR ENTRY</text>
+        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+
+        <!-- bar chart: 4 bars -->
+        <line x1="120" y1="320" x2="800" y2="320" class="stroke-2"/>
+        <line x1="120" y1="100" x2="120" y2="320" class="stroke-2"/>
+
+        <text x="108" y="104" class="lbl-soft" text-anchor="end">100%</text>
+        <text x="108" y="212" class="lbl-soft" text-anchor="end">50%</text>
+        <text x="108" y="324" class="lbl-soft" text-anchor="end">0%</text>
+        <line x1="116" y1="212" x2="124" y2="212" class="stroke"/>
+        <text x="60" y="200" class="lbl" transform="rotate(-90 60 200)" text-anchor="middle">% ARBITRAGEUR ENTRY</text>
+
+        <!-- baseline + 2 contrast pairs (illustrative) -->
+        <!-- baseline contract (no MM short): 70% entry -->
+        <g transform="translate(170,0)">
+          <rect x="0" y="166" width="60" height="154" fill="#2f8f5b"/>
+          <text x="30" y="155" class="lbl-soft" text-anchor="middle">≈ 70%</text>
+          <text x="30" y="338" class="lbl-soft" text-anchor="middle">contracts WITHOUT</text>
+          <text x="30" y="352" class="lbl-soft" text-anchor="middle">retail-buy imbalance</text>
+        </g>
+
+        <!-- contracts WITH retail buy imbalance: ≈ 35% entry -->
+        <g transform="translate(310,0)">
+          <rect x="0" y="244" width="60" height="76" fill="#c64545"/>
+          <text x="30" y="233" class="lbl-soft" text-anchor="middle">≈ 35%</text>
+          <text x="30" y="338" class="lbl-soft" text-anchor="middle">contracts WITH</text>
+          <text x="30" y="352" class="lbl-soft" text-anchor="middle">retail-buy imbalance</text>
+        </g>
+
+        <!-- contracts WITHOUT MM-sell imbalance: ≈ 65% entry -->
+        <g transform="translate(490,0)">
+          <rect x="0" y="177" width="60" height="143" fill="#2f8f5b"/>
+          <text x="30" y="166" class="lbl-soft" text-anchor="middle">≈ 65%</text>
+          <text x="30" y="338" class="lbl-soft" text-anchor="middle">contracts WITHOUT</text>
+          <text x="30" y="352" class="lbl-soft" text-anchor="middle">MM-sell imbalance</text>
+        </g>
+
+        <!-- contracts WITH MM-sell imbalance: ≈ 30% entry -->
+        <g transform="translate(630,0)">
+          <rect x="0" y="254" width="60" height="66" fill="#c64545"/>
+          <text x="30" y="243" class="lbl-soft" text-anchor="middle">≈ 30%</text>
+          <text x="30" y="338" class="lbl-soft" text-anchor="middle">contracts WITH</text>
+          <text x="30" y="352" class="lbl-soft" text-anchor="middle">MM-sell imbalance</text>
+        </g>
+
+        <!-- bracket annotations -->
+        <line x1="170" y1="90" x2="370" y2="90" class="stroke-soft"/>
+        <text x="270" y="84" class="lbl-soft" text-anchor="middle">RETAIL PROXY</text>
+        <line x1="490" y1="90" x2="690" y2="90" class="stroke-soft"/>
+        <text x="590" y="84" class="lbl-soft" text-anchor="middle">DEALER PROXY</text>
+
+        <text x="24" y="372" class="lbl-soft">FIG. 4.3 · ENTRY DROPS WHEN A MARKET MAKER IS LIKELY THE INCUMBENT (SCHEMATIC OF BPS TABLE 5)</text>
+      </svg>
+      <figcaption><span class="figno">FIG. 4.3</span> Schematic representation of the paper's Table 5 result. When the natural-market proxy fires — a contract that retail bought heavily, or that market makers sold heavily — the entry rate by independent arbitrageurs falls sharply. The model's Testable Prediction 1 (no entry into natural markets) is confirmed: independent arbitrageurs walk away when an incumbent has the contract on her balance sheet.</figcaption>
+    </figure>
+
+    <p>
+      Importantly, the result survives restricting the sample to the <em>top profitability tercile</em>. So we're not just observing that arbitrageurs avoid small opportunities — they specifically avoid <em>profitable opportunities natural to someone else</em>. That's precisely the model's mechanism.
+    </p>
+
+
+    <!-- ============== §4.4 ALTERNATIVES ============== -->
+    <h2 id="alternatives"><span class="num">§4.4</span>Ruling out alternatives</h2>
+
+    <p>
+      Any careful paper has to dispatch the alternative stories. BPS systematically rule out the main candidates:
+    </p>
+
+    <div class="compare">
+      <div>
+        <h4>Trading costs</h4>
+        <ul>
+          <li class="bad">Bid-ask spreads similar across entered and non-entered contracts</li>
+          <li class="bad">Exchange fees capped on PHLX/BOX — no incremental fee for additional contracts</li>
+          <li class="bad">Most dividend-play trades execute at the spread midpoint</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Capital constraints</h4>
+        <ul>
+          <li class="bad">Long and short positions on the same ticker net to zero for capital purposes</li>
+          <li class="bad">Daily fee cap structure does not bind for most participants</li>
+          <li class="bad">Pecking-order hypothesis explicitly rejected (FIG 4.2)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Operational / overnight risk</h4>
+        <ul>
+          <li class="bad">Risk-related contract characteristics (delta, vega) similar across entered and non-entered</li>
+          <li class="bad">Case-study contracts in the paper have near-identical Greeks</li>
+        </ul>
+      </div>
+      <div>
+        <h4>SEC stigma / reputational</h4>
+        <ul>
+          <li class="bad">Same arbitrageurs enter other dividend-play contracts; no consistent stigma pattern</li>
+          <li class="bad">Does not explain why entry rates correlate with natural-market proxies</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      With these alternatives ruled out, the strategic model's mechanism — tacit collusion in segmented markets, with incumbents protecting their natural markets and entrants alternating in contested ones — emerges as the parsimonious explanation that fits all three facts simultaneously.
+    </p>
+
+    <div class="callout">
+      <span class="tag">For the empirical-finance reader</span>
+      <p>
+        Notice the paper's identification logic. It doesn't run a single headline regression. It builds three independent stylised facts that each fall out of the data in a transparent way, then it cross-validates the mechanism by using two pre-existing natural-market proxies from microstructure literature. The "no pecking order" finding is the linchpin — it's the result that breaks the leading alternative theory cleanly, with no parameter to tune.
+      </p>
+    </div>
+
+
+    <div class="pagenav">
+      <a href="chapter-3.html">← Previous<span class="nm">3 · Dividend play</span></a>
+      <a href="chapter-5.html">Next →<span class="nm">5 · Regulation</span></a>
+    </div>
+
+  </article>
+
+  <div class="margin-tag">
+    <span class="top">STRATEGIC ARBITRAGE IN SEGMENTED MARKETS</span>
+    <span class="mid">CHAPTER 4 · THE DATA</span>
+    <span class="bot">FIG. 4.1 — 4.3</span>
+  </div>
+
+</main>
+
+</body>
+</html>

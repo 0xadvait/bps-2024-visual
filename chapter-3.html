@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3 · Dividend play — A visual reading of Bryzgalova, Pavlova &amp; Sikorskaya 2024</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="linkbar">
+  <div class="group">
+    <span class="lbl-tag">Source</span>
+    <a href="https://www.london.edu/faculty-and-research/faculty/profiles/p/pavlova-anna" target="_blank" rel="noopener">Pavlova · LBS<span class="arrow">↗</span></a>
+    <a href="https://www.london.edu/faculty-and-research/faculty/profiles/b/bryzgalova-svetlana" target="_blank" rel="noopener">Bryzgalova · LBS<span class="arrow">↗</span></a>
+  </div>
+  <div class="group">
+    <span class="lbl-tag">Built by</span>
+    <a href="https://github.com/0xadvait" target="_blank" rel="noopener">GitHub · @0xadvait<span class="arrow">↗</span></a>
+    <a href="https://x.com/advait_jayant" target="_blank" rel="noopener">X · @advait_jayant<span class="arrow">↗</span></a>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="brand">A visual reading of <em>Strategic Arbitrage in Segmented Markets</em> — Bryzgalova, Pavlova &amp; Sikorskaya, 2024</div>
+  <div class="crumbs">
+    <a href="index.html">Cover</a> ·
+    <a href="chapter-1.html">1 · The model</a> ·
+    <a href="chapter-2.html">2 · Tacit collusion</a> ·
+    <a href="chapter-3.html" class="current">3 · Dividend play</a> ·
+    <a href="chapter-4.html">4 · The data</a> ·
+    <a href="chapter-5.html">5 · Regulation</a> ·
+    <a href="terminology.html">Terms</a>
+  </div>
+</header>
+
+<main class="shell">
+
+  <aside class="toc">
+    <h3>Chapter 3</h3>
+    <ol style="counter-reset: none;">
+      <li style="counter-increment: none;"><a href="#mechanism">The mechanism</a></li>
+      <li style="counter-increment: none;"><a href="#example">A worked example</a></li>
+      <li style="counter-increment: none;"><a href="#why-laboratory">Why this is the right laboratory</a></li>
+      <li style="counter-increment: none;"><a href="#identification">Identifying arbitrageur trades</a></li>
+    </ol>
+    <h3 style="margin-top:24px;">Other chapters</h3>
+    <ol>
+      <li><a href="chapter-1.html">The model</a></li>
+      <li><a href="chapter-2.html">Tacit collusion</a></li>
+      <li><a href="chapter-3.html">Dividend play</a></li>
+      <li><a href="chapter-4.html">The data</a></li>
+      <li><a href="chapter-5.html">Regulation</a></li>
+    </ol>
+    <h3 style="margin-top:24px;"><a href="terminology.html" style="color:var(--blue);">Terms →</a></h3>
+  </aside>
+
+  <article class="content">
+
+    <h1><span class="num">CHAPTER 3</span>Dividend play</h1>
+    <p class="deck">
+      A virtually riskless options-market arbitrage that arises every time a dividend-paying stock approaches its ex-dividend date. The laboratory for testing the BPS model.
+    </p>
+
+
+    <!-- ============== §3.1 MECHANISM ============== -->
+    <h2 id="mechanism"><span class="num">§3.1</span>The mechanism</h2>
+
+    <p>
+      Consider an in-the-money American call option on a dividend-paying stock, approaching the last cum-dividend date. Standard option pricing (recall your derivatives course) says that early exercise is <em>optimal</em> for the holder when the dividend the underlying is about to pay exceeds the time value the option will lose by being exercised. In symbols, if <span class="math-inline">D</span> is the upcoming dividend, <span class="math-inline">K</span> is the strike, and <span class="math-inline">r</span> is the interest rate, the early-exercise condition is roughly <span class="math-inline">D &gt; Kr·Δt + (time value)</span> (Hull's textbook, Chapter 10).
+    </p>
+
+    <p>
+      In practice, a non-trivial fraction of retail investors fail to exercise even when it is optimal — through inattention, computational difficulty, or operational frictions (Poteshman &amp; Serbin 2003; Battalio, Figlewski &amp; Neal 2020). The Options Clearing Corporation (OCC) processes the exercise notices it receives and <strong>randomly assigns</strong> these exercises to short positions. Short positions <em>not</em> assigned to deliver the stock retain the option and receive a windfall capital gain — they hold a contract that just became more valuable because the underlying didn't go ex-dividend on them.
+    </p>
+
+    <figure>
+      <svg class="diag" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ch3f1-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" class="fill"/>
+          </marker>
+        </defs>
+
+        <text x="24" y="28" class="lbl-big">TIMELINE — WHY UNEXERCISED CALLS CREATE WINDFALL GAINS</text>
+        <text x="24" y="44" class="lbl-soft">EX-DIVIDEND DAY IS THE CRITICAL EVENT; THE OCC ASSIGNS RANDOMLY AMONG SHORT POSITIONS</text>
+        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+
+        <!-- timeline -->
+        <line x1="60" y1="200" x2="820" y2="200" class="stroke-2"/>
+        <line x1="60" y1="194" x2="60" y2="206" class="stroke"/>
+        <line x1="290" y1="194" x2="290" y2="206" class="stroke"/>
+        <line x1="520" y1="194" x2="520" y2="206" class="stroke"/>
+        <line x1="820" y1="194" x2="820" y2="206" class="stroke"/>
+
+        <text x="60" y="226" class="lbl-soft" text-anchor="middle">t − 1</text>
+        <text x="290" y="226" class="lbl-soft" text-anchor="middle">t = last cum-div date</text>
+        <text x="520" y="226" class="lbl-soft" text-anchor="middle">t + 1 = ex-div date</text>
+        <text x="820" y="226" class="lbl-soft" text-anchor="middle">expiry</text>
+
+        <!-- annotations above -->
+        <g transform="translate(60,100)">
+          <text x="0" y="0" class="lbl">CALL ITM</text>
+          <text x="0" y="14" class="lbl-soft">D &gt; K·r·Δt + tv</text>
+          <text x="0" y="28" class="lbl-soft">exercise OPTIMAL</text>
+        </g>
+
+        <g transform="translate(220,100)">
+          <text x="0" y="0" class="lbl">DEADLINE</text>
+          <text x="0" y="14" class="lbl-soft">file exercise notice</text>
+          <text x="0" y="28" class="lbl-soft">by end-of-day t</text>
+        </g>
+
+        <g transform="translate(460,100)">
+          <text x="0" y="0" class="lbl">EX-DIV</text>
+          <text x="0" y="14" class="lbl-soft">stock drops by D</text>
+          <text x="0" y="28" class="lbl-soft">unexercised calls</text>
+          <text x="0" y="42" class="lbl-soft">lose D in value</text>
+          <text x="0" y="62" class="lbl" style="fill:#c64545;">unassigned shorts:</text>
+          <text x="0" y="76" class="lbl-soft" style="fill:#c64545;">windfall gain D · 100</text>
+        </g>
+
+        <text x="24" y="345" class="lbl-soft">FIG. 3.1 · DIVIDEND-PLAY TIMELINE</text>
+      </svg>
+      <figcaption><span class="figno">FIG. 3.1</span> Each option contract is for 100 shares, so a $1 dividend creates a $100-per-contract windfall when the short holder isn't assigned. Suboptimal non-exercise by long-side investors is the underlying friction; OCC random assignment is the mechanism that distributes the windfall.</figcaption>
+    </figure>
+
+    <p>
+      The arbitrage opportunity is now visible. If you are a sophisticated trader, you can <em>dilute the pool of short positions</em> on the relevant contract just before the assignment is performed. You short a large number of additional contracts. Because OCC assignment is random across short positions, your incremental shorts shift the assignment probability toward you and away from the original short holder. By design, you exercise <em>all</em> of your own offsetting long positions, so you're left with only the unassigned short. With probability <span class="math-inline">≈ 1</span>, you capture most of the unexercised contracts' windfall.
+    </p>
+
+    <p>
+      To stay perfectly hedged through the trade, you simultaneously <em>buy</em> the same number of identical contracts (or contracts with neighbouring strikes) from a pre-arranged counterparty. The long and short cancel for risk purposes; only the windfall capital gain remains. The counterparty does the mirror trade with you. Both of you exit with the windfall split between you, plus the original short holder gets crowded out.
+    </p>
+
+
+    <!-- ============== §3.2 EXAMPLE ============== -->
+    <h2 id="example"><span class="num">§3.2</span>A worked example</h2>
+
+    <p>
+      BPS provide Table 1, a clean worked example for one contract. We reproduce its structure here. Assume one outstanding contract (100 underlying shares) and a $5 dividend (windfall of $500 per contract).
+    </p>
+
+    <figure>
+      <svg class="diag" viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg">
+        <text x="24" y="28" class="lbl-big">THREE CASES · ORIGINAL CUSTOMER HOLDS ONE LONG CALL</text>
+        <text x="24" y="44" class="lbl-soft">DIVIDEND $5 · CONTRACT SIZE 100 SHARES · WINDFALL FROM NON-EXERCISE = $500</text>
+        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+
+        <!-- table header -->
+        <g transform="translate(40,90)">
+          <text x="0" y="0" class="lbl">CASE</text>
+          <text x="190" y="0" class="lbl" text-anchor="middle">CUSTOMER<br/>BEHAVIOUR</text>
+          <text x="190" y="14" class="lbl-soft" text-anchor="middle">long 1 ITM call</text>
+          <text x="380" y="0" class="lbl" text-anchor="middle">ARBITRAGEUR</text>
+          <text x="380" y="14" class="lbl-soft" text-anchor="middle">positions</text>
+          <text x="560" y="0" class="lbl" text-anchor="middle">P(NON-ASSIGN.)</text>
+          <text x="560" y="14" class="lbl-soft" text-anchor="middle">orig. short / arb</text>
+          <text x="760" y="0" class="lbl" text-anchor="middle">EXP. GAINS</text>
+          <text x="760" y="14" class="lbl-soft" text-anchor="middle">orig. / arb</text>
+          <line x1="0" y1="22" x2="816" y2="22" class="stroke-soft"/>
+        </g>
+
+        <!-- case 1: optimal exercise -->
+        <g transform="translate(40,140)">
+          <text x="0" y="0" class="lbl-big" style="fill:#2f8f5b;">1</text>
+          <text x="0" y="16" class="lbl-soft" style="fill:#2f8f5b;">OPTIMAL</text>
+          <text x="0" y="30" class="lbl-soft" style="fill:#2f8f5b;">EXERCISE</text>
+          <text x="190" y="14" class="body" text-anchor="middle">exercises</text>
+          <text x="380" y="14" class="body" text-anchor="middle">not present</text>
+          <text x="560" y="14" class="body" text-anchor="middle">0 / —</text>
+          <text x="760" y="14" class="body" text-anchor="middle">$0 / $0</text>
+        </g>
+        <line x1="40" y1="190" x2="856" y2="190" class="stroke-soft"/>
+
+        <!-- case 2.1: suboptimal, no arbitrageur -->
+        <g transform="translate(40,210)">
+          <text x="0" y="0" class="lbl-big" style="fill:#c64545;">2.1</text>
+          <text x="0" y="16" class="lbl-soft" style="fill:#c64545;">SUBOPTIMAL</text>
+          <text x="0" y="30" class="lbl-soft" style="fill:#c64545;">NO ARB</text>
+          <text x="190" y="14" class="body" text-anchor="middle">forgets to exercise</text>
+          <text x="380" y="14" class="body" text-anchor="middle">not present</text>
+          <text x="560" y="14" class="body" text-anchor="middle">1 / —</text>
+          <text x="760" y="14" class="body" text-anchor="middle">$500 / $0</text>
+          <text x="760" y="30" class="lbl-soft" text-anchor="middle">all to orig. writer</text>
+        </g>
+        <line x1="40" y1="260" x2="856" y2="260" class="stroke-soft"/>
+
+        <!-- case 2.2: suboptimal, arbitrageur enters -->
+        <g transform="translate(40,280)">
+          <text x="0" y="0" class="lbl-big" style="fill:#2347d9;">2.2</text>
+          <text x="0" y="16" class="lbl-soft" style="fill:#2347d9;">SUBOPTIMAL</text>
+          <text x="0" y="30" class="lbl-soft" style="fill:#2347d9;">+ ARB</text>
+          <text x="190" y="14" class="body" text-anchor="middle">forgets to exercise</text>
+          <text x="380" y="14" class="body" text-anchor="middle">writes 100 contracts</text>
+          <text x="380" y="30" class="lbl-soft" text-anchor="middle">+ buys 100 hedge</text>
+          <text x="560" y="14" class="body" text-anchor="middle">1/101 · 100/101</text>
+          <text x="760" y="14" class="body" text-anchor="middle">$5 / $495</text>
+          <text x="760" y="30" class="lbl-soft" text-anchor="middle">arb captures 99%</text>
+        </g>
+
+        <text x="24" y="365" class="lbl-soft">FIG. 3.2 · WORKED EXAMPLE (BPS TABLE 1)</text>
+      </svg>
+      <figcaption><span class="figno">FIG. 3.2</span> The arbitrageur in Case 2.2 writes 100 additional short contracts (and buys 100 offsetting longs from a pre-arranged counterparty for the hedge). Random assignment now hits the arbitrageur with probability 100/101 — but she exercises <em>all</em> her own longs, so the unassigned position is her short, on which she captures the windfall. The original writer's expected gain falls from $500 to about $5.</figcaption>
+    </figure>
+
+    <p>
+      Two structural features make this strategy clean for empirical work. First, the arbitrage is <em>virtually riskless</em> — the only residual exposure is the overnight risk of assignment timing, which is small. Second, the trade has a <em>signature</em>: a coordinated burst of buy-and-sell of large contract quantities, executed on a physical exchange floor (where the fees are capped), in seconds, on the last cum-dividend date. That signature is what makes the dataset usable.
+    </p>
+
+
+    <!-- ============== §3.3 LABORATORY ============== -->
+    <h2 id="why-laboratory"><span class="num">§3.3</span>Why this is the right laboratory</h2>
+
+    <p>
+      Most of the limits-to-arbitrage literature struggles with two empirical obstacles: (1) you observe prices but not quantities of arbitrage capital, and (2) the "arbitrage opportunity" is often endogenous to the very prices you study. Dividend play sidesteps both:
+    </p>
+
+    <ul style="line-height:1.7;">
+      <li><strong>Quantities are visible.</strong> Transaction-level OPRA data (with floor-trade flags) lets the authors directly observe each arbitrageur's entry into each contract, including the size of their committed positions.</li>
+      <li><strong>Arbitrage value is exogenous.</strong> The windfall <span class="math-inline">D</span>·(contracts unexercised) doesn't depend on the arbitrageur's price impact — it depends on the dividend and on retail-investor failure to exercise, both fixed before the dividend play starts. The model's assumption that "<span class="math-inline">A</span> is exogenous and shared pro-rata by entrants" maps directly to reality here.</li>
+      <li><strong>Few participants, repeated interaction.</strong> Most dividend-play volume goes through PHLX and BOX (the two exchanges that cap fees for this strategy). Floor trading is concentrated: small handful of arbitrageurs, all observing one another's trades over years of dividend-play calendar events. Exactly the environment the model is built for.</li>
+    </ul>
+
+
+    <!-- ============== §3.4 IDENTIFICATION ============== -->
+    <h2 id="identification"><span class="num">§3.4</span>Identifying arbitrageur trades</h2>
+
+    <p>
+      The data source is OPRA LiveVol (provided by Cboe), covering November 2019 through June 2023. The key innovation is the use of OPRA's detailed trade-type flags — specifically SLFT and MLFT (single-leg and multi-leg floor trades) — to isolate transactions executed from the physical exchange floor.
+    </p>
+
+    <p>
+      To estimate the <em>number</em> of arbitrageurs in a given contract, the authors exploit the fact that each dividend-play trade appears in OPRA as a tight burst of buy-then-sell trades within seconds, with one unique trade size per arbitrageur pair. The number of unique trade sizes within a burst proxies for the number of arbitrageur pairs participating. A pair counts as one "arbitrageur" because only one party in the pair receives the windfall — the other is just the counterparty providing the hedge.
+    </p>
+
+    <figure>
+      <svg class="diag" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg">
+        <text x="24" y="28" class="lbl-big">IDENTIFICATION STRATEGY</text>
+        <text x="24" y="44" class="lbl-soft">FROM RAW TRANSACTION-LEVEL DATA TO ARBITRAGEUR COUNTS PER CONTRACT</text>
+        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+
+        <!-- five-step flow -->
+        <g transform="translate(40,100)">
+          <rect x="0" y="0" width="140" height="80" class="stroke-2 fill-soft" rx="3"/>
+          <text x="70" y="22" class="lbl" text-anchor="middle">1 · RAW OPRA</text>
+          <text x="70" y="40" class="lbl-soft" text-anchor="middle">all transactions</text>
+          <text x="70" y="56" class="lbl-soft" text-anchor="middle">Nov 2019 – Jun 2023</text>
+          <text x="70" y="72" class="lbl-soft" text-anchor="middle">16 U.S. exchanges</text>
+        </g>
+        <text x="190" y="144" class="lbl" style="fill:#2347d9;">→</text>
+
+        <g transform="translate(208,100)">
+          <rect x="0" y="0" width="140" height="80" class="stroke-2 fill-soft" rx="3"/>
+          <text x="70" y="22" class="lbl" text-anchor="middle">2 · FILTER FLOOR</text>
+          <text x="70" y="40" class="lbl-soft" text-anchor="middle">keep SLFT, MLFT</text>
+          <text x="70" y="56" class="lbl-soft" text-anchor="middle">floor-trade flags</text>
+          <text x="70" y="72" class="lbl-soft" text-anchor="middle">mostly PHLX, BOX</text>
+        </g>
+        <text x="358" y="144" class="lbl" style="fill:#2347d9;">→</text>
+
+        <g transform="translate(376,100)">
+          <rect x="0" y="0" width="140" height="80" class="stroke-2 fill-soft" rx="3"/>
+          <text x="70" y="22" class="lbl" text-anchor="middle">3 · CUM-DIV DAYS</text>
+          <text x="70" y="40" class="lbl-soft" text-anchor="middle">restrict to last</text>
+          <text x="70" y="56" class="lbl-soft" text-anchor="middle">cum-dividend date</text>
+          <text x="70" y="72" class="lbl-soft" text-anchor="middle">of each event</text>
+        </g>
+        <text x="526" y="144" class="lbl" style="fill:#2347d9;">→</text>
+
+        <g transform="translate(544,100)">
+          <rect x="0" y="0" width="140" height="80" class="stroke-2 fill-soft" rx="3"/>
+          <text x="70" y="22" class="lbl" text-anchor="middle">4 · ITM CALLS</text>
+          <text x="70" y="40" class="lbl-soft" text-anchor="middle">in-the-money calls</text>
+          <text x="70" y="56" class="lbl-soft" text-anchor="middle">w/ positive EEV</text>
+          <text x="70" y="72" class="lbl-soft" text-anchor="middle">(early exercise value)</text>
+        </g>
+        <text x="694" y="144" class="lbl" style="fill:#2347d9;">→</text>
+
+        <g transform="translate(712,100)">
+          <rect x="0" y="0" width="140" height="80" stroke="#2347d9" fill="#eef2ff" stroke-width="1.6" rx="3"/>
+          <text x="70" y="22" class="lbl" text-anchor="middle">5 · COUNT ARBS</text>
+          <text x="70" y="40" class="lbl-soft" text-anchor="middle">unique trade sizes</text>
+          <text x="70" y="56" class="lbl-soft" text-anchor="middle">in each cum-div</text>
+          <text x="70" y="72" class="lbl-soft" text-anchor="middle">floor burst</text>
+        </g>
+
+        <!-- annotation lines for outputs -->
+        <g transform="translate(40,240)">
+          <text x="0" y="0" class="lbl-big">OUTPUTS</text>
+          <text x="0" y="20" class="body"><strong>n<sub>arb</sub>(c, t)</strong> = number of distinct arbitrageur pairs in contract c on dividend-play date t.</text>
+          <text x="0" y="40" class="body"><strong>Φ<sub>floor</sub>(c, t)</strong> = floor share of trading volume in contract c on date t (≈ fraction of windfall captured).</text>
+          <text x="0" y="60" class="body"><strong>EEV(c, t)</strong> = early-exercise value, the per-contract windfall a successful dividend play extracts.</text>
+        </g>
+
+        <text x="24" y="345" class="lbl-soft">FIG. 3.3 · IDENTIFICATION PIPELINE</text>
+      </svg>
+      <figcaption><span class="figno">FIG. 3.3</span> The empirical pipeline turns raw OPRA transactions into three contract-level quantities the model maps directly onto: the number of entering arbitrageurs (TP2), the share of the windfall they capture (TP1), and the size of the available arbitrage value (the model's <span class="math-inline">A</span> or <span class="math-inline">A*</span>).</figcaption>
+    </figure>
+
+    <p>
+      With this in hand, the authors can now ask the model's questions directly. Of all profitable dividend-play contracts, what fraction attract any entry? Conditional on entry, how many arbitrageurs participate? Does the number of entrants vary with the size of the arbitrage opportunity? Those are the headline findings of Chapter 4.
+    </p>
+
+
+    <div class="pagenav">
+      <a href="chapter-2.html">← Previous<span class="nm">2 · Tacit collusion</span></a>
+      <a href="chapter-4.html">Next →<span class="nm">4 · The data</span></a>
+    </div>
+
+  </article>
+
+  <div class="margin-tag">
+    <span class="top">STRATEGIC ARBITRAGE IN SEGMENTED MARKETS</span>
+    <span class="mid">CHAPTER 3 · DIVIDEND PLAY</span>
+    <span class="bot">FIG. 3.1 — 3.3</span>
+  </div>
+
+</main>
+
+</body>
+</html>

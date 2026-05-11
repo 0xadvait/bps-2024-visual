@@ -1,0 +1,11 @@
+.DS_Store
+*.log
+*.pid
+.env
+.env.local
+.vercel/
+*.swp
+*~
+.codex/
+codex-*.log
+paper/

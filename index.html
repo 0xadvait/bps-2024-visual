@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Strategic Arbitrage in Segmented Markets — A Visual Reading of Bryzgalova, Pavlova & Sikorskaya 2024</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="linkbar">
+  <div class="group">
+    <span class="lbl-tag">Source</span>
+    <a href="https://www.london.edu/faculty-and-research/faculty/profiles/p/pavlova-anna" target="_blank" rel="noopener">Pavlova · LBS<span class="arrow">↗</span></a>
+    <a href="https://www.london.edu/faculty-and-research/faculty/profiles/b/bryzgalova-svetlana" target="_blank" rel="noopener">Bryzgalova · LBS<span class="arrow">↗</span></a>
+  </div>
+  <div class="group">
+    <span class="lbl-tag">Built by</span>
+    <a href="https://github.com/0xadvait" target="_blank" rel="noopener">GitHub · @0xadvait<span class="arrow">↗</span></a>
+    <a href="https://x.com/advait_jayant" target="_blank" rel="noopener">X · @advait_jayant<span class="arrow">↗</span></a>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="brand">A visual reading of <em>Strategic Arbitrage in Segmented Markets</em> — Bryzgalova, Pavlova &amp; Sikorskaya, 2024</div>
+  <div class="crumbs">
+    <a href="index.html" class="current">Cover</a> ·
+    <a href="chapter-1.html">1 · The model</a> ·
+    <a href="chapter-2.html">2 · Tacit collusion</a> ·
+    <a href="chapter-3.html">3 · Dividend play</a> ·
+    <a href="chapter-4.html">4 · The data</a> ·
+    <a href="chapter-5.html">5 · Regulation</a> ·
+    <a href="terminology.html">Terms</a>
+  </div>
+</header>
+
+<main class="shell">
+
+  <aside class="toc">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="chapter-1.html">The model</a>
+        <ul>
+          <li><a href="chapter-1.html#environment">Economic environment</a></li>
+          <li><a href="chapter-1.html#payoffs">Payoffs and the resource constraint</a></li>
+          <li><a href="chapter-1.html#nash">The one-shot Nash equilibrium</a></li>
+          <li><a href="chapter-1.html#pareto">The Pareto frontier</a></li>
+        </ul>
+      </li>
+      <li><a href="chapter-2.html">Tacit collusion</a>
+        <ul>
+          <li><a href="chapter-2.html#why-repeated">Why the repeated game</a></li>
+          <li><a href="chapter-2.html#trigger">The trigger strategy</a></li>
+          <li><a href="chapter-2.html#spe">The SPE condition</a></li>
+          <li><a href="chapter-2.html#predictions">Three testable predictions</a></li>
+        </ul>
+      </li>
+      <li><a href="chapter-3.html">Dividend play</a>
+        <ul>
+          <li><a href="chapter-3.html#mechanism">The mechanism</a></li>
+          <li><a href="chapter-3.html#why-laboratory">Why this is the right laboratory</a></li>
+          <li><a href="chapter-3.html#identification">Identifying arbitrageur trades</a></li>
+        </ul>
+      </li>
+      <li><a href="chapter-4.html">The data</a>
+        <ul>
+          <li><a href="chapter-4.html#three-facts">Three empirical facts</a></li>
+          <li><a href="chapter-4.html#no-pecking">No pecking order</a></li>
+          <li><a href="chapter-4.html#natural-markets">Identifying natural markets</a></li>
+          <li><a href="chapter-4.html#alternatives">Ruling out alternatives</a></li>
+        </ul>
+      </li>
+      <li><a href="chapter-5.html">Regulation</a></li>
+    </ol>
+    <h3 style="margin-top:24px;"><a href="terminology.html" style="color:var(--blue);">Terms →</a></h3>
+    <p style="font-size:12px; color:var(--ink-soft); line-height:1.5;">
+      Glossary of the technical vocabulary — dividend play, OPRA, OCC assignment, SPE, trigger strategy, Folk theorem, and the rest.
+    </p>
+    <h3 style="margin-top:24px;">Source</h3>
+    <p style="font-size:12px; color:var(--ink-soft); line-height:1.5;">
+      Bryzgalova, S., Pavlova, A. &amp; Sikorskaya, T. (2024). <em>Strategic Arbitrage in Segmented Markets.</em> Working paper, London Business School &amp; Chicago Booth.
+    </p>
+  </aside>
+
+  <article class="content">
+
+    <div class="cover">
+
+      <div class="header-block">
+        <div>
+          <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.12em; color:var(--ink-faint); text-transform:uppercase; margin-bottom:18px;">
+            A visual reading · v0.1 · 2026
+          </div>
+          <h1 class="title">Strategic<br/>Arbitrage<br/>in Segmented<br/>Markets</h1>
+          <div class="sub">
+            A visual walkthrough of Bryzgalova, Pavlova and Sikorskaya's 2024 model of strategic arbitrageurs in repeated multi-market games, and the U.S. options dividend-play strategy that lets them test it on transaction-level data. The empirical surprise: in a virtually riskless arbitrage, only <strong>57%</strong> of profitable opportunities attract entry, and <strong>49%</strong> of those that do attract only one arbitrageur.
+          </div>
+        </div>
+        <div class="meta">
+          Authors · S. Bryzgalova &amp; A. Pavlova (LBS), T. Sikorskaya (Chicago Booth)<br/>
+          Date · December 2024<br/>
+          JEL · G4, G5, G11, G12<br/>
+          Audience · First-year PhD level; comfortable with game theory and asset pricing
+        </div>
+      </div>
+
+      <!-- HERO: three-market schematic showing the tacit-collusion allocation -->
+      <figure class="heroart">
+        <svg class="diag" viewBox="0 0 920 460" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="cov-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" class="fill"/>
+            </marker>
+            <marker id="cov-arr-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#c64545"/>
+            </marker>
+          </defs>
+
+          <text x="28" y="30" class="lbl-big">THE BPS GAME — TWO ARBITRAGEURS, THREE MARKETS, ONE COOPERATIVE EQUILIBRIUM</text>
+          <text x="28" y="46" class="lbl-soft">SOLID ARROWS = TACIT-COLLUSION ENTRY · DASHED RED = ENTRY THAT WOULD BREAK THE EQUILIBRIUM</text>
+          <line x1="28" y1="58" x2="892" y2="58" class="stroke-soft"/>
+
+          <!-- Intermediary 1 (left) -->
+          <g transform="translate(80,140)">
+            <rect x="0" y="0" width="160" height="80" class="stroke-2 fill-soft" rx="4"/>
+            <text x="80" y="32" class="lbl-big" text-anchor="middle">INTERMEDIARY 1</text>
+            <text x="80" y="50" class="lbl-soft" text-anchor="middle">natural market: M₁</text>
+            <text x="80" y="64" class="lbl-soft" text-anchor="middle">cost in M₁: 0   ·   in M₂: f   ·   in M₃: f*</text>
+          </g>
+
+          <!-- Intermediary 2 (right) -->
+          <g transform="translate(680,140)">
+            <rect x="0" y="0" width="160" height="80" class="stroke-2 fill-soft" rx="4"/>
+            <text x="80" y="32" class="lbl-big" text-anchor="middle">INTERMEDIARY 2</text>
+            <text x="80" y="50" class="lbl-soft" text-anchor="middle">natural market: M₂</text>
+            <text x="80" y="64" class="lbl-soft" text-anchor="middle">cost in M₁: f   ·   in M₂: 0   ·   in M₃: f*</text>
+          </g>
+
+          <!-- Three markets (bottom row) -->
+          <g transform="translate(80,300)">
+            <rect x="0" y="0" width="160" height="80" class="stroke-2" fill="#fffdf6" rx="4"/>
+            <text x="80" y="26" class="lbl" text-anchor="middle">MARKET M₁</text>
+            <text x="80" y="46" class="body" text-anchor="middle">value: A</text>
+            <text x="80" y="62" class="lbl-soft" text-anchor="middle">"natural" to I₁</text>
+          </g>
+
+          <g transform="translate(380,300)">
+            <rect x="0" y="0" width="160" height="80" class="stroke-2" fill="#fffdf6" rx="4"/>
+            <text x="80" y="26" class="lbl" text-anchor="middle">MARKET M₃</text>
+            <text x="80" y="46" class="body" text-anchor="middle">value: A*</text>
+            <text x="80" y="62" class="lbl-soft" text-anchor="middle">natural to neither</text>
+          </g>
+
+          <g transform="translate(680,300)">
+            <rect x="0" y="0" width="160" height="80" class="stroke-2" fill="#fffdf6" rx="4"/>
+            <text x="80" y="26" class="lbl" text-anchor="middle">MARKET M₂</text>
+            <text x="80" y="46" class="body" text-anchor="middle">value: A</text>
+            <text x="80" y="62" class="lbl-soft" text-anchor="middle">"natural" to I₂</text>
+          </g>
+
+          <!-- arrows: solid = tacit collusion entry; dashed red = forbidden entry -->
+          <!-- I1 → M1 (own natural market — enter) -->
+          <line x1="160" y1="220" x2="160" y2="296" stroke="#2347d9" stroke-width="2.4" marker-end="url(#cov-arr)"/>
+          <text x="170" y="266" class="lbl-soft" style="fill:#2347d9;">enter (cost 0)</text>
+
+          <!-- I2 → M2 (own natural market — enter) -->
+          <line x1="760" y1="220" x2="760" y2="296" stroke="#2347d9" stroke-width="2.4" marker-end="url(#cov-arr)"/>
+          <text x="650" y="266" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">enter (cost 0)</text>
+
+          <!-- I1 ↘ M3 (alternate entry) -->
+          <line x1="180" y1="222" x2="420" y2="296" stroke="#2347d9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#cov-arr)"/>
+          <text x="244" y="252" class="lbl-soft" style="fill:#2347d9;">alternate</text>
+          <text x="244" y="266" class="lbl-soft" style="fill:#2347d9;">odd periods</text>
+
+          <!-- I2 ↙ M3 (alternate entry) -->
+          <line x1="740" y1="222" x2="500" y2="296" stroke="#2347d9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#cov-arr)"/>
+          <text x="676" y="252" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">alternate</text>
+          <text x="676" y="266" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">even periods</text>
+
+          <!-- FORBIDDEN: I1 → M2 -->
+          <line x1="220" y1="220" x2="700" y2="296" stroke="#c64545" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#cov-arr-bad)"/>
+          <text x="448" y="234" class="lbl-soft" style="fill:#c64545;" text-anchor="middle">break cooperation → trigger punishment</text>
+
+          <!-- bottom strip -->
+          <text x="460" y="430" class="lbl-soft" text-anchor="middle">SOLVE-ABLE AS A SUBGAME PERFECT EQUILIBRIUM IF δ ≥ (A − f − f*/2) / A</text>
+
+          <text x="892" y="448" class="lbl-soft" text-anchor="end">FIG. 0 · TACIT COLLUSION ALLOCATION</text>
+        </svg>
+        <figcaption><span class="figno">FIG. 0</span> The cooperative equilibrium that the model predicts and the data confirms: each intermediary stays in her own natural market and alternates entry in the contested third market. The dashed red arrow — Intermediary 1 entering Intermediary 2's natural market — is the deviation that any trigger strategy must punish with reversion to the one-shot Nash equilibrium.</figcaption>
+      </figure>
+    </div>
+
+    <h2 style="margin-top:32px;">What this is</h2>
+    <p>
+      Bryzgalova, Pavlova and Sikorskaya (BPS) build a repeated game-theoretic model in which arbitrageurs face fixed entry costs and have <em>natural</em> markets — markets where the entry cost is zero, because the arbitrageur is already a market maker there or holds the right inventory. In a one-shot Nash equilibrium, both arbitrageurs enter all markets and equally split each opportunity. In an infinitely repeated game, however, the unique symmetric subgame perfect tacit-collusion equilibrium is much cleaner: each arbitrageur stays in her own natural market and the contested market alternates.
+    </p>
+    <p>
+      They test the model in the U.S. options "dividend play" market — a virtually riskless arbitrage that captures the windfall gains accruing to call-option writers when buyers fail to exercise before ex-dividend. Three findings, all consistent with the model and inconsistent with standard competitive limits-to-arbitrage theories: only <strong>57%</strong> of profitable opportunities attract entry, arbitrageurs harvest only <strong>44%</strong> of total potential profits, and <strong>49%</strong> of contracts that do attract entry have just one arbitrageur. The final section shows how arbitrageurs circumvented the 2014 SEC clearing rule designed to kill this strategy.
+    </p>
+
+    <div class="callout">
+      <span class="tag">For the year-1 PhD reader</span>
+      <p>
+        The paper sits at the intersection of three literatures you saw in coursework: <strong>limits to arbitrage</strong> (Shleifer-Vishny 1997, Gromb-Vayanos 2002), <strong>repeated-game industrial organization</strong> (Green-Porter 1984, Bernheim-Whinston 1990, Dutta-Madhavan 1997), and <strong>options-market microstructure</strong>. The mechanism is novel relative to classical tacit-collusion IO models: cooperation here is about <em>not entering</em> a competitor's market, so the welfare gain comes from saving fixed costs rather than from raising prices.
+      </p>
+    </div>
+
+    <h2>Read in order</h2>
+    <p>
+      Each chapter takes 8–12 minutes. The math is light but precise; we use the paper's notation directly. Diagrams are inline SVG — no JavaScript, no build step.
+    </p>
+
+    <div class="chapters">
+      <a class="chapter-card" href="chapter-1.html">
+        <div class="num">Chapter 1</div>
+        <div class="name">The model</div>
+        <div class="blurb">Two intermediaries, three markets, one resource budget. Section 2.1–2.2 of the paper: the economic environment, the payoff function, the one-shot Nash equilibrium, and the Pareto frontier of the stage game.</div>
+      </a>
+      <a class="chapter-card" href="chapter-2.html">
+        <div class="num">Chapter 2</div>
+        <div class="name">Tacit collusion</div>
+        <div class="blurb">Section 2.3. Why the repeated game expands the equilibrium set, the trigger strategy that supports the Pareto efficient outcome, the SPE condition δ ≥ (A − f − f*/2)/A, and the three testable predictions.</div>
+      </a>
+      <a class="chapter-card" href="chapter-3.html">
+        <div class="num">Chapter 3</div>
+        <div class="name">Dividend play</div>
+        <div class="blurb">Section 3. What dividend play actually is — the mechanics of OCC random assignment, why floor-trader arbitrageurs can capture the windfall, and how transaction-level OPRA data lets the authors identify these trades precisely.</div>
+      </a>
+      <a class="chapter-card" href="chapter-4.html">
+        <div class="num">Chapter 4</div>
+        <div class="name">What the data shows</div>
+        <div class="blurb">Section 4. The three headline facts (57% entry, 44% harvested, 49% solo), the lack of a pecking order, the natural-market proxies, and the propensity-score-matched evidence ruling out limits-to-arbitrage alternatives.</div>
+      </a>
+      <a class="chapter-card" href="chapter-5.html">
+        <div class="num">Chapter 5</div>
+        <div class="name">Regulation</div>
+        <div class="blurb">Section 5–6. The 2014 SEC clearing rule, how arbitrageurs circumvented it by swapping near-identical contracts in place of the same contract, and the authors' proposed regulatory fix.</div>
+      </a>
+      <a class="chapter-card" href="terminology.html" style="background: var(--blue-tint); border-color: var(--blue-soft);">
+        <div class="num">Appendix</div>
+        <div class="name">Terminology</div>
+        <div class="blurb">Glossary covering the game-theory vocabulary (SPE, trigger strategy, Folk theorem), the options-market machinery (OPRA, OCC, PHLX fee caps), and the literature touchstones (Shleifer-Vishny, Gromb-Vayanos, Green-Porter, CHSH).</div>
+      </a>
+    </div>
+
+    <div class="pagenav">
+      <span></span>
+      <a href="chapter-1.html">Begin →<span class="nm">1 · The model</span></a>
+    </div>
+
+  </article>
+
+  <div class="margin-tag">
+    <span class="top">STRATEGIC ARBITRAGE IN SEGMENTED MARKETS</span>
+    <span class="mid">COVER · A VISUAL READING</span>
+    <span class="bot">2026 · v0.1</span>
+  </div>
+
+</main>
+
+</body>
+</html>
