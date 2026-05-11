@@ -3,10 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="A visual walkthrough of Bryzgalova, Pavlova and Sikorskaya’s Strategic Arbitrage in Segmented Markets, with diagrams, glossary, and chapter-by-chapter explanation." />
 <title>1 · The model — A visual reading of Bryzgalova, Pavlova &amp; Sikorskaya 2024</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="linkbar">
   <div class="group">
@@ -23,18 +25,18 @@
 
 <header class="topbar">
   <div class="brand">A visual reading of <em>Strategic Arbitrage in Segmented Markets</em> — Bryzgalova, Pavlova &amp; Sikorskaya, 2024</div>
-  <div class="crumbs">
+  <nav class="crumbs" aria-label="Chapters">
     <a href="index.html">Cover</a> ·
-    <a href="chapter-1.html" class="current">1 · The model</a> ·
+    <a href="chapter-1.html" class="current" aria-current="page">1 · The model</a> ·
     <a href="chapter-2.html">2 · Tacit collusion</a> ·
     <a href="chapter-3.html">3 · Dividend play</a> ·
     <a href="chapter-4.html">4 · The data</a> ·
     <a href="chapter-5.html">5 · Regulation</a> ·
     <a href="terminology.html">Terms</a>
-  </div>
+  </nav>
 </header>
 
-<main class="shell">
+<main id="main" class="shell">
 
   <aside class="toc">
     <h3>Chapter 1</h3>
@@ -64,7 +66,7 @@
 
 
     <!-- ============== §1.1 ENVIRONMENT ============== -->
-    <h2 id="environment"><span class="num">§1.1</span>Economic environment</h2>
+    <h2 id="environment"><span class="num">§1.1</span> Economic environment</h2>
 
     <p>
       Time is discrete and the horizon is infinite. The economy has <strong>three markets</strong>, labelled M₁, M₂, M₃. Each market has one per-period arbitrage opportunity of fixed monetary value. To keep the algebra simple, the values are <span class="math-inline">A</span> in M₁ and M₂, and <span class="math-inline">A*</span> in M₃.
@@ -89,7 +91,10 @@
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg">
+        <div class="figure-canvas" tabindex="0" aria-label="Scrollable diagram">
+        <svg class="diag" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chapter_1-fig-1-1-title chapter_1-fig-1-1-desc">
+          <title id="chapter_1-fig-1-1-title">FIG. 1.1</title>
+          <desc id="chapter_1-fig-1-1-desc">The cost matrix. Green cells are zero-cost natural markets; red cells are positive-cost competitor-natural markets; grey cells are the contested market M₃ where both intermediaries face the same cost f* . Throughout the paper, BPS assume A/2 ≥ f and A*/2 ≥ f* </desc>
         <text x="24" y="28" class="lbl-big">SETUP — TWO PLAYERS, THREE MARKETS, ASYMMETRIC ENTRY COSTS</text>
         <text x="24" y="44" class="lbl-soft">EACH INTERMEDIARY HAS ONE "NATURAL" MARKET WHERE HER ENTRY COST IS ZERO</text>
         <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
@@ -154,12 +159,13 @@
 
         <text x="24" y="345" class="lbl-soft">FIG. 1.1 · ENTRY-COST MATRIX</text>
       </svg>
+        </div>
       <figcaption><span class="figno">FIG. 1.1</span> The cost matrix. Green cells are zero-cost natural markets; red cells are positive-cost competitor-natural markets; grey cells are the contested market M₃ where both intermediaries face the same cost <span class="math-inline">f*</span>. Throughout the paper, BPS assume <span class="math-inline">A/2 ≥ f</span> and <span class="math-inline">A*/2 ≥ f*</span> so that entry is profitable in equilibrium.</figcaption>
     </figure>
 
 
     <!-- ============== §1.2 PAYOFFS ============== -->
-    <h2 id="payoffs"><span class="num">§1.2</span>Payoffs and the resource constraint</h2>
+    <h2 id="payoffs"><span class="num">§1.2</span> Payoffs and the resource constraint</h2>
 
     <p>
       Let <span class="math-inline">k<sub>i</sub><sup>j</sup></span> denote the resources Intermediary <span class="math-inline">i</span> commits to market <span class="math-inline">j</span>. The per-period budget constraint is
@@ -209,7 +215,7 @@
 
 
     <!-- ============== §1.3 NASH ============== -->
-    <h2 id="nash"><span class="num">§1.3</span>The one-shot Nash equilibrium</h2>
+    <h2 id="nash"><span class="num">§1.3</span> The one-shot Nash equilibrium</h2>
 
     <p>
       Start with the stage game. Each intermediary takes the other's resource allocation as given and chooses her own to maximise her stage payoff. Symmetry suggests looking at the symmetric Nash equilibrium. Solving Eq. 1.2 with that ansatz gives the paper's Corollary 1:
@@ -240,7 +246,7 @@
 
 
     <!-- ============== §1.4 PARETO ============== -->
-    <h2 id="pareto"><span class="num">§1.4</span>The Pareto frontier</h2>
+    <h2 id="pareto"><span class="num">§1.4</span> The Pareto frontier</h2>
 
     <p>
       The Nash payoff in Eq. 1.5 is <em>not</em> Pareto-optimal for the two intermediaries. To see why, consider an alternative allocation: each intermediary enters only her own natural market and they alternate in M₃ (each entering half the time). The arbitrage values harvested are identical to the Nash allocation, but the fixed cost paid is dramatically smaller — only <span class="math-inline">f*/2</span> in expectation per intermediary instead of <span class="math-inline">f + f*</span>.
@@ -260,7 +266,8 @@
     </p>
 
     <figure>
-      <svg class="diag pareto-frontier" viewBox="0 0 920 520" xmlns="http://www.w3.org/2000/svg" aria-labelledby="fig-1-2-title fig-1-2-desc" role="img">
+        <div class="figure-canvas" tabindex="0" aria-label="Scrollable diagram">
+        <svg class="diag pareto-frontier" viewBox="0 0 920 520" xmlns="http://www.w3.org/2000/svg" aria-labelledby="fig-1-2-title fig-1-2-desc" role="img">
         <title id="fig-1-2-title">Pareto frontier of the stage game</title>
         <desc id="fig-1-2-desc">The Pareto frontier is above the symmetric Nash point by the fixed-cost savings.</desc>
         <text x="24" y="28" class="lbl-big">PARETO FRONTIER OF THE STAGE GAME</text>
@@ -319,6 +326,7 @@
 
         <text x="24" y="508" class="lbl-soft">FIG. 1.2 · PARETO FRONTIER OF THE STAGE GAME (AFTER BPS FIG. 1)</text>
       </svg>
+        </div>
       <figcaption><span class="figno">FIG. 1.2</span> The Pareto frontier (solid blue) is the boundary of feasible payoff pairs. The slanted segments correspond to gradual entry of one intermediary into the other's natural market; the vertical dashed jumps correspond to the discrete fixed-cost saving when she finally exits. The symmetric Pareto-efficient equilibrium (●) is strictly above the symmetric Nash equilibrium (★) by <span class="math-inline">f + f*/2</span> per intermediary — the wasted fixed costs.</figcaption>
     </figure>
 

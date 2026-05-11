@@ -3,10 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="A visual walkthrough of Bryzgalova, Pavlova and Sikorskaya’s Strategic Arbitrage in Segmented Markets, with diagrams, glossary, and chapter-by-chapter explanation." />
 <title>4 · The data — A visual reading of Bryzgalova, Pavlova &amp; Sikorskaya 2024</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="linkbar">
   <div class="group">
@@ -23,18 +25,18 @@
 
 <header class="topbar">
   <div class="brand">A visual reading of <em>Strategic Arbitrage in Segmented Markets</em> — Bryzgalova, Pavlova &amp; Sikorskaya, 2024</div>
-  <div class="crumbs">
+  <nav class="crumbs" aria-label="Chapters">
     <a href="index.html">Cover</a> ·
     <a href="chapter-1.html">1 · The model</a> ·
     <a href="chapter-2.html">2 · Tacit collusion</a> ·
     <a href="chapter-3.html">3 · Dividend play</a> ·
-    <a href="chapter-4.html" class="current">4 · The data</a> ·
+    <a href="chapter-4.html" class="current" aria-current="page">4 · The data</a> ·
     <a href="chapter-5.html">5 · Regulation</a> ·
     <a href="terminology.html">Terms</a>
-  </div>
+  </nav>
 </header>
 
-<main class="shell">
+<main id="main" class="shell">
 
   <aside class="toc">
     <h3>Chapter 4</h3>
@@ -64,14 +66,17 @@
 
 
     <!-- ============== §4.1 THREE FACTS ============== -->
-    <h2 id="three-facts"><span class="num">§4.1</span>Three empirical facts</h2>
+    <h2 id="three-facts"><span class="num">§4.1</span> Three empirical facts</h2>
 
     <p>
       Aggregating across all profitable dividend-play opportunities in the November 2019 – June 2023 sample, the paper's central findings (§4.2 of the paper) reduce to three numbers.
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg">
+        <div class="figure-canvas" tabindex="0" aria-label="Scrollable diagram">
+        <svg class="diag" viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chapter_4-fig-4-1-title chapter_4-fig-4-1-desc">
+          <title id="chapter_4-fig-4-1-title">FIG. 4.1</title>
+          <desc id="chapter_4-fig-4-1-desc">Facts 1 and 2 are the model&#x27;s Testable Prediction 1 (no entry into natural markets) in action: 43% of opportunities are natural to some incumbent who captures them silently. Fact 3 is Testable Prediction 2 (one arbitrageur per non-natural market) showing up in</desc>
         <text x="24" y="28" class="lbl-big">HEADLINE FINDINGS</text>
         <text x="24" y="44" class="lbl-soft">VIRTUALLY RISKLESS ARBITRAGE · YET MOST OPPORTUNITIES SEE LITTLE OR NO ENTRY</text>
         <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
@@ -111,6 +116,7 @@
 
         <text x="24" y="385" class="lbl-soft">FIG. 4.1 · THREE HEADLINE FACTS (BPS §4.2)</text>
       </svg>
+        </div>
       <figcaption><span class="figno">FIG. 4.1</span> Facts 1 and 2 are the model's Testable Prediction 1 (no entry into natural markets) in action: 43% of opportunities are natural to some incumbent who captures them silently. Fact 3 is Testable Prediction 2 (one arbitrageur per non-natural market) showing up in cross-section across the contested half of the sample.</figcaption>
     </figure>
 
@@ -124,7 +130,7 @@
 
 
     <!-- ============== §4.2 NO PECKING ORDER ============== -->
-    <h2 id="no-pecking"><span class="num">§4.2</span>No pecking order</h2>
+    <h2 id="no-pecking"><span class="num">§4.2</span> No pecking order</h2>
 
     <p>
       A natural first guess: maybe arbitrageurs <em>prioritise</em> the most profitable opportunities and just ignore marginal ones. This is the "pecking order" hypothesis implied by standard limits-to-arbitrage stories — capital is scarce, so deploy it to the most profitable trades first.
@@ -135,7 +141,10 @@
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg">
+        <div class="figure-canvas" tabindex="0" aria-label="Scrollable diagram">
+        <svg class="diag" viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chapter_4-fig-4-2-title chapter_4-fig-4-2-desc">
+          <title id="chapter_4-fig-4-2-title">FIG. 4.2</title>
+          <desc id="chapter_4-fig-4-2-desc">Whichever profitability measure you sort by, the no-entry rate sits around 37–38% across all terciles. The most profitable tercile is just as likely to be ignored as the least profitable. This is impossible to reconcile with capital-constrained limits-to-arbit</desc>
         <text x="24" y="28" class="lbl-big">NO PECKING ORDER · NO-ENTRY RATE IS FLAT IN PROFITABILITY</text>
         <text x="24" y="44" class="lbl-soft">EVEN THE MOST PROFITABLE CONTRACTS SEE 37% NON-ENTRY</text>
         <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
@@ -196,6 +205,7 @@
 
         <text x="24" y="372" class="lbl-soft">FIG. 4.2 · NO-ENTRY % BY PROFITABILITY TERCILE (PAPER FACT 3)</text>
       </svg>
+        </div>
       <figcaption><span class="figno">FIG. 4.2</span> Whichever profitability measure you sort by, the no-entry rate sits around 37–38% across all terciles. The most profitable tercile is just as likely to be ignored as the least profitable. This is impossible to reconcile with capital-constrained limits-to-arbitrage theories that imply a pecking order.</figcaption>
     </figure>
 
@@ -205,7 +215,7 @@
 
 
     <!-- ============== §4.3 NATURAL MARKETS ============== -->
-    <h2 id="natural-markets"><span class="num">§4.3</span>Identifying natural markets in the data</h2>
+    <h2 id="natural-markets"><span class="num">§4.3</span> Identifying natural markets in the data</h2>
 
     <p>
       The model's mechanism is that 43% no-entry is concentrated in contracts that are <em>natural</em> to some incumbent market maker — typically because she's already short the contract from her ordinary market-making activity, so capturing the windfall is costless for her and other arbitrageurs rationally stay away.
@@ -221,7 +231,10 @@
     </ul>
 
     <figure>
-      <svg class="diag" viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg">
+        <div class="figure-canvas" tabindex="0" aria-label="Scrollable diagram">
+        <svg class="diag" viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chapter_4-fig-4-3-title chapter_4-fig-4-3-desc">
+          <title id="chapter_4-fig-4-3-title">FIG. 4.3</title>
+          <desc id="chapter_4-fig-4-3-desc">Schematic representation of the paper&#x27;s Table 5 result. When the natural-market proxy fires — a contract that retail bought heavily, or that market makers sold heavily — the entry rate by independent arbitrageurs falls sharply. The model&#x27;s Testable Prediction </desc>
         <text x="24" y="28" class="lbl-big">CONFIRMING THE MECHANISM</text>
         <text x="24" y="44" class="lbl-soft">CONTRACTS WHERE A MARKET MAKER IS LIKELY SHORT (NATURAL) HAVE SHARPLY LOWER ARBITRAGEUR ENTRY</text>
         <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
@@ -277,6 +290,7 @@
 
         <text x="24" y="372" class="lbl-soft">FIG. 4.3 · ENTRY DROPS WHEN A MARKET MAKER IS LIKELY THE INCUMBENT (SCHEMATIC OF BPS TABLE 5)</text>
       </svg>
+        </div>
       <figcaption><span class="figno">FIG. 4.3</span> Schematic representation of the paper's Table 5 result. When the natural-market proxy fires — a contract that retail bought heavily, or that market makers sold heavily — the entry rate by independent arbitrageurs falls sharply. The model's Testable Prediction 1 (no entry into natural markets) is confirmed: independent arbitrageurs walk away when an incumbent has the contract on her balance sheet.</figcaption>
     </figure>
 
@@ -286,7 +300,7 @@
 
 
     <!-- ============== §4.4 ALTERNATIVES ============== -->
-    <h2 id="alternatives"><span class="num">§4.4</span>Ruling out alternatives</h2>
+    <h2 id="alternatives"><span class="num">§4.4</span> Ruling out alternatives</h2>
 
     <p>
       Any careful paper has to dispatch the alternative stories. BPS systematically rule out the main candidates:

@@ -3,10 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="A visual walkthrough of Bryzgalova, Pavlova and Sikorskaya’s Strategic Arbitrage in Segmented Markets, with diagrams, glossary, and chapter-by-chapter explanation." />
 <title>3 · Dividend play — A visual reading of Bryzgalova, Pavlova &amp; Sikorskaya 2024</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="linkbar">
   <div class="group">
@@ -23,18 +25,18 @@
 
 <header class="topbar">
   <div class="brand">A visual reading of <em>Strategic Arbitrage in Segmented Markets</em> — Bryzgalova, Pavlova &amp; Sikorskaya, 2024</div>
-  <div class="crumbs">
+  <nav class="crumbs" aria-label="Chapters">
     <a href="index.html">Cover</a> ·
     <a href="chapter-1.html">1 · The model</a> ·
     <a href="chapter-2.html">2 · Tacit collusion</a> ·
-    <a href="chapter-3.html" class="current">3 · Dividend play</a> ·
+    <a href="chapter-3.html" class="current" aria-current="page">3 · Dividend play</a> ·
     <a href="chapter-4.html">4 · The data</a> ·
     <a href="chapter-5.html">5 · Regulation</a> ·
     <a href="terminology.html">Terms</a>
-  </div>
+  </nav>
 </header>
 
-<main class="shell">
+<main id="main" class="shell">
 
   <aside class="toc">
     <h3>Chapter 3</h3>
@@ -64,7 +66,7 @@
 
 
     <!-- ============== §3.1 MECHANISM ============== -->
-    <h2 id="mechanism"><span class="num">§3.1</span>The mechanism</h2>
+    <h2 id="mechanism"><span class="num">§3.1</span> The mechanism</h2>
 
     <p>
       Consider an in-the-money American call option on a dividend-paying stock, approaching the last cum-dividend date. Standard option pricing (recall your derivatives course) says that early exercise is <em>optimal</em> for the holder when the dividend the underlying is about to pay exceeds the time value the option will lose by being exercised. In symbols, if <span class="math-inline">D</span> is the upcoming dividend, <span class="math-inline">K</span> is the strike, and <span class="math-inline">r</span> is the interest rate, the early-exercise condition is roughly <span class="math-inline">D &gt; Kr·Δt + (time value)</span> (Hull's textbook, Chapter 10).
@@ -75,7 +77,10 @@
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg">
+        <div class="figure-canvas" tabindex="0" aria-label="Scrollable diagram">
+        <svg class="diag" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chapter_3-fig-3-1-title chapter_3-fig-3-1-desc">
+          <title id="chapter_3-fig-3-1-title">FIG. 3.1</title>
+          <desc id="chapter_3-fig-3-1-desc">Each option contract is for 100 shares, so a $1 dividend creates a $100-per-contract windfall when the short holder isn&#x27;t assigned. Suboptimal non-exercise by long-side investors is the underlying friction; OCC random assignment is the mechanism that distribut</desc>
         <defs>
           <marker id="ch3f1-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
             <path d="M 0 0 L 10 5 L 0 10 z" class="fill"/>
@@ -122,6 +127,7 @@
 
         <text x="24" y="345" class="lbl-soft">FIG. 3.1 · DIVIDEND-PLAY TIMELINE</text>
       </svg>
+        </div>
       <figcaption><span class="figno">FIG. 3.1</span> Each option contract is for 100 shares, so a $1 dividend creates a $100-per-contract windfall when the short holder isn't assigned. Suboptimal non-exercise by long-side investors is the underlying friction; OCC random assignment is the mechanism that distributes the windfall.</figcaption>
     </figure>
 
@@ -135,14 +141,17 @@
 
 
     <!-- ============== §3.2 EXAMPLE ============== -->
-    <h2 id="example"><span class="num">§3.2</span>A worked example</h2>
+    <h2 id="example"><span class="num">§3.2</span> A worked example</h2>
 
     <p>
       BPS provide Table 1, a clean worked example for one contract. We reproduce its structure here. Assume one outstanding contract (100 underlying shares) and a $5 dividend (windfall of $500 per contract).
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 920 440" xmlns="http://www.w3.org/2000/svg">
+        <div class="figure-canvas" tabindex="0" aria-label="Scrollable diagram">
+        <svg class="diag" viewBox="0 0 920 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chapter_3-fig-3-2-title chapter_3-fig-3-2-desc">
+          <title id="chapter_3-fig-3-2-title">FIG. 3.2</title>
+          <desc id="chapter_3-fig-3-2-desc">The arbitrageur in Case 2.2 writes 100 additional short contracts (and buys 100 offsetting longs from a pre-arranged counterparty for the hedge). Random assignment now hits the arbitrageur with probability 100/101 — but she exercises all her own longs, so the </desc>
         <text x="24" y="28" class="lbl-big">THREE CASES · ORIGINAL CUSTOMER HOLDS ONE LONG CALL</text>
         <text x="24" y="44" class="lbl-soft">DIVIDEND $5 · CONTRACT SIZE 100 SHARES · WINDFALL FROM NON-EXERCISE = $500</text>
         <line x1="24" y1="58" x2="896" y2="58" class="stroke-soft"/>
@@ -194,6 +203,7 @@
 
         <text x="24" y="425" class="lbl-soft">FIG. 3.2 · WORKED EXAMPLE (AFTER BPS TABLE 1)</text>
       </svg>
+        </div>
       <figcaption><span class="figno">FIG. 3.2</span> The arbitrageur in Case 2.2 writes 100 additional short contracts (and buys 100 offsetting longs from a pre-arranged counterparty for the hedge). Random assignment now hits the arbitrageur with probability 100/101 — but she exercises <em>all</em> her own longs, so the unassigned position is her short, on which she captures the windfall. The original writer's expected gain falls from $500 to about $5.</figcaption>
     </figure>
 
@@ -203,7 +213,7 @@
 
 
     <!-- ============== §3.3 LABORATORY ============== -->
-    <h2 id="why-laboratory"><span class="num">§3.3</span>Why this is the right laboratory</h2>
+    <h2 id="why-laboratory"><span class="num">§3.3</span> Why this is the right laboratory</h2>
 
     <p>
       Most of the limits-to-arbitrage literature struggles with two empirical obstacles: (1) you observe prices but not quantities of arbitrage capital, and (2) the "arbitrage opportunity" is often endogenous to the very prices you study. Dividend play sidesteps both:
@@ -217,7 +227,7 @@
 
 
     <!-- ============== §3.4 IDENTIFICATION ============== -->
-    <h2 id="identification"><span class="num">§3.4</span>Identifying arbitrageur trades</h2>
+    <h2 id="identification"><span class="num">§3.4</span> Identifying arbitrageur trades</h2>
 
     <p>
       The data source is OPRA LiveVol (provided by Cboe), covering November 2019 through June 2023. The key innovation is the use of OPRA's detailed trade-type flags — specifically SLFT and MLFT (single-leg and multi-leg floor trades) — to isolate transactions executed from the physical exchange floor.
@@ -228,7 +238,10 @@
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg">
+        <div class="figure-canvas" tabindex="0" aria-label="Scrollable diagram">
+        <svg class="diag" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chapter_3-fig-3-3-title chapter_3-fig-3-3-desc">
+          <title id="chapter_3-fig-3-3-title">FIG. 3.3</title>
+          <desc id="chapter_3-fig-3-3-desc">The empirical pipeline turns raw OPRA transactions into three contract-level quantities the model maps directly onto: the number of entering arbitrageurs (TP2), the share of the windfall they capture (TP1), and the size of the available arbitrage value (the mo</desc>
         <text x="24" y="28" class="lbl-big">IDENTIFICATION STRATEGY</text>
         <text x="24" y="44" class="lbl-soft">FROM RAW TRANSACTION-LEVEL DATA TO ARBITRAGEUR COUNTS PER CONTRACT</text>
         <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
@@ -288,6 +301,7 @@
 
         <text x="24" y="345" class="lbl-soft">FIG. 3.3 · IDENTIFICATION PIPELINE</text>
       </svg>
+        </div>
       <figcaption><span class="figno">FIG. 3.3</span> The empirical pipeline turns raw OPRA transactions into three contract-level quantities the model maps directly onto: the number of entering arbitrageurs (TP2), the share of the windfall they capture (TP1), and the size of the available arbitrage value (the model's <span class="math-inline">A</span> or <span class="math-inline">A*</span>).</figcaption>
     </figure>
 

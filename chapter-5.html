@@ -3,10 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="A visual walkthrough of Bryzgalova, Pavlova and Sikorskaya’s Strategic Arbitrage in Segmented Markets, with diagrams, glossary, and chapter-by-chapter explanation." />
 <title>5 · Regulation — A visual reading of Bryzgalova, Pavlova &amp; Sikorskaya 2024</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="linkbar">
   <div class="group">
@@ -23,18 +25,18 @@
 
 <header class="topbar">
   <div class="brand">A visual reading of <em>Strategic Arbitrage in Segmented Markets</em> — Bryzgalova, Pavlova &amp; Sikorskaya, 2024</div>
-  <div class="crumbs">
+  <nav class="crumbs" aria-label="Chapters">
     <a href="index.html">Cover</a> ·
     <a href="chapter-1.html">1 · The model</a> ·
     <a href="chapter-2.html">2 · Tacit collusion</a> ·
     <a href="chapter-3.html">3 · Dividend play</a> ·
     <a href="chapter-4.html">4 · The data</a> ·
-    <a href="chapter-5.html" class="current">5 · Regulation</a> ·
+    <a href="chapter-5.html" class="current" aria-current="page">5 · Regulation</a> ·
     <a href="terminology.html">Terms</a>
-  </div>
+  </nav>
 </header>
 
-<main class="shell">
+<main id="main" class="shell">
 
   <aside class="toc">
     <h3>Chapter 5</h3>
@@ -64,7 +66,7 @@
 
 
     <!-- ============== §5.1 2014 RULE ============== -->
-    <h2 id="sec-2014"><span class="num">§5.1</span>The 2014 SEC clearing rule</h2>
+    <h2 id="sec-2014"><span class="num">§5.1</span> The 2014 SEC clearing rule</h2>
 
     <p>
       The pre-2014 dividend-play strategy required the arbitrageur to <em>simultaneously buy and sell the same contract</em> — that's how the offsetting hedge worked, and that's how the dilution of the short pool was engineered. In 2014, the SEC and the Options Clearing Corporation (OCC) approved a rule that made this specific mechanic impossible.
@@ -75,7 +77,10 @@
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg">
+        <div class="figure-canvas" tabindex="0" aria-label="Scrollable diagram">
+        <svg class="diag" viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chapter_5-fig-5-1-title chapter_5-fig-5-1-desc">
+          <title id="chapter_5-fig-5-1-title">FIG. 5.1</title>
+          <desc id="chapter_5-fig-5-1-desc">Pre-2014, OCC saw your gross positions and ran the assignment lottery against all of them, so the more you wrote, the more likely you&#x27;d be the unassigned writer. Post-2014, same-contract long-and-short positions cancel out before the lottery runs, so writing 1</desc>
         <defs>
           <marker id="ch5f1-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
             <path d="M 0 0 L 10 5 L 0 10 z" class="fill"/>
@@ -120,12 +125,13 @@
 
         <text x="24" y="405" class="lbl-soft">FIG. 5.1 · WHAT THE 2014 RULE WAS DESIGNED TO ACCOMPLISH</text>
       </svg>
+        </div>
       <figcaption><span class="figno">FIG. 5.1</span> Pre-2014, OCC saw your gross positions and ran the assignment lottery against all of them, so the more you wrote, the more likely you'd be the unassigned writer. Post-2014, same-contract long-and-short positions cancel out before the lottery runs, so writing 100 paired contracts adds zero exposure to the assignment pool. The rule was designed to kill dividend play outright.</figcaption>
     </figure>
 
 
     <!-- ============== §5.2 CIRCUMVENT ============== -->
-    <h2 id="circumvent"><span class="num">§5.2</span>How arbitrageurs circumvented it</h2>
+    <h2 id="circumvent"><span class="num">§5.2</span> How arbitrageurs circumvented it</h2>
 
     <p>
       The 2014 rule netted <em>same</em> contracts. Arbitrageurs responded by using <em>different</em> contracts. Instead of pairing long and short positions in the same call (call C with strike K and expiry T), they pair a long position in C with a short position in a near-identical neighbour — call C' with the same expiry T but a different strike K' — or vice versa.
@@ -136,7 +142,10 @@
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 920 440" xmlns="http://www.w3.org/2000/svg">
+        <div class="figure-canvas" tabindex="0" aria-label="Scrollable diagram">
+        <svg class="diag" viewBox="0 0 920 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chapter_5-fig-5-2-title chapter_5-fig-5-2-desc">
+          <title id="chapter_5-fig-5-2-title">FIG. 5.2</title>
+          <desc id="chapter_5-fig-5-2-desc">The circumvention uses the gap between economic substitutability (which is what hedging cares about) and contractual identity (which is what netting algorithms key on). Near-adjacent contracts are economically near-identical but legally distinct.</desc>
         <text x="24" y="28" class="lbl-big">THE CIRCUMVENTION</text>
         <text x="24" y="44" class="lbl-soft">SUBSTITUTE NEAR-IDENTICAL CONTRACTS · OCC NETTING ALGORITHM TREATS THEM AS DISTINCT</text>
         <line x1="24" y1="58" x2="896" y2="58" class="stroke-soft"/>
@@ -177,6 +186,7 @@
 
         <text x="24" y="425" class="lbl-soft">FIG. 5.2 · WHAT CHANGED AND WHAT DIDN'T</text>
       </svg>
+        </div>
       <figcaption><span class="figno">FIG. 5.2</span> The circumvention uses the gap between economic substitutability (which is what hedging cares about) and contractual identity (which is what netting algorithms key on). Near-adjacent contracts are economically near-identical but legally distinct.</figcaption>
     </figure>
 
@@ -186,7 +196,7 @@
 
 
     <!-- ============== §5.3 PROPOSAL ============== -->
-    <h2 id="proposal"><span class="num">§5.3</span>The authors' proposed fix</h2>
+    <h2 id="proposal"><span class="num">§5.3</span> The authors' proposed fix</h2>
 
     <p>
       BPS suggest the obvious-in-hindsight fix: net <em>across</em> contracts that are economic substitutes, not just within identical contracts. Specifically, sum each arbitrageur's gross delta-equivalent exposure across all calls on the same underlying with the same maturity, and run the OCC assignment lottery against that aggregated quantity.
@@ -205,7 +215,7 @@
 
 
     <!-- ============== §5.4 TAKEAWAY ============== -->
-    <h2 id="takeaway"><span class="num">§5.4</span>Takeaway</h2>
+    <h2 id="takeaway"><span class="num">§5.4</span> Takeaway</h2>
 
     <p>
       The paper's structure is a textbook example of how to write up theory + empirics in the modern finance literature. The model is simple — two players, three markets, one fixed cost. The mechanism is general — tacit collusion supported by trigger strategies, an established result since the 1970s — but the application (entry into multi-market arbitrage with natural markets) is novel. The empirical laboratory is exceptionally clean: a virtually riskless arbitrage with observable quantities, exogenous opportunity values, and a small repeat-player population.
