@@ -635,6 +635,12 @@ figcaption .desc {
 .diag.pareto-frontier .frontier { stroke: var(--d-stroke); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .diag.pareto-frontier .jump { stroke: var(--d-stroke); stroke-width: 2.4; stroke-dasharray: 4 4; stroke-linecap: round; }
 
+/* Fig. 2.1 trigger strategy has tight hand-placed labels; keep its annotation compact. */
+.diag.trigger-strategy .transition-arrow { stroke: #c64545; stroke-width: 2; stroke-dasharray: 5 3; }
+.diag.trigger-strategy .punishment-loop { stroke: #c64545; stroke-width: 1.4; stroke-dasharray: 3 3; fill: none; }
+.diag.trigger-strategy .transition-label { fill: #c64545; letter-spacing: 0.035em; }
+.diag.trigger-strategy .trigger-note { fill: rgba(255, 253, 246, 0.94); stroke: #f1c8c8; stroke-width: 0.7; rx: 3; }
+
 /* ---------- bars, comparison ---------- */
 .bar-row {
   display: flex;

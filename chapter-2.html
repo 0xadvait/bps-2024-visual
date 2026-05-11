@@ -94,7 +94,9 @@
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 920 440" xmlns="http://www.w3.org/2000/svg">
+      <svg class="diag trigger-strategy" viewBox="0 0 940 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-2-1-title fig-2-1-desc">
+        <title id="fig-2-1-title">Two-state trigger strategy</title>
+        <desc id="fig-2-1-desc">The cooperative phase continues until a deviation is observed, after which the game moves permanently to the punishment phase.</desc>
         <defs>
           <marker id="ch2f1-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
             <path d="M 0 0 L 10 5 L 0 10 z" class="fill"/>
@@ -109,14 +111,14 @@
 
         <text x="24" y="28" class="lbl-big">THE TRIGGER STRATEGY</text>
         <text x="24" y="44" class="lbl-soft">PROPOSITION 3 · COOPERATE WHILE NO ONE HAS DEVIATED · REVERT TO STAGE-NASH FOREVER ONCE THEY HAVE</text>
-        <line x1="24" y1="58" x2="896" y2="58" class="stroke-soft"/>
+        <line x1="24" y1="58" x2="916" y2="58" class="stroke-soft"/>
 
         <!-- Cooperative phase box -->
-        <g transform="translate(60,110)">
-          <rect x="0" y="0" width="340" height="220" stroke="#2f8f5b" fill="#e8f5ee" stroke-width="2" rx="6"/>
-          <text x="170" y="32" class="lbl-big" text-anchor="middle" style="fill:#2f8f5b;">COOPERATIVE PHASE</text>
-          <text x="170" y="50" class="lbl-soft" text-anchor="middle">"so far, no one has deviated"</text>
-          <line x1="20" y1="62" x2="320" y2="62" class="stroke-soft"/>
+        <g transform="translate(50,110)">
+          <rect x="0" y="0" width="330" height="220" stroke="#2f8f5b" fill="#e8f5ee" stroke-width="2" rx="6"/>
+          <text x="165" y="32" class="lbl-big" text-anchor="middle" style="fill:#2f8f5b;">COOPERATIVE PHASE</text>
+          <text x="165" y="50" class="lbl-soft" text-anchor="middle">"so far, no one has deviated"</text>
+          <line x1="20" y1="62" x2="310" y2="62" class="stroke-soft"/>
           <text x="20" y="86" class="body">Each intermediary stays in her</text>
           <text x="20" y="102" class="body">natural market: k₁¹ &gt; 0, k₂² &gt; 0</text>
           <text x="20" y="128" class="body">Alternate entry in M₃:</text>
@@ -127,17 +129,18 @@
         </g>
 
         <!-- Transition arrow -->
-        <line x1="408" y1="220" x2="500" y2="220" stroke="#c64545" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#ch2f1-arr-red)"/>
-        <text x="454" y="206" class="lbl" text-anchor="middle" style="fill:#c64545;">DEVIATION</text>
-        <text x="454" y="220" class="lbl" text-anchor="middle" style="fill:#c64545;">OBSERVED</text>
-        <text x="454" y="246" class="lbl-soft" text-anchor="middle" style="fill:#c64545;">e.g. I₁ enters M₂</text>
+        <line x1="395" y1="220" x2="525" y2="220" class="transition-arrow" marker-end="url(#ch2f1-arr-red)"/>
+        <text x="460" y="202" class="lbl transition-label" text-anchor="middle">DEVIATION</text>
+        <text x="460" y="217" class="lbl transition-label" text-anchor="middle">OBSERVED</text>
+        <rect x="408" y="234" width="104" height="20" class="trigger-note"/>
+        <text x="460" y="248" class="lbl-soft transition-label" text-anchor="middle">I₁ enters M₂</text>
 
         <!-- Punishment phase box -->
-        <g transform="translate(508,110)">
-          <rect x="0" y="0" width="340" height="220" stroke="#c64545" fill="#fee" stroke-width="2" rx="6"/>
-          <text x="170" y="32" class="lbl-big" text-anchor="middle" style="fill:#c64545;">PUNISHMENT PHASE</text>
-          <text x="170" y="50" class="lbl-soft" text-anchor="middle">"absorbing state · no return"</text>
-          <line x1="20" y1="62" x2="320" y2="62" class="stroke-soft"/>
+        <g transform="translate(540,110)">
+          <rect x="0" y="0" width="330" height="220" stroke="#c64545" fill="#fee" stroke-width="2" rx="6"/>
+          <text x="165" y="32" class="lbl-big" text-anchor="middle" style="fill:#c64545;">PUNISHMENT PHASE</text>
+          <text x="165" y="50" class="lbl-soft" text-anchor="middle">"absorbing state · no return"</text>
+          <line x1="20" y1="62" x2="310" y2="62" class="stroke-soft"/>
           <text x="20" y="86" class="body">Both intermediaries play the</text>
           <text x="20" y="102" class="body">stage-game Nash forever:</text>
           <text x="20" y="124" class="body">  · enter all three markets</text>
@@ -147,10 +150,11 @@
           <text x="20" y="202" class="body">A + A*/2 − f − f*</text>
         </g>
 
-        <!-- Punishment self-loop — clean circular arrow on the side of the punishment box -->
-        <path d="M 858 200 C 890 200 890 240 858 240" stroke="#c64545" stroke-width="1.4" stroke-dasharray="3 3" fill="none" marker-end="url(#ch2f1-arr-loop)"/>
-        <text x="900" y="224" class="lbl-soft" text-anchor="end" style="fill:#c64545;">stays</text>
-        <text x="900" y="238" class="lbl-soft" text-anchor="end" style="fill:#c64545;">forever</text>
+        <!-- Punishment self-loop — keep the label outside the loop path. -->
+        <path d="M 880 198 C 916 198 916 242 880 242" class="punishment-loop" marker-end="url(#ch2f1-arr-loop)"/>
+        <rect x="882" y="174" width="48" height="32" class="trigger-note"/>
+        <text x="906" y="188" class="lbl-soft transition-label" text-anchor="middle">stays</text>
+        <text x="906" y="202" class="lbl-soft transition-label" text-anchor="middle">forever</text>
 
         <text x="24" y="425" class="lbl-soft">FIG. 2.1 · TWO-STATE TRIGGER STRATEGY</text>
       </svg>
