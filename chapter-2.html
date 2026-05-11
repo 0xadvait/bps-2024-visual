@@ -94,7 +94,7 @@
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 880 420" xmlns="http://www.w3.org/2000/svg">
+      <svg class="diag" viewBox="0 0 920 440" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="ch2f1-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
             <path d="M 0 0 L 10 5 L 0 10 z" class="fill"/>
@@ -102,51 +102,57 @@
           <marker id="ch2f1-arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
             <path d="M 0 0 L 10 5 L 0 10 z" fill="#c64545"/>
           </marker>
+          <marker id="ch2f1-arr-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#c64545"/>
+          </marker>
         </defs>
 
         <text x="24" y="28" class="lbl-big">THE TRIGGER STRATEGY</text>
-        <text x="24" y="44" class="lbl-soft">PROPOSITION 3 · COOPERATE WHILE NO ONE HAS DEVIATED · REVERT TO STAGE-GAME NASH FOREVER ONCE THEY HAVE</text>
-        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+        <text x="24" y="44" class="lbl-soft">PROPOSITION 3 · COOPERATE WHILE NO ONE HAS DEVIATED · REVERT TO STAGE-NASH FOREVER ONCE THEY HAVE</text>
+        <line x1="24" y1="58" x2="896" y2="58" class="stroke-soft"/>
 
         <!-- Cooperative phase box -->
-        <g transform="translate(60,100)">
-          <rect x="0" y="0" width="320" height="200" stroke="#2f8f5b" fill="#e8f5ee" stroke-width="2" rx="6"/>
-          <text x="160" y="28" class="lbl-big" text-anchor="middle" style="fill:#2f8f5b;">COOPERATIVE PHASE</text>
-          <text x="160" y="46" class="lbl-soft" text-anchor="middle">"so far, no one has deviated"</text>
-          <line x1="20" y1="58" x2="300" y2="58" class="stroke-soft"/>
-          <text x="20" y="80" class="body">Each intermediary stays in her</text>
-          <text x="20" y="96" class="body">natural market: k₁¹ &gt; 0, k₂² &gt; 0</text>
-          <text x="20" y="120" class="body">Alternate entry in M₃:</text>
-          <text x="20" y="136" class="body">  · odd t → k₁³ &gt; 0, k₂³ = 0</text>
-          <text x="20" y="152" class="body">  · even t → k₂³ &gt; 0, k₁³ = 0</text>
-          <text x="20" y="180" class="lbl-soft">Per-period payoff: A + A*/2 − f*/2</text>
+        <g transform="translate(60,110)">
+          <rect x="0" y="0" width="340" height="220" stroke="#2f8f5b" fill="#e8f5ee" stroke-width="2" rx="6"/>
+          <text x="170" y="32" class="lbl-big" text-anchor="middle" style="fill:#2f8f5b;">COOPERATIVE PHASE</text>
+          <text x="170" y="50" class="lbl-soft" text-anchor="middle">"so far, no one has deviated"</text>
+          <line x1="20" y1="62" x2="320" y2="62" class="stroke-soft"/>
+          <text x="20" y="86" class="body">Each intermediary stays in her</text>
+          <text x="20" y="102" class="body">natural market: k₁¹ &gt; 0, k₂² &gt; 0</text>
+          <text x="20" y="128" class="body">Alternate entry in M₃:</text>
+          <text x="20" y="146" class="body">  · odd t → k₁³ &gt; 0, k₂³ = 0</text>
+          <text x="20" y="162" class="body">  · even t → k₂³ &gt; 0, k₁³ = 0</text>
+          <text x="20" y="194" class="lbl-soft">PER-PERIOD PAYOFF</text>
+          <text x="20" y="210" class="body">A + A*/2 − f*/2</text>
         </g>
 
-        <!-- arrow: deviation triggers transition -->
-        <line x1="380" y1="200" x2="500" y2="200" stroke="#c64545" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#ch2f1-arr-red)"/>
-        <text x="440" y="190" class="lbl" text-anchor="middle" style="fill:#c64545;">deviation observed</text>
-        <text x="440" y="220" class="lbl-soft" text-anchor="middle" style="fill:#c64545;">(I₁ enters M₂ or I₂ enters M₁)</text>
+        <!-- Transition arrow -->
+        <line x1="408" y1="220" x2="500" y2="220" stroke="#c64545" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#ch2f1-arr-red)"/>
+        <text x="454" y="206" class="lbl" text-anchor="middle" style="fill:#c64545;">DEVIATION</text>
+        <text x="454" y="220" class="lbl" text-anchor="middle" style="fill:#c64545;">OBSERVED</text>
+        <text x="454" y="246" class="lbl-soft" text-anchor="middle" style="fill:#c64545;">e.g. I₁ enters M₂</text>
 
         <!-- Punishment phase box -->
-        <g transform="translate(500,100)">
-          <rect x="0" y="0" width="320" height="200" stroke="#c64545" fill="#fee" stroke-width="2" rx="6"/>
-          <text x="160" y="28" class="lbl-big" text-anchor="middle" style="fill:#c64545;">PUNISHMENT PHASE</text>
-          <text x="160" y="46" class="lbl-soft" text-anchor="middle">"absorbing state · no return"</text>
-          <line x1="20" y1="58" x2="300" y2="58" class="stroke-soft"/>
-          <text x="20" y="80" class="body">Both intermediaries play the</text>
-          <text x="20" y="96" class="body">stage-game Nash forever:</text>
-          <text x="20" y="116" class="body">  · enter all three markets</text>
-          <text x="20" y="132" class="body">  · split each opportunity 50/50</text>
-          <text x="20" y="152" class="body">  · pay both costs f and f*</text>
-          <text x="20" y="180" class="lbl-soft">Per-period payoff: A + A*/2 − f − f*</text>
+        <g transform="translate(508,110)">
+          <rect x="0" y="0" width="340" height="220" stroke="#c64545" fill="#fee" stroke-width="2" rx="6"/>
+          <text x="170" y="32" class="lbl-big" text-anchor="middle" style="fill:#c64545;">PUNISHMENT PHASE</text>
+          <text x="170" y="50" class="lbl-soft" text-anchor="middle">"absorbing state · no return"</text>
+          <line x1="20" y1="62" x2="320" y2="62" class="stroke-soft"/>
+          <text x="20" y="86" class="body">Both intermediaries play the</text>
+          <text x="20" y="102" class="body">stage-game Nash forever:</text>
+          <text x="20" y="124" class="body">  · enter all three markets</text>
+          <text x="20" y="140" class="body">  · split each opportunity 50/50</text>
+          <text x="20" y="156" class="body">  · pay both costs f and f*</text>
+          <text x="20" y="186" class="lbl-soft">PER-PERIOD PAYOFF</text>
+          <text x="20" y="202" class="body">A + A*/2 − f − f*</text>
         </g>
 
-        <!-- self-loop for punishment -->
-        <path d="M 660 320 C 660 360 660 380 660 380 C 660 320 660 320 660 320" stroke="#c64545" fill="none" stroke-width="1.2" stroke-dasharray="3 3"/>
-        <ellipse cx="660" cy="350" rx="40" ry="16" stroke="#c64545" fill="none" stroke-width="1.4" stroke-dasharray="3 3"/>
-        <text x="660" y="354" class="lbl-soft" text-anchor="middle" style="fill:#c64545;">stays forever</text>
+        <!-- Punishment self-loop — clean circular arrow on the side of the punishment box -->
+        <path d="M 858 200 C 890 200 890 240 858 240" stroke="#c64545" stroke-width="1.4" stroke-dasharray="3 3" fill="none" marker-end="url(#ch2f1-arr-loop)"/>
+        <text x="900" y="224" class="lbl-soft" text-anchor="end" style="fill:#c64545;">stays</text>
+        <text x="900" y="238" class="lbl-soft" text-anchor="end" style="fill:#c64545;">forever</text>
 
-        <text x="24" y="405" class="lbl-soft">FIG. 2.1 · TWO-STATE TRIGGER STRATEGY</text>
+        <text x="24" y="425" class="lbl-soft">FIG. 2.1 · TWO-STATE TRIGGER STRATEGY</text>
       </svg>
       <figcaption><span class="figno">FIG. 2.1</span> A particularly simple trigger strategy: while no deviation has occurred, play the cooperative pattern; after the first observed deviation, revert to stage-Nash play <em>forever</em>. This is sometimes called a "grim" trigger because the punishment phase is absorbing — once entered, no return to cooperation is ever attempted. Less harsh trigger strategies (e.g. finite-length punishment phases) also work but require more bookkeeping.</figcaption>
     </figure>
@@ -185,47 +191,49 @@
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg">
+      <svg class="diag" viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg">
         <text x="24" y="28" class="lbl-big">WHEN IS TACIT COLLUSION SUSTAINABLE?</text>
         <text x="24" y="44" class="lbl-soft">DISCOUNT FACTOR δ MUST EXCEED A THRESHOLD THAT DEPENDS ON THE COST-TO-ARBITRAGE RATIO</text>
-        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+        <line x1="24" y1="58" x2="896" y2="58" class="stroke-soft"/>
 
         <!-- axes -->
-        <line x1="120" y1="320" x2="780" y2="320" class="stroke-2"/>
-        <line x1="120" y1="100" x2="120" y2="320" class="stroke-2"/>
+        <line x1="140" y1="340" x2="820" y2="340" class="stroke-2"/>
+        <line x1="140" y1="100" x2="140" y2="340" class="stroke-2"/>
 
-        <!-- y axis labels (delta) -->
-        <text x="108" y="104" class="lbl-soft" text-anchor="end">δ = 1</text>
-        <text x="108" y="214" class="lbl-soft" text-anchor="end">δ = 0.5</text>
-        <text x="108" y="324" class="lbl-soft" text-anchor="end">δ = 0</text>
-        <text x="60" y="200" class="lbl" transform="rotate(-90 60 200)" text-anchor="middle">DISCOUNT FACTOR δ</text>
+        <!-- y axis labels -->
+        <text x="128" y="104" class="lbl-soft" text-anchor="end">δ = 1</text>
+        <text x="128" y="224" class="lbl-soft" text-anchor="end">δ = 0.5</text>
+        <text x="128" y="344" class="lbl-soft" text-anchor="end">δ = 0</text>
+        <text x="68" y="210" class="lbl" transform="rotate(-90 68 210)" text-anchor="middle">DISCOUNT FACTOR δ</text>
 
-        <!-- x axis labels (cost / arbitrage ratio) -->
-        <text x="120" y="338" class="lbl-soft" text-anchor="middle">0</text>
-        <text x="450" y="338" class="lbl-soft" text-anchor="middle">0.5</text>
-        <text x="780" y="338" class="lbl-soft" text-anchor="middle">1</text>
-        <text x="450" y="358" class="lbl">(f + f*/2) / A &nbsp;·&nbsp; cost-to-arbitrage ratio</text>
+        <!-- x axis labels -->
+        <text x="140" y="358" class="lbl-soft" text-anchor="middle">0</text>
+        <text x="480" y="358" class="lbl-soft" text-anchor="middle">0.5</text>
+        <text x="820" y="358" class="lbl-soft" text-anchor="middle">1</text>
+        <text x="480" y="378" class="lbl">(f + f*/2) / A &nbsp;·&nbsp; COST-TO-ARBITRAGE RATIO</text>
 
-        <!-- The threshold curve: δ = 1 - (f + f*/2)/A → straight line from (0, 1) to (1, 0) -->
-        <line x1="120" y1="100" x2="780" y2="320" stroke="#2347d9" stroke-width="2.4"/>
+        <!-- Sustainable region (above the threshold line) — fill the triangle -->
+        <path d="M 140 100 L 820 100 L 820 340 Z" fill="#e8f5ee" opacity="0.6"/>
 
-        <!-- Sustainable region (above the line) -->
-        <path d="M 120 100 L 780 100 L 780 320 L 120 100 Z" fill="#e8f5ee" opacity="0.5"/>
-        <text x="500" y="180" class="lbl-big" text-anchor="middle" style="fill:#2f8f5b;">SUSTAINABLE</text>
-        <text x="500" y="196" class="lbl-soft" text-anchor="middle" style="fill:#2f8f5b;">tacit collusion is SPE</text>
+        <!-- threshold line: δ = 1 - (f + f*/2)/A, from (0,1) to (1,0) -->
+        <line x1="140" y1="100" x2="820" y2="340" stroke="#2347d9" stroke-width="2.4"/>
 
-        <!-- Unsustainable region (below) -->
+        <!-- SUSTAINABLE label — UP-RIGHT, deep in green region, well away from the threshold line -->
+        <text x="700" y="158" class="lbl-big" text-anchor="middle" style="fill:#2f8f5b;">SUSTAINABLE</text>
+        <text x="700" y="176" class="lbl-soft" text-anchor="middle" style="fill:#2f8f5b;">tacit collusion is SPE</text>
+
+        <!-- NOT SUSTAINABLE label — DOWN-LEFT, below the threshold line, in the empty region -->
         <text x="280" y="290" class="lbl-big" text-anchor="middle" style="fill:#c64545;">NOT SUSTAINABLE</text>
-        <text x="280" y="306" class="lbl-soft" text-anchor="middle" style="fill:#c64545;">deviation pays</text>
+        <text x="280" y="308" class="lbl-soft" text-anchor="middle" style="fill:#c64545;">one-shot deviation pays</text>
 
-        <!-- annotation -->
-        <line x1="450" y1="210" x2="540" y2="180" class="lead"/>
-        <text x="546" y="178" class="lbl" style="fill:#2347d9;">δ = 1 − (f + f*/2)/A</text>
-        <text x="546" y="192" class="lbl-soft">threshold line</text>
+        <!-- Threshold line annotation — separated from the sustainable label, with a leader -->
+        <line x1="480" y1="220" x2="400" y2="240" class="lead"/>
+        <text x="396" y="246" class="lbl" style="fill:#2347d9;" text-anchor="end">THRESHOLD</text>
+        <text x="396" y="262" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">δ = 1 − (f + f*/2) / A</text>
 
-        <text x="24" y="370" class="lbl-soft">FIG. 2.2 · SUSTAINABILITY REGION</text>
+        <text x="24" y="408" class="lbl-soft">FIG. 2.2 · SUSTAINABILITY REGION</text>
       </svg>
-      <figcaption><span class="figno">FIG. 2.2</span> The set of <span class="math-inline">(cost-ratio, δ)</span> pairs for which the trigger strategy is an SPE. The threshold line is <span class="math-inline">δ = 1 − (f + f*/2)/A</span>. As fixed costs grow relative to arbitrage value, the threshold drops — cooperation can be sustained even by impatient players, because they have a lot to lose if punishment kicks in. In the empirical application (multiple dividend-play opportunities per week, on a calendar with high frequency), the relevant <span class="math-inline">δ</span> is very close to 1, so the SPE condition is easily satisfied.</figcaption>
+      <figcaption><span class="figno">FIG. 2.2</span> The set of <span class="math-inline">(cost-ratio, δ)</span> pairs for which the trigger strategy is an SPE. The threshold line is <span class="math-inline">δ = 1 − (f + f*/2)/A</span>. As fixed costs grow relative to arbitrage value, the threshold drops — cooperation can be sustained even by impatient players, because they have a lot to lose if punishment kicks in. In the empirical application (multiple dividend-play opportunities per week), the relevant <span class="math-inline">δ</span> is very close to 1, so the SPE condition is easily satisfied.</figcaption>
     </figure>
 
 

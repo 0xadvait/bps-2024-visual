@@ -260,83 +260,60 @@
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <marker id="ch1f2-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M 0 0 L 10 5 L 0 10 z" class="fill"/>
-          </marker>
-        </defs>
-
+      <svg class="diag" viewBox="0 0 920 500" xmlns="http://www.w3.org/2000/svg">
         <text x="24" y="28" class="lbl-big">PARETO FRONTIER OF THE STAGE GAME</text>
         <text x="24" y="44" class="lbl-soft">BPS FIG. 1 · NASH EQUILIBRIUM (★) SITS STRICTLY INSIDE THE FRONTIER</text>
-        <line x1="24" y1="58" x2="856" y2="58" class="stroke-soft"/>
+        <line x1="24" y1="58" x2="896" y2="58" class="stroke-soft"/>
 
         <!-- axes -->
-        <line x1="120" y1="420" x2="780" y2="420" class="stroke-2"/>
+        <line x1="120" y1="420" x2="800" y2="420" class="stroke-2"/>
         <line x1="120" y1="100" x2="120" y2="420" class="stroke-2"/>
-        <text x="450" y="450" class="lbl">INTERMEDIARY 1's PAYOFF</text>
-        <text x="60" y="260" class="lbl" transform="rotate(-90 60 260)" text-anchor="middle">INTERMEDIARY 2's PAYOFF</text>
+        <text x="460" y="448" class="lbl">INTERMEDIARY 1's PAYOFF</text>
+        <text x="50" y="260" class="lbl" transform="rotate(-90 50 260)" text-anchor="middle">INTERMEDIARY 2's PAYOFF</text>
 
-        <!-- axis labels -->
-        <text x="110" y="425" class="lbl-soft" text-anchor="end">0</text>
-        <text x="110" y="424" class="lbl-soft" text-anchor="end">0</text>
-        <text x="110" y="110" class="lbl-soft" text-anchor="end">2A+A*−f−f*</text>
-        <text x="780" y="440" class="lbl-soft" text-anchor="middle">2A+A*−f−f*</text>
+        <!-- axis tick labels -->
+        <text x="112" y="424" class="lbl-soft" text-anchor="end">0</text>
+        <text x="112" y="106" class="lbl-soft" text-anchor="end">π̄</text>
+        <text x="800" y="442" class="lbl-soft" text-anchor="middle">π̄</text>
+        <text x="112" y="118" class="lbl-soft" text-anchor="end">= 2A+A*−f−f*</text>
 
-        <!-- The pareto frontier (BPS fig 1): piecewise -->
-        <!-- Right side: from (2A+A*−f−f*, 0) going up-left
-             - Slanted segment as I2 starts entering M2
-             - Jump up by f when I1 leaves M2
-             - Slanted segment with both in M3
-             - Symmetric Pareto eff point (●) sits where they alternate M3
-             - Mirror image on the other side -->
-
-        <!-- For the visual, idealise to: triangle apex at (700,140), small step-jump, symmetric point at (500,140) -->
-
-        <!-- right triangle pure (1 alone) -->
+        <!-- Pareto frontier (BPS figure 1 idealised) -->
+        <!-- triangle endpoints + slanted segments + vertical jumps -->
         <circle cx="710" cy="420" r="6" fill="#2347d9"/>
-        <line x1="710" y1="420" x2="660" y2="320" stroke="#2347d9" stroke-width="2"/>
-        <!-- jump up by f -->
+        <line x1="710" y1="420" x2="660" y2="320" stroke="#2347d9" stroke-width="2.4"/>
         <line x1="660" y1="320" x2="660" y2="280" stroke="#2347d9" stroke-width="2" stroke-dasharray="4 3"/>
-        <text x="670" y="304" class="lbl-soft" style="fill:#2347d9;">+f</text>
-        <!-- slanted to symmetric Pareto point -->
-        <line x1="660" y1="280" x2="500" y2="180" stroke="#2347d9" stroke-width="2"/>
-        <!-- symmetric Pareto -->
+        <text x="666" y="304" class="lbl-soft" style="fill:#2347d9;">jump = f</text>
+        <line x1="660" y1="280" x2="500" y2="180" stroke="#2347d9" stroke-width="2.4"/>
         <circle cx="500" cy="180" r="7" fill="#2f8f5b"/>
-        <!-- mirror image leftward -->
-        <line x1="500" y1="180" x2="340" y2="280" stroke="#2347d9" stroke-width="2"/>
+        <line x1="500" y1="180" x2="340" y2="280" stroke="#2347d9" stroke-width="2.4"/>
         <line x1="340" y1="280" x2="340" y2="320" stroke="#2347d9" stroke-width="2" stroke-dasharray="4 3"/>
-        <text x="350" y="304" class="lbl-soft" style="fill:#2347d9;">+f</text>
-        <line x1="340" y1="320" x2="290" y2="420" stroke="#2347d9" stroke-width="2"/>
+        <text x="334" y="304" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">jump = f</text>
+        <line x1="340" y1="320" x2="290" y2="420" stroke="#2347d9" stroke-width="2.4"/>
         <circle cx="290" cy="420" r="6" fill="#2347d9"/>
 
-        <!-- Nash equilibrium STAR — strictly inside -->
-        <g transform="translate(420,300)">
-          <text x="0" y="6" text-anchor="middle" style="fill:#c64545; font-family:var(--mono); font-size:24px; font-weight:700;">★</text>
-        </g>
-        <line x1="430" y1="294" x2="510" y2="260" class="lead"/>
-        <text x="520" y="262" class="lbl" style="fill:#c64545;">SYMMETRIC NASH</text>
-        <text x="520" y="276" class="lbl-soft">π = A + A*/2 − f − f*</text>
-        <text x="520" y="290" class="lbl-soft">both enter all three markets</text>
+        <!-- Nash equilibrium star — strictly inside frontier -->
+        <text x="500" y="312" text-anchor="middle" style="fill:#c64545; font-family:var(--mono); font-size:26px; font-weight:700;">★</text>
 
-        <!-- Pareto point annotation -->
-        <line x1="494" y1="180" x2="430" y2="140" class="lead"/>
-        <text x="420" y="132" class="lbl" style="fill:#2f8f5b;" text-anchor="end">SYMMETRIC PARETO EQ.</text>
-        <text x="420" y="146" class="lbl-soft" style="fill:#2f8f5b;" text-anchor="end">π = A + A*/2 − f*/2</text>
-        <text x="420" y="160" class="lbl-soft" style="fill:#2f8f5b;" text-anchor="end">each stays in her natural market</text>
+        <!-- gap dashed line between Pareto and Nash -->
+        <line x1="500" y1="190" x2="500" y2="296" stroke="#9ca3af" stroke-width="0.8" stroke-dasharray="3 3"/>
+        <text x="510" y="244" class="lbl-soft" style="fill:#2f8f5b;">gap = f + f*/2</text>
+        <text x="510" y="258" class="lbl-soft" style="fill:#2f8f5b;">(saved fixed costs)</text>
 
-        <!-- callout corners -->
-        <line x1="708" y1="418" x2="780" y2="380" class="lead"/>
-        <text x="784" y="378" class="lbl-soft">I₁ takes all markets, I₂ stays out</text>
+        <!-- Pareto point annotation — UP-LEFT in clear space -->
+        <line x1="494" y1="180" x2="380" y2="140" class="lead"/>
+        <text x="370" y="124" class="lbl" style="fill:#2f8f5b;" text-anchor="end">SYMMETRIC PARETO EQ.</text>
+        <text x="370" y="140" class="lbl-soft" style="fill:#2f8f5b;" text-anchor="end">π = A + A*/2 − f*/2</text>
+        <text x="370" y="156" class="lbl-soft" style="fill:#2f8f5b;" text-anchor="end">each stays in her natural market</text>
 
-        <!-- savings annotation -->
-        <line x1="500" y1="178" x2="420" y2="294" stroke="#9ca3af" stroke-width="0.8" stroke-dasharray="2 2"/>
-        <text x="445" y="234" class="lbl-soft" style="fill:#2f8f5b;">gap = f + f*/2</text>
-        <text x="445" y="248" class="lbl-soft" style="fill:#2f8f5b;">(saved fixed costs)</text>
+        <!-- Nash equilibrium annotation — DOWN-RIGHT in clear space -->
+        <line x1="510" y1="316" x2="600" y2="360" class="lead"/>
+        <text x="608" y="362" class="lbl" style="fill:#c64545;">SYMMETRIC NASH (★)</text>
+        <text x="608" y="378" class="lbl-soft" style="fill:#c64545;">π = A + A*/2 − f − f*</text>
+        <text x="608" y="394" class="lbl-soft" style="fill:#c64545;">both enter all three markets</text>
 
-        <text x="24" y="465" class="lbl-soft">FIG. 1.2 · PARETO FRONTIER OF THE STAGE GAME (AFTER BPS FIG. 1)</text>
+        <text x="24" y="488" class="lbl-soft">FIG. 1.2 · PARETO FRONTIER OF THE STAGE GAME (AFTER BPS FIG. 1)</text>
       </svg>
-      <figcaption><span class="figno">FIG. 1.2</span> The Pareto frontier (solid blue) is the boundary of feasible payoff pairs. The slanted segments correspond to gradual entry of one intermediary into the other's natural market; the vertical jump corresponds to the discrete fixed-cost saving when she finally exits. The symmetric Pareto-efficient equilibrium (●) is strictly above the symmetric Nash equilibrium (★) by <span class="math-inline">f + f*/2</span> per intermediary — the wasted fixed costs.</figcaption>
+      <figcaption><span class="figno">FIG. 1.2</span> The Pareto frontier (solid blue) is the boundary of feasible payoff pairs. The slanted segments correspond to gradual entry of one intermediary into the other's natural market; the vertical dashed jumps correspond to the discrete fixed-cost saving when she finally exits. The symmetric Pareto-efficient equilibrium (●) is strictly above the symmetric Nash equilibrium (★) by <span class="math-inline">f + f*/2</span> per intermediary — the wasted fixed costs.</figcaption>
     </figure>
 
     <p>

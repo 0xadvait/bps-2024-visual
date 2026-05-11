@@ -106,87 +106,84 @@
 
       <!-- HERO: three-market schematic showing the tacit-collusion allocation -->
       <figure class="heroart">
-        <svg class="diag" viewBox="0 0 920 460" xmlns="http://www.w3.org/2000/svg">
+        <svg class="diag" viewBox="0 0 920 520" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <marker id="cov-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
               <path d="M 0 0 L 10 5 L 0 10 z" class="fill"/>
             </marker>
-            <marker id="cov-arr-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#c64545"/>
-            </marker>
           </defs>
 
           <text x="28" y="30" class="lbl-big">THE BPS GAME — TWO ARBITRAGEURS, THREE MARKETS, ONE COOPERATIVE EQUILIBRIUM</text>
-          <text x="28" y="46" class="lbl-soft">SOLID ARROWS = TACIT-COLLUSION ENTRY · DASHED RED = ENTRY THAT WOULD BREAK THE EQUILIBRIUM</text>
+          <text x="28" y="46" class="lbl-soft">SOLID ARROWS · OWN NATURAL MARKET · DASHED · ALTERNATE ENTRY IN THE CONTESTED THIRD MARKET</text>
           <line x1="28" y1="58" x2="892" y2="58" class="stroke-soft"/>
 
-          <!-- Intermediary 1 (left) -->
-          <g transform="translate(80,140)">
-            <rect x="0" y="0" width="160" height="80" class="stroke-2 fill-soft" rx="4"/>
-            <text x="80" y="32" class="lbl-big" text-anchor="middle">INTERMEDIARY 1</text>
-            <text x="80" y="50" class="lbl-soft" text-anchor="middle">natural market: M₁</text>
-            <text x="80" y="64" class="lbl-soft" text-anchor="middle">cost in M₁: 0   ·   in M₂: f   ·   in M₃: f*</text>
+          <!-- Intermediary 1 (top-left) -->
+          <g transform="translate(60,100)">
+            <rect x="0" y="0" width="200" height="84" class="stroke-2 fill-soft" rx="4"/>
+            <text x="100" y="26" class="lbl-big" text-anchor="middle">INTERMEDIARY 1</text>
+            <text x="100" y="46" class="lbl-soft" text-anchor="middle">natural market: M₁</text>
+            <text x="100" y="64" class="lbl-soft" text-anchor="middle">costs (M₁, M₂, M₃) = (0, f, f*)</text>
           </g>
 
-          <!-- Intermediary 2 (right) -->
-          <g transform="translate(680,140)">
-            <rect x="0" y="0" width="160" height="80" class="stroke-2 fill-soft" rx="4"/>
-            <text x="80" y="32" class="lbl-big" text-anchor="middle">INTERMEDIARY 2</text>
-            <text x="80" y="50" class="lbl-soft" text-anchor="middle">natural market: M₂</text>
-            <text x="80" y="64" class="lbl-soft" text-anchor="middle">cost in M₁: f   ·   in M₂: 0   ·   in M₃: f*</text>
+          <!-- Intermediary 2 (top-right) -->
+          <g transform="translate(660,100)">
+            <rect x="0" y="0" width="200" height="84" class="stroke-2 fill-soft" rx="4"/>
+            <text x="100" y="26" class="lbl-big" text-anchor="middle">INTERMEDIARY 2</text>
+            <text x="100" y="46" class="lbl-soft" text-anchor="middle">natural market: M₂</text>
+            <text x="100" y="64" class="lbl-soft" text-anchor="middle">costs (M₁, M₂, M₃) = (f, 0, f*)</text>
           </g>
 
-          <!-- Three markets (bottom row) -->
-          <g transform="translate(80,300)">
-            <rect x="0" y="0" width="160" height="80" class="stroke-2" fill="#fffdf6" rx="4"/>
-            <text x="80" y="26" class="lbl" text-anchor="middle">MARKET M₁</text>
-            <text x="80" y="46" class="body" text-anchor="middle">value: A</text>
-            <text x="80" y="62" class="lbl-soft" text-anchor="middle">"natural" to I₁</text>
+          <!-- I1 → M1 (own market) — solid arrow straight down -->
+          <line x1="160" y1="184" x2="160" y2="340" stroke="#2347d9" stroke-width="2.4" marker-end="url(#cov-arr)"/>
+          <text x="172" y="266" class="lbl-soft" style="fill:#2347d9;">own market</text>
+          <text x="172" y="280" class="lbl-soft" style="fill:#2347d9;">cost 0</text>
+
+          <!-- I2 → M2 (own market) — solid arrow straight down -->
+          <line x1="760" y1="184" x2="760" y2="340" stroke="#2347d9" stroke-width="2.4" marker-end="url(#cov-arr)"/>
+          <text x="748" y="266" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">own market</text>
+          <text x="748" y="280" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">cost 0</text>
+
+          <!-- I1 → M3 (alternates in odd periods) — curve to LEFT side of M3, never crosses I2 arrow -->
+          <path d="M 230 184 C 290 240 350 280 400 340" stroke="#2347d9" stroke-width="1.8" stroke-dasharray="5 3" fill="none" marker-end="url(#cov-arr)"/>
+          <text x="298" y="222" class="lbl-soft" style="fill:#2347d9;">alternates in M₃</text>
+          <text x="298" y="236" class="lbl-soft" style="fill:#2347d9;">(odd t)</text>
+
+          <!-- I2 → M3 (alternates in even periods) — curve to RIGHT side of M3 -->
+          <path d="M 690 184 C 630 240 570 280 520 340" stroke="#2347d9" stroke-width="1.8" stroke-dasharray="5 3" fill="none" marker-end="url(#cov-arr)"/>
+          <text x="622" y="222" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">alternates in M₃</text>
+          <text x="622" y="236" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">(even t)</text>
+
+          <!-- M1 (bottom-left) -->
+          <g transform="translate(60,344)">
+            <rect x="0" y="0" width="200" height="84" class="stroke-2" fill="#fffdf6" rx="4"/>
+            <text x="100" y="26" class="lbl" text-anchor="middle">MARKET M₁</text>
+            <text x="100" y="46" class="body" text-anchor="middle">value: A</text>
+            <text x="100" y="66" class="lbl-soft" text-anchor="middle">natural to I₁</text>
           </g>
 
-          <g transform="translate(380,300)">
-            <rect x="0" y="0" width="160" height="80" class="stroke-2" fill="#fffdf6" rx="4"/>
-            <text x="80" y="26" class="lbl" text-anchor="middle">MARKET M₃</text>
-            <text x="80" y="46" class="body" text-anchor="middle">value: A*</text>
-            <text x="80" y="62" class="lbl-soft" text-anchor="middle">natural to neither</text>
+          <!-- M3 (bottom-centre) -->
+          <g transform="translate(360,344)">
+            <rect x="0" y="0" width="200" height="84" class="stroke-2" fill="#fffdf6" rx="4"/>
+            <text x="100" y="26" class="lbl" text-anchor="middle">MARKET M₃</text>
+            <text x="100" y="46" class="body" text-anchor="middle">value: A*</text>
+            <text x="100" y="66" class="lbl-soft" text-anchor="middle">contested · one entrant per period</text>
           </g>
 
-          <g transform="translate(680,300)">
-            <rect x="0" y="0" width="160" height="80" class="stroke-2" fill="#fffdf6" rx="4"/>
-            <text x="80" y="26" class="lbl" text-anchor="middle">MARKET M₂</text>
-            <text x="80" y="46" class="body" text-anchor="middle">value: A</text>
-            <text x="80" y="62" class="lbl-soft" text-anchor="middle">"natural" to I₂</text>
+          <!-- M2 (bottom-right) -->
+          <g transform="translate(660,344)">
+            <rect x="0" y="0" width="200" height="84" class="stroke-2" fill="#fffdf6" rx="4"/>
+            <text x="100" y="26" class="lbl" text-anchor="middle">MARKET M₂</text>
+            <text x="100" y="46" class="body" text-anchor="middle">value: A</text>
+            <text x="100" y="66" class="lbl-soft" text-anchor="middle">natural to I₂</text>
           </g>
 
-          <!-- arrows: solid = tacit collusion entry; dashed red = forbidden entry -->
-          <!-- I1 → M1 (own natural market — enter) -->
-          <line x1="160" y1="220" x2="160" y2="296" stroke="#2347d9" stroke-width="2.4" marker-end="url(#cov-arr)"/>
-          <text x="170" y="266" class="lbl-soft" style="fill:#2347d9;">enter (cost 0)</text>
+          <!-- SPE condition strip -->
+          <line x1="60" y1="468" x2="860" y2="468" class="stroke-soft"/>
+          <text x="460" y="488" class="lbl-soft" text-anchor="middle">SUSTAINABLE AS SPE WHEN&nbsp;&nbsp;δ ≥ (A − f − f*/2) / A&nbsp;&nbsp;·&nbsp;&nbsp;DEVIATION REVERTS PLAY TO ONE-SHOT NASH FOREVER</text>
 
-          <!-- I2 → M2 (own natural market — enter) -->
-          <line x1="760" y1="220" x2="760" y2="296" stroke="#2347d9" stroke-width="2.4" marker-end="url(#cov-arr)"/>
-          <text x="650" y="266" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">enter (cost 0)</text>
-
-          <!-- I1 ↘ M3 (alternate entry) -->
-          <line x1="180" y1="222" x2="420" y2="296" stroke="#2347d9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#cov-arr)"/>
-          <text x="244" y="252" class="lbl-soft" style="fill:#2347d9;">alternate</text>
-          <text x="244" y="266" class="lbl-soft" style="fill:#2347d9;">odd periods</text>
-
-          <!-- I2 ↙ M3 (alternate entry) -->
-          <line x1="740" y1="222" x2="500" y2="296" stroke="#2347d9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#cov-arr)"/>
-          <text x="676" y="252" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">alternate</text>
-          <text x="676" y="266" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">even periods</text>
-
-          <!-- FORBIDDEN: I1 → M2 -->
-          <line x1="220" y1="220" x2="700" y2="296" stroke="#c64545" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#cov-arr-bad)"/>
-          <text x="448" y="234" class="lbl-soft" style="fill:#c64545;" text-anchor="middle">break cooperation → trigger punishment</text>
-
-          <!-- bottom strip -->
-          <text x="460" y="430" class="lbl-soft" text-anchor="middle">SOLVE-ABLE AS A SUBGAME PERFECT EQUILIBRIUM IF δ ≥ (A − f − f*/2) / A</text>
-
-          <text x="892" y="448" class="lbl-soft" text-anchor="end">FIG. 0 · TACIT COLLUSION ALLOCATION</text>
+          <text x="60" y="510" class="lbl-soft">FIG. 0 · TACIT COLLUSION ALLOCATION</text>
         </svg>
-        <figcaption><span class="figno">FIG. 0</span> The cooperative equilibrium that the model predicts and the data confirms: each intermediary stays in her own natural market and alternates entry in the contested third market. The dashed red arrow — Intermediary 1 entering Intermediary 2's natural market — is the deviation that any trigger strategy must punish with reversion to the one-shot Nash equilibrium.</figcaption>
+        <figcaption><span class="figno">FIG. 0</span> The cooperative equilibrium that the model predicts and the data confirms: each intermediary stays in her own natural market and alternates entry in the contested third market. A deviation — Intermediary 1 entering Intermediary 2's natural market, or vice versa — is punished by reversion to the one-shot Nash equilibrium forever, which sustains cooperation under the discount-factor condition above (see Chapter 2).</figcaption>
       </figure>
     </div>
 
