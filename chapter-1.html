@@ -260,7 +260,9 @@
     </p>
 
     <figure>
-      <svg class="diag" viewBox="0 0 920 520" xmlns="http://www.w3.org/2000/svg">
+      <svg class="diag pareto-frontier" viewBox="0 0 920 520" xmlns="http://www.w3.org/2000/svg" aria-labelledby="fig-1-2-title fig-1-2-desc" role="img">
+        <title id="fig-1-2-title">Pareto frontier of the stage game</title>
+        <desc id="fig-1-2-desc">The Pareto frontier is above the symmetric Nash point by the fixed-cost savings.</desc>
         <text x="24" y="28" class="lbl-big">PARETO FRONTIER OF THE STAGE GAME</text>
         <text x="24" y="44" class="lbl-soft">BPS FIG. 1 · NASH EQUILIBRIUM (★) SITS STRICTLY INSIDE THE FRONTIER</text>
         <line x1="24" y1="58" x2="896" y2="58" class="stroke-soft"/>
@@ -278,14 +280,14 @@
 
         <!-- Pareto frontier — solid blue segments with vertical dashed jumps -->
         <circle cx="710" cy="420" r="6" fill="#2347d9"/>
-        <line x1="710" y1="420" x2="660" y2="320" stroke="#2347d9" stroke-width="2.4"/>
-        <line x1="660" y1="320" x2="660" y2="280" stroke="#2347d9" stroke-width="2" stroke-dasharray="4 3"/>
+        <line x1="710" y1="420" x2="660" y2="320" class="frontier"/>
+        <line x1="660" y1="320" x2="660" y2="280" class="jump"/>
         <text x="668" y="304" class="lbl-soft" style="fill:#2347d9;">jump = f</text>
-        <line x1="660" y1="280" x2="500" y2="180" stroke="#2347d9" stroke-width="2.4"/>
-        <line x1="500" y1="180" x2="340" y2="280" stroke="#2347d9" stroke-width="2.4"/>
-        <line x1="340" y1="280" x2="340" y2="320" stroke="#2347d9" stroke-width="2" stroke-dasharray="4 3"/>
+        <line x1="660" y1="280" x2="500" y2="180" class="frontier"/>
+        <line x1="500" y1="180" x2="340" y2="280" class="frontier"/>
+        <line x1="340" y1="280" x2="340" y2="320" class="jump"/>
         <text x="332" y="304" class="lbl-soft" style="fill:#2347d9;" text-anchor="end">jump = f</text>
-        <line x1="340" y1="320" x2="290" y2="420" stroke="#2347d9" stroke-width="2.4"/>
+        <line x1="340" y1="320" x2="290" y2="420" class="frontier"/>
         <circle cx="290" cy="420" r="6" fill="#2347d9"/>
 
         <!-- key equilibrium points -->
@@ -297,20 +299,23 @@
 
         <!-- gap label — with a clean horizontal leader so the label is well clear of the dashed line -->
         <line x1="500" y1="246" x2="568" y2="246" stroke="#2f8f5b" stroke-width="0.8"/>
+        <rect x="570" y="224" width="146" height="44" class="note-box"/>
         <text x="576" y="240" class="lbl" style="fill:#2f8f5b;">GAP = f + f*/2</text>
         <text x="576" y="256" class="lbl-soft" style="fill:#2f8f5b;">(saved fixed costs)</text>
 
         <!-- Pareto annotation — UP-LEFT of the dot, leader to dot -->
-        <line x1="494" y1="178" x2="380" y2="140" class="lead"/>
-        <text x="370" y="124" class="lbl" style="fill:#2f8f5b;" text-anchor="end">SYMMETRIC PARETO EQ.</text>
-        <text x="370" y="140" class="lbl-soft" style="fill:#2f8f5b;" text-anchor="end">π = A + A*/2 − f*/2</text>
-        <text x="370" y="156" class="lbl-soft" style="fill:#2f8f5b;" text-anchor="end">each stays in her own market</text>
+        <line x1="494" y1="178" x2="372" y2="144" class="lead"/>
+        <rect x="230" y="106" width="152" height="62" class="note-box"/>
+        <text x="372" y="124" class="lbl" style="fill:#2f8f5b;" text-anchor="end">SYMMETRIC PARETO EQ.</text>
+        <text x="372" y="142" class="lbl-soft" style="fill:#2f8f5b;" text-anchor="end">π = A + A*/2 − f*/2</text>
+        <text x="372" y="160" class="lbl-soft" style="fill:#2f8f5b;" text-anchor="end">own markets only</text>
 
         <!-- Nash annotation — DOWN-LEFT of the star, leader to star, in clear empty space -->
         <line x1="490" y1="318" x2="380" y2="360" class="lead"/>
+        <rect x="218" y="344" width="162" height="62" class="note-box"/>
         <text x="370" y="362" class="lbl" style="fill:#c64545;" text-anchor="end">SYMMETRIC NASH (★)</text>
-        <text x="370" y="378" class="lbl-soft" style="fill:#c64545;" text-anchor="end">π = A + A*/2 − f − f*</text>
-        <text x="370" y="394" class="lbl-soft" style="fill:#c64545;" text-anchor="end">both enter all three markets</text>
+        <text x="370" y="380" class="lbl-soft" style="fill:#c64545;" text-anchor="end">π = A + A*/2 − f − f*</text>
+        <text x="370" y="398" class="lbl-soft" style="fill:#c64545;" text-anchor="end">enters all markets</text>
 
         <text x="24" y="508" class="lbl-soft">FIG. 1.2 · PARETO FRONTIER OF THE STAGE GAME (AFTER BPS FIG. 1)</text>
       </svg>

@@ -4,7 +4,7 @@
   --paper: #fffdf6;
   --ink: #1f2937;
   --ink-soft: #4b5563;
-  --ink-faint: #9ca3af;
+  --ink-faint: #7d8796;
   --rule: #e5e1d3;
   --blue: #2347d9;
   --blue-soft: #5b7cf5;
@@ -22,6 +22,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--serif);
@@ -32,6 +33,8 @@ html, body {
 
 a { color: var(--blue); text-decoration: none; }
 a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--blue-soft); outline-offset: 3px; border-radius: 2px; }
+img, svg { max-width: 100%; }
 
 /* ---------- credits strip (above topbar) ---------- */
 .linkbar {
@@ -42,8 +45,8 @@ a:hover { text-decoration: underline; }
   justify-content: space-between;
   align-items: center;
   font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: 0.08em;
+  font-size: 11.5px;
+  letter-spacing: 0.055em;
   text-transform: uppercase;
   color: var(--ink-faint);
   flex-wrap: wrap;
@@ -51,17 +54,20 @@ a:hover { text-decoration: underline; }
 }
 .linkbar .group {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   flex-wrap: wrap;
   align-items: center;
   margin: 0; /* override scoped `.group` rules on terminology.html */
 }
 .linkbar .lbl-tag {
   color: var(--ink-faint);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.085em;
 }
 .linkbar a {
-  color: var(--ink-soft);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
   border-bottom: 1px solid transparent;
   transition: color .15s, border-color .15s;
 }
@@ -71,7 +77,7 @@ a:hover { text-decoration: underline; }
   text-decoration: none;
 }
 .linkbar .arrow {
-  font-size: 9px;
+  font-size: 10px;
   margin-left: 2px;
   opacity: 0.7;
 }
@@ -87,7 +93,7 @@ a:hover { text-decoration: underline; }
   .linkbar .arrow { display: none; }
 }
 @media (max-width: 540px) {
-  .linkbar { font-size: 9.5px; }
+  .linkbar { font-size: 10px; }
   .linkbar .group { gap: 8px; row-gap: 4px; }
 }
 
@@ -103,9 +109,9 @@ a:hover { text-decoration: underline; }
   justify-content: space-between;
   align-items: center;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.055em;
   color: var(--ink-soft);
 }
 .topbar .brand {
@@ -116,22 +122,24 @@ a:hover { text-decoration: underline; }
   text-transform: none;
   letter-spacing: 0;
 }
-.topbar .crumbs a { color: var(--ink-soft); margin: 0 6px; }
+.topbar .crumbs a { color: var(--ink-soft); margin: 0 5px; display: inline-flex; align-items: center; min-height: 30px; padding: 0 2px; }
 .topbar .crumbs a.current { color: var(--blue); }
 
 /* ---------- layout ---------- */
 .shell {
   display: grid;
-  grid-template-columns: 240px 1fr 60px;
-  gap: 56px;
-  max-width: 1340px;
+  grid-template-columns: 220px minmax(0, 760px) 34px;
+  gap: 38px;
+  max-width: 1150px;
   margin: 0 auto;
-  padding: 60px 32px 120px;
+  padding: 56px 28px 120px;
 }
 
-@media (max-width: 900px) {
-  .shell { grid-template-columns: 1fr; gap: 20px; padding: 20px 14px 56px; }
-  .toc { position: static !important; max-height: none !important; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
+@media (max-width: 1100px) {
+  .shell { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 20px 14px 56px; }
+  .toc { position: static !important; max-height: none !important; width: 100%; min-width: 0; padding: 12px 0 16px; border-bottom: 1px solid var(--rule); overflow-x: hidden; }
+  .toc ol, .toc ul { margin-bottom: 16px; }
+  .toc a { display: inline-flex; align-items: center; min-height: 28px; }
   .margin-tag { display: none; }
   .topbar {
     padding: 10px 14px;
@@ -160,7 +168,7 @@ a:hover { text-decoration: underline; }
   .content .deck { font-size: 17px; max-width: 100%; line-height: 1.45; }
   .content h2 { font-size: 22px; margin-top: 30px; line-height: 1.2; }
   .content h3 { font-size: 17px; }
-  .content { max-width: 100%; font-size: 16px; line-height: 1.65; }
+  .content { max-width: 100%; min-width: 0; font-size: 16px; line-height: 1.65; }
   .chapters { grid-template-columns: 1fr; gap: 12px; }
   .chapters .chapter-card { padding: 16px 18px; }
   .chapters .chapter-card .num { font-size: 10px; }
@@ -212,29 +220,13 @@ a:hover { text-decoration: underline; }
   .term .name { font-size: 16px; }
   .term .body { font-size: 14px; }
   .topbar { padding: 8px 12px; }
-  .topbar .crumbs { font-size: 9.5px; }
+  .topbar .crumbs { font-size: 10px; }
   .topbar .brand { font-size: 12px; }
-  .linkbar { font-size: 9.5px; }
+  .linkbar { font-size: 10px; }
   .linkbar .group { gap: 10px; row-gap: 4px; }
   .diag .lbl, .diag .lbl-soft { font-size: 13px; }
   .diag .lbl-big { font-size: 14.5px; }
   .diag .body { font-size: 13.5px; }
-}
-  .cover .title { font-size: 28px; }
-  .content h1 { font-size: 26px; }
-  .content h1 .num { font-size: 14px; margin-bottom: 10px; }
-  .content h2 { font-size: 19px; }
-  .content { font-size: 14.5px; }
-  .term { grid-template-columns: 1fr; }
-  .term .name { font-size: 16px; }
-  .term .body { font-size: 13.5px; }
-  /* further-shrunk topbar/crumbs on very narrow phones */
-  .topbar { padding: 8px 12px; }
-  .topbar .crumbs { font-size: 9px; }
-  .topbar .brand { font-size: 11.5px; }
-  /* keep figures readable but accept the swipe */
-  figure svg { min-width: 700px; }
-  .cover .heroart svg { min-width: 700px; }
 }
 
 /* ---------- TOC sidebar ---------- */
@@ -243,7 +235,7 @@ a:hover { text-decoration: underline; }
   top: 80px;
   align-self: start;
   font-family: var(--sans);
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.55;
   max-height: calc(100vh - 100px);
   overflow-y: auto;
@@ -251,7 +243,7 @@ a:hover { text-decoration: underline; }
 .toc h3 {
   font-family: var(--mono);
   font-size: 10.5px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--ink-faint);
   margin: 0 0 8px;
@@ -268,8 +260,10 @@ a:hover { text-decoration: underline; }
   margin-bottom: 6px;
 }
 .toc ol > li > a {
-  color: var(--ink);
+  color: var(--ink-soft);
   font-weight: 600;
+  display: inline-block;
+  padding: 2px 0;
 }
 .toc ol > li > a::before {
   content: counter(chap) ". ";
@@ -285,12 +279,14 @@ a:hover { text-decoration: underline; }
   border-left: 1px solid var(--rule);
 }
 .toc ul li { margin: 2px 0; }
-.toc ul li a { color: var(--ink-soft); font-weight: 400; }
-.toc a.active { color: var(--blue); }
+.toc ul li a { color: #5f6b7a; font-weight: 400; }
+.toc a.active { color: var(--blue); font-weight: 700; }
+.toc a.active::after { content: ""; display: inline-block; width: 20px; border-top: 1px solid currentColor; margin-left: 8px; transform: translateY(-3px); }
 
 /* ---------- main content ---------- */
 .content {
   max-width: 760px;
+  min-width: 0;
   font-feature-settings: "kern", "liga";
 }
 
@@ -362,7 +358,8 @@ a:hover { text-decoration: underline; }
 
 /* ---------- figures ---------- */
 figure {
-  margin: 40px 0 36px;
+  margin: 42px 0 38px;
+  min-width: 0;
   padding: 0;
 }
 figure svg {
@@ -371,24 +368,26 @@ figure svg {
   height: auto;
   background: var(--paper);
   border: 1px solid var(--rule);
-  border-radius: 2px;
+  border-radius: 4px;
 }
 figcaption {
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-family: var(--serif);
+  font-size: 14px;
   color: var(--ink-soft);
-  margin-top: 10px;
-  line-height: 1.5;
+  margin-top: 12px;
+  line-height: 1.58;
 }
 figcaption .figno {
   color: var(--blue);
-  margin-right: 8px;
+  margin-right: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
 }
 figcaption .desc {
   font-family: var(--serif);
-  font-size: 13px;
+  font-size: 14px;
   color: var(--ink-soft);
   text-transform: none;
   letter-spacing: 0;
@@ -410,8 +409,8 @@ figcaption .desc {
 .callout .tag {
   display: inline-block;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
+  font-size: 10.5px;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--blue);
   font-weight: 600;
@@ -501,9 +500,9 @@ figcaption .desc {
 }
 .cover .meta {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.055em;
   color: var(--ink-faint);
   line-height: 1.8;
 }
@@ -519,7 +518,7 @@ figcaption .desc {
   border: 1px solid var(--rule);
   border-radius: 2px;
 }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .cover .header-block {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -543,9 +542,10 @@ figcaption .desc {
   text-decoration: none;
   color: var(--ink);
   display: block;
-  transition: border-color .15s, transform .15s;
+  transition: border-color .16s, box-shadow .16s, transform .16s, background .16s;
 }
-.chapter-card:hover { border-color: var(--blue); transform: translateY(-2px); text-decoration: none; }
+.chapter-card:hover { border-color: var(--blue); background: #fffefa; box-shadow: 0 10px 24px rgba(35, 71, 217, 0.10); transform: translateY(-3px); text-decoration: none; }
+.chapter-card:focus-visible { box-shadow: 0 0 0 3px rgba(91, 124, 245, 0.24); }
 .chapter-card .num {
   font-family: var(--mono);
   font-size: 11px;
@@ -561,7 +561,7 @@ figcaption .desc {
   letter-spacing: -0.01em;
 }
 .chapter-card .blurb {
-  font-size: 14px;
+  font-size: 14.5px;
   color: var(--ink-soft);
   line-height: 1.5;
 }
@@ -580,6 +580,15 @@ figcaption .desc {
 }
 .pagenav a {
   color: var(--ink-soft);
+  min-height: 32px;
+  border-bottom: 1px solid transparent;
+  transition: color .16s, border-color .16s, transform .16s;
+}
+.pagenav a:hover { color: var(--blue); border-bottom-color: currentColor; transform: translateY(-1px); text-decoration: none; }
+.pagenav a:last-child {
+  text-align: right;
+  color: var(--blue);
+  font-weight: 600;
 }
 .pagenav a .nm {
   display: block;
@@ -600,22 +609,31 @@ figcaption .desc {
   --d-orange: #f6802b;
   --d-green: #2f8f5b;
   --d-text: #1f2937;
-  --d-mute: #9ca3af;
+  --d-mute: #7d8796;
 }
 .diag .stroke    { stroke: var(--d-stroke); fill: none; stroke-width: 1.2; }
-.diag .stroke-2  { stroke: var(--d-stroke); fill: none; stroke-width: 1.8; }
+.diag .stroke-2  { stroke: var(--d-stroke); fill: none; stroke-width: 2.1; }
 .diag .stroke-soft { stroke: var(--d-stroke-soft); fill: none; stroke-width: 1; }
 .diag .fill      { fill: var(--d-stroke); }
 .diag .fill-soft { fill: var(--d-fill); }
 .diag .fill-orange { fill: var(--d-orange); }
 .diag .fill-green  { fill: var(--d-green); }
-.diag .lead      { stroke: var(--d-stroke); fill: none; stroke-width: 0.8; stroke-dasharray: 0; }
+.diag .lead      { stroke: var(--d-stroke); fill: none; stroke-width: 1; stroke-dasharray: 0; }
 .diag .dashed    { stroke: var(--d-stroke); fill: none; stroke-width: 0.8; stroke-dasharray: 3 3; }
 .diag .grid      { stroke: #d8e0f5; fill: none; stroke-width: 0.5; }
-.diag .lbl       { font-family: var(--mono); font-size: 9.5px; fill: var(--d-stroke); letter-spacing: 0.06em; text-transform: uppercase; }
-.diag .lbl-soft  { font-family: var(--mono); font-size: 9px; fill: var(--d-mute); letter-spacing: 0.06em; text-transform: uppercase; }
-.diag .lbl-big   { font-family: var(--mono); font-size: 11px; fill: var(--d-stroke); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
-.diag .body      { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 11px; fill: var(--d-text); }
+.diag .lbl       { font-family: var(--mono); font-size: 10.25px; fill: var(--d-stroke); letter-spacing: 0.06em; text-transform: uppercase; }
+.diag .lbl-soft  { font-family: var(--mono); font-size: 9.75px; fill: var(--d-mute); letter-spacing: 0.06em; text-transform: uppercase; }
+.diag .lbl-big   { font-family: var(--mono); font-size: 12px; fill: var(--d-stroke); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+.diag .body      { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 12px; fill: var(--d-text); }
+
+
+/* Fig. 1.2 needs denser annotation than the other diagrams. */
+.diag.pareto-frontier .lbl { font-size: 11px; letter-spacing: 0.045em; }
+.diag.pareto-frontier .lbl-soft { font-size: 10.5px; letter-spacing: 0.04em; }
+.diag.pareto-frontier .lbl-big { font-size: 13px; }
+.diag.pareto-frontier .note-box { fill: rgba(255, 253, 246, 0.92); stroke: var(--rule); stroke-width: 0.8; rx: 4; }
+.diag.pareto-frontier .frontier { stroke: var(--d-stroke); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.diag.pareto-frontier .jump { stroke: var(--d-stroke); stroke-width: 2.4; stroke-dasharray: 4 4; stroke-linecap: round; }
 
 /* ---------- bars, comparison ---------- */
 .bar-row {
@@ -675,7 +693,7 @@ figcaption .desc {
 .compare li.good::before { content: "✓"; color: var(--green); }
 
 /* Late diagram/mobile overrides: keep SVG figures usable after base rules cascade. */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .cover { grid-template-columns: 1fr; gap: 28px; padding: 32px 0 24px; }
   .cover .title { font-size: 36px; }
   .cover .sub { font-size: 14px; }
@@ -692,7 +710,7 @@ figcaption .desc {
  * Mobile overrides — appended at the end so they take precedence
  * over any earlier @media rules in the file.
  * ============================================================ */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   figure svg { min-width: 0 !important; width: 100% !important; border-radius: 2px; }
   .cover .heroart svg { min-width: 0 !important; width: 100% !important; border-radius: 2px; }
   .cover .heroart { margin: 0 !important; overflow: visible !important; }
